@@ -1,0 +1,157 @@
+name: CommandBin
+version: 1.32
+author: CainFoool
+main: main.java.me.cain.commandbin.CommandBin
+commands:
+   tp:
+       description: 'Teleport to a player'
+   tphere:
+       description: 'Teleport a player to you'
+   setspawn:
+       description: 'Set the worlds spawn location'
+   spawn:
+       description: 'Teleport to the worlds spawn'
+   tp2p:
+       description: 'Teleport a player to another player'
+   tpall:
+       description: 'Teleport everyone to you'
+   tpworld:
+       description: 'Teleport to a world'
+   createworld:
+       description: 'Create a world'
+   shutdown:
+       description: 'Shut down the server'
+   unloadworld:
+       description: 'Unload a world'
+   cmdbin:
+       description: 'General stuff'
+   join:
+       description: 'Fake Join Message'
+   leave:
+       description: 'Fake Leave Message'
+   ping:
+       description: 'Pong'
+   creative:
+       description: 'Enable Creativity'
+   survival:
+       description: 'Enable the Survival'
+   shoot:
+       description: 'Shoot a player into the air'
+   strike:
+       description: 'Strike a player'
+   time:
+       description: 'Set the time of the world'
+   rain:
+       description: 'Make it rain'
+   sun:
+       description: 'Make the sun shine'
+   kick:
+       description: 'Kick a player'
+   ban:
+       description: 'Ban a player'
+   unban:
+       description: 'Unban a player'
+   heal:
+       description: 'Heal a player'
+   feed:
+       description: 'Feed a player'
+   freeze:
+       description: 'Freeze a player'
+   unfreeze:
+       description: 'Unfreeze a player'
+   god:
+       description: 'Set yourself to god enabled or disabled'
+   facepalm:
+       description: 'Facepalm'
+   snowman:
+       description: 'Create snow!'
+   unsnowman:
+       description: 'Stop the creation of snow!'
+   explode:
+       description: 'Explode someone'
+   light:
+       description: 'Set somebody on fire'
+   roll:
+       description: 'Roll a number'
+   handicap:
+       description: 'Disable a player from using commands'
+   unhandicap:
+       description: 'Reenable a player to use commands'
+   mute:
+       description: 'Mute a player'
+   unmute:
+       description: 'Unmute a Player'
+   smoke:
+       description: 'Become the walking chimney'
+   explosionstick:
+       description: 'The Explosion stick!'
+   lightningstick:
+       description: 'The lightning stick!'
+   slap:
+       description: 'Slap a player'
+   clear:
+       description: 'Clear your inventory'
+   who:
+       description: 'Details of a player'
+   spawnmob:
+       description: 'Spawn a mob'
+   i:
+       description: 'Get an item'
+   msg:
+       description: 'Message a player'
+   sethome:
+       description: 'Set your home'
+   home:
+       description: 'Teleport to your home'
+   setwarp:
+       description: 'Create a warp'
+   warp:
+       description: 'Teleport to a warp'
+   nick:
+       description: 'Set somebodys nickname'
+   setxp:
+       description: 'Set somebodys experience'
+   delwarp:
+       description: 'Delete a warp'
+   kill:
+       description: 'Kill a player'
+   up:
+       description: 'Go up X amount of blocks'
+   unlimited:
+       description: 'Unlimited amount of blocks'
+   delunlimited:
+       description: 'Remove unlimited blocks'
+   torchbow:
+       description: 'Torch Bow'
+   mytime:
+       description: 'Set your time'
+   armour:
+       description: 'Give yourself armour'
+   cbhelp:
+       description: 'CommandBin Commands'
+   explosionbow:
+       description: 'The dangerous explosion bow'
+   crossbow:
+       description: 'Ohdear.'
+   paid:
+       description: 'Check to see if a user paid legit'
+   put:
+       description: 'Put a player where you are looking'
+   banip:
+       description: 'Ban a players IP address'
+   unbanip:
+       description: 'Unban a players IP'
+   me:
+       description: 'Simple me'
+   more:
+       description: 'Receive more'
+   killmobs:
+       description: 'kill all mobs'
+   jail:
+       description: 'Jail a player'
+   unjail:
+       description: 'Unjail a player'
+   setjail:
+       description: 'Set the location of a jail'
+   setunjail:
+       description: 'Set the location once youre unjailed'
