@@ -157,5 +157,10 @@ public class CommandRegistration
 		CommandBin.plugin.getCommand("setunjail").setExecutor(jail);
 		//
 		
+		// Troll Commands
+		CommandExecutor Troll = new TrollCommands();
+		CommandBin.plugin.getCommand("troll").setExecutor(Troll);
+		// Before anyone judges, I made this out of entire boredom D: 
+		//
 	}
 }

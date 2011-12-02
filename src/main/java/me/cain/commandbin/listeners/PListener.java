@@ -60,6 +60,13 @@ public class PListener extends PlayerListener {
 				e.getPlayer().sendMessage(ChatColor.RED + CommandBin.plugin.getConfig().getString("settings.playercannotusecommands"));
 				e.setCancelled(true);
 			}
+			
+			if(CommandBin.plugin.getConfig().getBoolean("jail.players." + e.getPlayer().getName()))
+			{
+				e.setCancelled(true);
+				e.getPlayer().sendMessage(ChatColor.RED + "You are jailed. Stop trying to use commands!");
+			}
+			return;
 	}
 	
 	public void onPlayerChat(PlayerChatEvent e)
