@@ -3,6 +3,7 @@ package main.java.me.cain.commandbin;
 import main.java.me.cain.commandbin.commands.CommandRegistration;
 import main.java.me.cain.commandbin.config.ConfigSetup;
 import main.java.me.cain.commandbin.listeners.EventRegistration;
+import main.java.me.cain.commandbin.statistics.CallHome;
 import main.java.me.cain.commandbin.statistics.Statistics;
 
 import org.bukkit.ChatColor;
@@ -37,7 +38,7 @@ public class CommandBin extends JavaPlugin {
 		ConfigSetup.start();
 		// RegisterRecipes();
 		Statistics.StartStats();
-		// CallHome.init(CommandBin.plugin); Doesn't seem to be working.
+		CallHome.init(this);
 	}
 	
 	public void onDisable()
