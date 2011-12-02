@@ -199,9 +199,9 @@ public class JailCommands implements CommandExecutor
 			{
 				if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.setjail"))
 				{
-					double bx = ((Player) s).getLocation().getX();
-					double by = ((Player) s).getLocation().getY();
-					double bz = ((Player) s).getLocation().getZ();
+					double bx = ((Player) s).getLocation().getBlock().getX();
+					double by = ((Player) s).getLocation().getBlock().getY();
+					double bz = ((Player) s).getLocation().getBlock().getZ();
 					String world = ((Player) s).getWorld().getName();
 					CommandBin.plugin.getConfig().set("jail.jail.location.x", bx);
 					CommandBin.plugin.getConfig().set("jail.jail.location.y", by);
@@ -220,9 +220,9 @@ public class JailCommands implements CommandExecutor
 			{
 				if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.setunjail"))
 				{
-					double bx = ((Player) s).getLocation().getX();
-					double by = ((Player) s).getLocation().getY();
-					double bz = ((Player) s).getLocation().getZ();
+					double bx = ((Player) s).getLocation().getBlock().getX();
+					double by = ((Player) s).getLocation().getBlock().getY();
+					double bz = ((Player) s).getLocation().getBlock().getZ();
 					String world = ((Player) s).getWorld().getName();
 					CommandBin.plugin.getConfig().set("jail.unjail.location.x", bx);
 					CommandBin.plugin.getConfig().set("jail.unjail.location.y", by);
