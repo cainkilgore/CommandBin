@@ -21,7 +21,7 @@ public class AdministrationCommands implements CommandExecutor
 				if(s instanceof Player)
 				{
 					((Player) s).sendMessage(ChatColor.YELLOW + "+++++++++CommandBin++++++++++");
-					((Player) s).sendMessage(ChatColor.GREEN + "+ Over 60 commands in CommandBin!");
+					((Player) s).sendMessage(ChatColor.GREEN + "+ Over 70 commands in CommandBin!");
 					((Player) s).sendMessage(ChatColor.RED + "+ Version: " + CommandBin.plugin.getDescription().getVersion());
 					((Player) s).sendMessage(ChatColor.LIGHT_PURPLE + "+ Developer: " + CommandBin.plugin.getDescription().getAuthors());
 					((Player) s).sendMessage(ChatColor.YELLOW + "+++++++++++++++++++++++++++++");
@@ -29,7 +29,7 @@ public class AdministrationCommands implements CommandExecutor
 				else
 				{
 					s.sendMessage(ChatColor.YELLOW + "+++++++++CommandBin++++++++++");
-					s.sendMessage(ChatColor.GREEN + "+ Over 60 commands in CommandBin!");
+					s.sendMessage(ChatColor.GREEN + "+ Over 70 commands in CommandBin!");
 					s.sendMessage(ChatColor.RED + "+ Version: " + CommandBin.plugin.getDescription().getVersion());
 					s.sendMessage(ChatColor.LIGHT_PURPLE + "+ Developer: " + CommandBin.plugin.getDescription().getAuthors());
 					s.sendMessage(ChatColor.YELLOW + "+++++++++++++++++++++++++++++");
