@@ -6,6 +6,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
+import org.bukkit.event.entity.EndermanPickupEvent;
+import org.bukkit.event.entity.EndermanPlaceEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
@@ -125,5 +127,24 @@ public class EListener extends EntityListener {
 		
 		return;
 	}
+	
+	public void onEndermanPickup(EndermanPickupEvent e)
+	{
+		if(CommandBin.plugin.getConfig().getBoolean("settings.endermangriefing", false))
+		{
+			e.setCancelled(true);
+		}
+		return;
+	}
+	
+	public void onEndermanPlace(EndermanPlaceEvent e)
+	{
+		if(CommandBin.plugin.getConfig().getBoolean("settings.endermangriefing", false))
+		{
+			e.setCancelled(true);
+		}
+		return;
+	}
+	
 
 }
