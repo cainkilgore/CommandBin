@@ -1145,8 +1145,8 @@ public class PlayerCommands implements CommandExecutor
 						}
 					}
 					if (id == -1) { ((Player) s).sendMessage(ChatColor.RED + "This item does not exist."); return false; }
-					((Player)((Player) s)).getInventory().addItem(new ItemStack(id, amount));
-					((Player)((Player) s)).sendMessage(ChatColor.GREEN + "You obtained " + id);
+					((Player) s).getInventory().addItem(new ItemStack(id, amount));
+					((Player) s).sendMessage(ChatColor.GREEN + "You obtained " + id);
 					return true;
 					}
 					else

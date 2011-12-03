@@ -18,9 +18,7 @@ import org.bukkit.entity.Player;
 public class ModerationCommands implements CommandExecutor
 {
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args)
-	{
-		// if(legohouse) <- .. where I typed it. 
-		
+	{	
 		if(l.equalsIgnoreCase("kick"))
 		{
 			if(args.length < 2)
