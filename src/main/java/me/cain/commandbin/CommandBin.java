@@ -34,8 +34,8 @@ public class CommandBin extends JavaPlugin {
 	{
 		EventRegistration.setup();
 		setupPermissions();
-		CommandRegistration.SetupCommands();
 		ConfigSetup.start();
+		CommandRegistration.SetupCommands();
 		// RegisterRecipes();
 		//Statistics.StartStats();
 		//CallHome.init(this);

@@ -225,6 +225,12 @@ public class ConfigSetup
 			CommandBin.plugin.saveConfig();
 		}
 		
+		if(CommandBin.plugin.getConfig().get("settings.consolename") == null)
+		{
+			System.out.println(CommandBin.plugin.Plugin + "[Config] Setting default Console Name");
+			CommandBin.plugin.getConfig().set("settings.consolename", "Console");
+			CommandBin.plugin.saveConfig();
+		}
 		
 		
 		

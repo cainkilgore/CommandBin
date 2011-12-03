@@ -157,3 +157,5 @@ commands:
        description: 'Set the location once youre unjailed'
    troll:
        description: 'Troll a player by placing diamond at their feet that they cant pickup'
+   say:
+       description: 'Say a message'

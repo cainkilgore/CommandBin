@@ -162,5 +162,10 @@ public class CommandRegistration
 		CommandBin.plugin.getCommand("troll").setExecutor(Troll);
 		// Before anyone judges, I made this out of entire boredom D: 
 		//
+		
+		// Say Command (works in-console and in-game)
+		CommandExecutor say = new SayCommand();
+		CommandBin.plugin.getCommand("say").setExecutor(say);
+		//
 	}
 }
