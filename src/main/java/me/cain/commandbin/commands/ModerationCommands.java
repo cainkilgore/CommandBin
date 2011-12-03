@@ -25,7 +25,7 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					((Player) s).sendMessage("/" + l.toString() + " [player]");
+					((Player) s).sendMessage("/" + l.toString() + " [player] [reason]");
 				}
 				else
 				{
@@ -42,7 +42,13 @@ public class ModerationCommands implements CommandExecutor
 					{
 						if(target != null)
 						{
-							target.kickPlayer(args[1].toString());
+							StringBuilder x = new StringBuilder();
+							int i;
+							for(i = 1; i < args.length; i++)
+							{
+								x.append(args[i] + " ");
+							}
+							target.kickPlayer(x.toString().trim());
 							if(CommandBin.plugin.getConfig().get("settings.broadcastkick").equals(true))
 							{
 								Bukkit.getServer().broadcastMessage(ChatColor.RED + ((Player) s).getName() + " has kicked " + target.getName());
@@ -62,7 +68,13 @@ public class ModerationCommands implements CommandExecutor
 				{
 					if(target != null)
 					{
-						target.kickPlayer(args[1]);
+						StringBuilder x = new StringBuilder();
+						int i;
+						for(i = 1; i < args.length; i++)
+						{
+							x.append(args[i] + " ");
+						}
+						target.kickPlayer(x.toString().trim());
 						if(CommandBin.plugin.getConfig().get("settings.broadcastkick").equals(true))
 						{
 							Bukkit.getServer().broadcastMessage(ChatColor.RED + ((Player) s).getName() + " has kicked " + target.getName());
@@ -98,8 +110,14 @@ public class ModerationCommands implements CommandExecutor
 						Player target = Bukkit.getServer().getPlayer(args[0]);
 						if(target != null)
 						{
+							StringBuilder x = new StringBuilder();
+							int i;
+							for(i = 1; i < args.length; i++)
+							{
+								x.append(args[i] + " ");
+							}
 							((Player) s).sendMessage("You banned " + target.getName());
-							target.kickPlayer(args[1]);
+							target.kickPlayer(x.toString().trim());
 							CommandBin.plugin.getConfig().set(target.getName() + ".banned", true);
 							CommandBin.plugin.getConfig().set(target.getName() + ".banreason", args[1]);
 							CommandBin.plugin.saveConfig();
@@ -119,10 +137,16 @@ public class ModerationCommands implements CommandExecutor
 					Player target = Bukkit.getServer().getPlayer(args[0]);
 					if(target != null)
 					{
+						StringBuilder x = new StringBuilder();
+						int i;
+						for(i = 1; i < args.length; i++)
+						{
+							x.append(args[i] + " ");
+						}
 						s.sendMessage("You banned " + target.getName());
-						target.kickPlayer(args[1]);
+						target.kickPlayer(x.toString().trim());
 						CommandBin.plugin.getConfig().set(target.getName() + ".banned", true);
-						CommandBin.plugin.getConfig().set(target.getName() + ".banreason", args[1]);
+						CommandBin.plugin.getConfig().set(target.getName() + ".banreason", x.toString().trim());
 						CommandBin.plugin.saveConfig();
 					}
 					else
