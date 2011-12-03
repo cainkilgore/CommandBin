@@ -1945,8 +1945,8 @@ public class PlayerCommands implements CommandExecutor
 						}
 
 						Bukkit.getServer().broadcastMessage(
-								ChatColor.RED + ("* " + ChatColor.AQUA + ((Player) s).getName() + ": "
-										+ x.toString().trim()));
+								"* " + ChatColor.AQUA + ((Player) s).getName() + ": " + ChatColor.WHITE 
+										+ x.toString().trim());
 					} else
 					{
 						((Player) s)
