@@ -1,0 +1,7 @@
+/target/site
+/target/classes
+/target/javadoc-bundle-options
+/target/maven-archiver
+/target/surefire
+.classpath
+.project

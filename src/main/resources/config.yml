@@ -1,0 +1,61 @@
+# TrashCan main configuration file
+# Now CommandBin config had little to none documentation so I'll just do it here.
+# NOTE: Custom messages support &-color codes. http://www.minecraftwiki.net/wiki/Classic_server_protocol#Color_Codes
+# TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
+settings:
+  # Message to send when using /shutdown.
+  shutdownmessage: '&cThe server is going down for shutdown!'
+  # /broadcast message format. Do not remove {message}, only move its location if you have to!
+  broadcastformat: '&6[Broadcast]&7{message}'
+  # True if kicks should be broadcasted.
+  broadcastkick: true
+  # True if bans should be broadcasted.
+  broadcastban: true
+  # True if commands should be logged to the server log.
+  log-commands: true
+  # Message to send when a player is muted (and tries to talk)
+  playerismuted: '&cYou are muted, shh!'
+  # Message to send when a player is not allowed to use commands.
+  playercannotusecommands: '&cYou cannot use commands.'
+  # Join message to send
+  joinmessage: 'has joined the game'
+  # Leave message to send
+  leavemessage: 'has left the game'
+  # True if XP should be dropped on death
+  dropxpondeath: false
+  # Maximum amount of mobs that can be spawned once with /spawnmob
+  spawn-mob-max-amount: 10
+  # True if spawned (/spawnmob) wolves should be tamed automatically
+  tame-spawned-wolves: true
+  # True if Endermen are allowed to grief (pick up blocks and place them)
+  endermangriefing: false
+  # Basic protection settings
+  protection:
+    block-placing-tnt: true
+    block-placing-lava: true
+    block-creeper-explosions: false
+  # Ore broadcasting settings
+  orebroadcast:
+    # If any of these are true, a message will be broadcasted telling who broke what.
+    coalore: false
+    ironore: false
+    goldore: false
+    diamondore: true
+    redstoneore: false
+    lapislazuliore: false
+  # True if mob spawners should be mineable (ie you get the drop)
+  mineablemobspawners: true
+  # True if ops can see all PMs sent
+  opscanseepms: true
+  # Message of the day. Sent to players that join, and when using /motd.
+  message-of-the-day: '&7This is the default &6TrashCan&7 MOTD!/break  - We can even make this multiple lines.'
+  # True if custom chat formatting should be used.
+  customchat: true
+  # Bow explosion radius (if the player has explosionbow enabled)
+  bowexplosionradius: 3
+  # True if an Enderdragon should spawn when hitting an Ender-egg
+  spawn-enderdragon-on-hitting-enderegg: true
+  # True if players should be teleported to the place their thrown egg hits.
+  teleport-on-egg-throw: false
+  # True if a player should be able to have multiple homes
+  multihomes: true

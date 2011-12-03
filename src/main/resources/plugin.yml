@@ -1,161 +1,222 @@
-name: CommandBin
-version: 1.32
-author: CainFoool
-main: main.java.me.cain.commandbin.CommandBin
+# TrashCan plugin.yml (do not modify)
+# TrashCan license: http://creativecommons.org/licenses/by-nc-nd/3.0/
+name: TrashCan
+version: 'TC-cb1.32 (this version has had many secret updates)'
+authors: [CainFoool, iffa]
+main: me.iffa.trashcan.TrashCan
+# Softdepends on CommandBin for a few reasons
+softdepend: [CommandBin]
+# Commands
 commands:
+       # Done (tp2p is now in this command) - perms: trashcan.general.tp, trashcan.general.tp.others
    tp:
-       description: 'Teleport to a player'
+       description: 'Teleport to a player.'
+       # Done - perms: trashcan.general.tphere
    tphere:
-       description: 'Teleport a player to you'
+       description: 'Teleport a player to you.'
+       # Done - perms: trashcan.admin.setspawn
    setspawn:
-       description: 'Set the worlds spawn location'
+       description: "Set the world's spawn location."
+       # Done - perms: trashcan.general.spawn
    spawn:
-       description: 'Teleport to the worlds spawn'
-   tp2p:
-       description: 'Teleport a player to another player'
+       description: 'Teleport to the worlds spawn.'
+       # Done - perms: trashcan.general.tpall
    tpall:
-       description: 'Teleport everyone to you'
+       description: 'Teleport everyone to you.'
+       # Done - perms: trashcan.general.tpworld
    tpworld:
-       description: 'Teleport to a world'
+       description: 'Teleport to a world.'
+       # Done - perms: trashcan.admin.createworld
    createworld:
-       description: 'Create a world'
+       description: 'Create a world.'
+       # Done (implemented myself) - perms: trashcan.admin.shutdown
    shutdown:
-       description: 'Shut down the server'
+       description: 'Shut down the server.'
+       # Done - perms: trashcan.admin.unloadworld
    unloadworld:
-       description: 'Unload a world'
-   cmdbin:
-       description: 'General stuff'
+       description: 'Unload a world.'
+       # Done (renamed from cmdbin to trashcan) - perms for /trashcan reload: trashcan.admin.reload
+   trashcan:
+       description: 'Information about TrashCan and other useful stuff.'
+       # Done - perms: trashcan.fun.fakejoin
    join:
-       description: 'Fake Join Message'
+       description: 'Fake join message.'
+       # done - perms: trashcan.fun.fakeleave
    leave:
-       description: 'Fake Leave Message'
-   ping:
-       description: 'Pong'
+       description: 'Fake leave message.'
+       # Done - perms: trashcan.general.creative, trashcan.general.creative.others
    creative:
-       description: 'Enable Creativity'
+       description: 'Switch to creative-gamemode.'
+       # Done - perms: trashcan.general.survival, trashcan.general.survival.others
    survival:
-       description: 'Enable the Survival'
+       description: 'Switch to survival-gamemode.'
+       # Done - perms: trashcan.fun.shoot
    shoot:
-       description: 'Shoot a player into the air'
+       description: 'Shoot a player into the air.'
+       # Done - perms: trashcan.fun.strike
    strike:
-       description: 'Strike a player'
+       description: 'Strike a player.'
+       # Done - perms: trashcan.admin.time
    time:
-       description: 'Set the time of the world'
-   rain:
-       description: 'Make it rain'
-   sun:
-       description: 'Make the sun shine'
+       description: 'Set the time of the world.'
+       # Done (sun + rain) - perms: trashcan.admin.weather
+   weather:
+       description: 'Change weather.'
+       # Done - perms: trashcan.moderation.kick
    kick:
-       description: 'Kick a player'
+       description: 'Kick a player.'
+       # Done - perms: trashcan.moderation.ban
    ban:
-       description: 'Ban a player'
+       description: 'Ban a player.'
+       # Done - perms: trashcan.moderation.unban
    unban:
-       description: 'Unban a player'
+       description: 'Unban a player.'
+       # Done - perms: trashcan.general.heal(.others)
    heal:
-       description: 'Heal a player'
+       description: 'Heal a player.'
+       # Done - perms: trashcan.general.feed(.others)
    feed:
-       description: 'Feed a player'
+       description: 'Feed a player.'
+       # Done, unfreeze is now in this command - perms: trashcan.moderation.freeze
    freeze:
-       description: 'Freeze a player'
-   unfreeze:
-       description: 'Unfreeze a player'
+       description: 'Freeze a player.'
+       # Done - perms: trashcan.admin.god, trashcan.admin.god.others
    god:
-       description: 'Set yourself to god enabled or disabled'
+       description: 'Set yourself to godmode.'
+       # Done - perms: trashcan.fun.facepalm
    facepalm:
-       description: 'Facepalm'
+       description: 'Facepalm.'
+       # Done (unsnowman is now in this command) - perms: trashcan.fun.snowman
    snowman:
-       description: 'Create snow!'
-   unsnowman:
-       description: 'Stop the creation of snow!'
+       description: 'Create snow.'
+       # Done - perms: trashcan.fun.explode
    explode:
-       description: 'Explode someone'
+       description: 'Explode someone.'
+       # Done - perms: trashcan.fun.light
    light:
-       description: 'Set somebody on fire'
+       description: 'Set somebody on fire.'
+       # Done - perms: trashcan.fun.roll
    roll:
-       description: 'Roll a number'
+       description: 'Roll a number.'
+       # Done, unhandicap is now in this command - perms: trashcan.moderating.handicap
    handicap:
-       description: 'Disable a player from using commands'
-   unhandicap:
-       description: 'Reenable a player to use commands'
+       description: 'Disable a player from using commands.'
+       # Done, /unmute is now in this command - perms: trashcan.moderating.mute
    mute:
-       description: 'Mute a player'
-   unmute:
-       description: 'Unmute a Player'
+       description: 'Mute a player.'
+       # Done - perms: trashcan.fun.smoke
    smoke:
-       description: 'Become the walking chimney'
+       description: 'Become the walking chimney.'
+       # Done - perms: trashcan.fun.explosionstick
    explosionstick:
-       description: 'The Explosion stick!'
+       description: 'The explosion stick!'
+       # Done - perms: trashcan.fun.lightningstick
    lightningstick:
        description: 'The lightning stick!'
+       # Done - perms: trashcan.fun.slap
    slap:
-       description: 'Slap a player'
+       description: 'Slap a player.'
+       # Done - perms: trashcan.general.clear
    clear:
        description: 'Clear your inventory'
+       # Done - perms: trashcan.admin.who, trashcan.admin.who.others
    who:
-       description: 'Details of a player'
+       description: 'Details of a player.'
+       # Done - perms: trashcan.general.spawnmob
    spawnmob:
-       description: 'Spawn a mob'
-   i:
-       description: 'Get an item'
+       description: 'Spawn a mob.'
+       # Done (originally /i) - perms: trashcan.general.item
+   item:
+       description: 'Get an item.'
+       aliases: [i]
+       # Done - perms: trashcan.general.msg
    msg:
-       description: 'Message a player'
+       description: 'Message a player.'
+       # Done - perms: trashcan.general.sethome
    sethome:
-       description: 'Set your home'
+       description: 'Set your home.'
+       # Done - perms: trashcan.general.home
    home:
-       description: 'Teleport to your home'
+       description: 'Teleport to your home.'
+       # Done - perms: trashcan.moderation.setwarp
    setwarp:
-       description: 'Create a warp'
+       description: 'Create a warp.'
+       # Done - perms: trashcan.general.warp
    warp:
-       description: 'Teleport to a warp'
+       description: 'Teleport to a warp.'
+       # Done - perms: trashcan.general.nick, trashcan.general.nick.others
    nick:
-       description: 'Set somebodys nickname'
+       description: 'Set somebodys nickname.'
+       # Done - perms: trashcan.general.setxp(.others)
    setxp:
-       description: 'Set somebodys experience'
+       description: 'Set somebodys experience.'
+       # Done - perms: trashcan.moderation.delwarp
    delwarp:
-       description: 'Delete a warp'
+       description: 'Delete a warp.'
+       # Done - perms: trashcan.moderation.kill
    kill:
-       description: 'Kill a player'
+       description: 'Kill a player.'
+       # Done - perms: trashcan.general.up
    up:
-       description: 'Go up X amount of blocks'
+       description: 'Go up X amount of blocks.'
+       # Done (delunlimited is in this) - perms: trashcan.general.unlimited
    unlimited:
-       description: 'Unlimited amount of blocks'
-   delunlimited:
-       description: 'Remove unlimited blocks'
+       description: 'Unlimited amount of blocks.'
+       # Done - perms: trashcan.fun.torchbow
    torchbow:
-       description: 'Torch Bow'
+       description: 'Toggle torchbow.'
+       # Done - perms: trashcan.general.mytime
    mytime:
-       description: 'Set your time'
-   armour:
-       description: 'Give yourself armour'
-   cbhelp:
-       description: 'CommandBin Commands'
+       description: 'Set your time.'
+       # Done (originally armour) - perms: trashcan.general.armor
+   armor:
+       description: 'Give yourself armor.'
+       aliases: [armour]
+       # Done (pages not) - perms: none
+   help:
+       description: 'TrashCan commands.'
+       # Done - perms: trashcan.fun.explosionbow
    explosionbow:
-       description: 'The dangerous explosion bow'
+       description: 'The dangerous explosion bow.'
+       # Done - perms: trashcan.fun.crossbow
    crossbow:
-       description: 'Ohdear.'
+       description: 'Shoot explosives like explosionbow, without the redstone torches!'
+       # Done - perms: trashcan.admin.paid
    paid:
-       description: 'Check to see if a user paid legit'
+       description: 'Check to see if a user has paid for Minecraft.'
+       # Done - perms: trashcan.general.put
    put:
-       description: 'Put a player where you are looking'
+       description: 'Put a player where you are looking.'
+       # Done - perms: trashcan.moderating.banip
    banip:
-       description: 'Ban a players IP address'
+       description: 'Ban a players IP address.'
+       # Done - perms: trashcan.moderating.unbanip
    unbanip:
-       description: 'Unban a players IP'
+       description: 'Unban a players IP.'
+       # Done - perms: trashcan.general.me
    me:
-       description: 'Simple me'
+       description: '* player did something.'
+       # Done (not in CommandBin) - perms: trashcan.general.motd
+   motd:
+       description: 'Get the server message of the day.'
+       # Done (not in CommandBin) - perms: trashcan.general.usage
+   usage:
+       description: "Get a command's usage information."
+       # Done - perms: trashcan.general.more
    more:
-       description: 'Receive more'
-   killmobs:
-       description: 'kill all mobs'
-   jail:
-       description: 'Jail a player'
-   unjail:
-       description: 'Unjail a player'
-   setjail:
-       description: 'Set the location of a jail'
-   setunjail:
-       description: 'Set the location once youre unjailed'
-   troll:
-       description: 'Troll a player by placing diamond at their feet that they cant pickup'
-   say:
-       description: 'Say a message'
+       description: 'Give some more of this!'
+       # Done - perms: trashcan.admin.debug
+   debug:
+       description: 'Show debugging information.'
+       # Done (not in cmdbin) - perms: trashcan.admin.broadcast
+   broadcast:
+       description: 'Broadcast a message.'
+       # Done (not in cmdbin) - perms: trashcan.general.unstuck
+   unstuck:
+       description: 'Are you stuck?'
+# Permissions
+permissions:
+  # Having a config setting for this, just not what you should do.
+  trashcan.other.strike-on-join:
+    description: 'Allows a player to receive a lightning on their location when joining.'
+    default: false
