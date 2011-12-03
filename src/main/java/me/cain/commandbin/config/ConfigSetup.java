@@ -232,6 +232,13 @@ public class ConfigSetup
 			CommandBin.plugin.saveConfig();
 		}
 		
+		if(CommandBin.plugin.getConfig().get("settings.debugitems") == null)
+		{
+			System.out.println(CommandBin.plugin.Plugin + "[Config] Setting default debug items");
+			CommandBin.plugin.getConfig().set("settings.debugitems", false);
+			CommandBin.plugin.saveConfig();
+		}
+		
 		
 		
 		

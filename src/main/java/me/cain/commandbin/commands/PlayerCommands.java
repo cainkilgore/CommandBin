@@ -1,25 +1,25 @@
-package main.java.me.cain.commandbin.commands;
-
-import main.java.me.cain.commandbin.CommandBin;
-
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.block.BlockFace;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.util.Vector;
-
-public class PlayerCommands implements CommandExecutor
-{
-
-	public boolean onCommand(CommandSender s, Command c, String l, String[] args)
+	package main.java.me.cain.commandbin.commands;
+	
+	import main.java.me.cain.commandbin.CommandBin;
+	
+	import org.bukkit.Bukkit;
+	import org.bukkit.ChatColor;
+	import org.bukkit.Location;
+	import org.bukkit.Material;
+	import org.bukkit.block.BlockFace;
+	import org.bukkit.command.Command;
+	import org.bukkit.command.CommandExecutor;
+	import org.bukkit.command.CommandSender;
+	import org.bukkit.entity.Player;
+	import org.bukkit.inventory.ItemStack;
+	import org.bukkit.util.Vector;
+	
+	public class PlayerCommands implements CommandExecutor
 	{
-		if (l.equalsIgnoreCase("tp"))
+	
+		public boolean onCommand(CommandSender s, Command c, String l, String[] args)
+		{
+			if (l.equalsIgnoreCase("tp"))
 		{
 			if (args.length < 1)
 			{
@@ -46,12 +46,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -76,7 +76,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("tphere"))
 		{
 			if (args.length < 1)
@@ -107,12 +107,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -121,7 +121,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("tp2p"))
 		{
 			if (args.length < 2)
@@ -158,12 +158,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -182,7 +182,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("put"))
 		{
 			if (args.length < 1)
@@ -217,12 +217,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -231,7 +231,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("setspawn"))
 		{
 			if (s instanceof Player)
@@ -255,7 +255,7 @@ public class PlayerCommands implements CommandExecutor
 						+ "You must be in-game to set the spawn!");
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("spawn"))
 		{
 			if (s instanceof Player)
@@ -293,7 +293,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("tpall"))
 		{
 			if (s instanceof Player)
@@ -319,7 +319,7 @@ public class PlayerCommands implements CommandExecutor
 						+ "You must be in-game to teleport everyone to you!");
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("tpworld"))
 		{
 			if (args.length < 1)
@@ -345,7 +345,7 @@ public class PlayerCommands implements CommandExecutor
 							((Player) s).sendMessage(ChatColor.GREEN
 									+ "Teleported to world '"
 									+ Bukkit.getServer().getWorld(args[0])
-											.getName() + "'");
+									.getName() + "'");
 						} else
 						{
 							((Player) s).sendMessage(ChatColor.RED + "World '"
@@ -354,7 +354,7 @@ public class PlayerCommands implements CommandExecutor
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -367,7 +367,7 @@ public class PlayerCommands implements CommandExecutor
 									.getWorld(args[1]).getSpawnLocation());
 							s.sendMessage(ChatColor.GREEN + "Teleported "
 									+ target.getName() + " to '" + args[1]
-									+ "'");
+											+ "'");
 						} else
 						{
 							s.sendMessage(CommandBin.plugin.PlayerOffline);
@@ -380,7 +380,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("shoot"))
 		{
 			if (args.length < 1)
@@ -412,12 +412,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -434,7 +434,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("strike"))
 		{
 			if (args.length < 1)
@@ -465,12 +465,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -487,7 +487,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("time"))
 		{
 			if (args.length < 1)
@@ -513,7 +513,7 @@ public class PlayerCommands implements CommandExecutor
 									+ "You have set it to day-time!");
 							((Player) s).getWorld().setTime(0);
 						}
-
+	
 						if (args[0].equalsIgnoreCase("night"))
 						{
 							((Player) s).sendMessage(ChatColor.GREEN
@@ -523,7 +523,7 @@ public class PlayerCommands implements CommandExecutor
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -540,13 +540,13 @@ public class PlayerCommands implements CommandExecutor
 									+ "This world does not exist. Did you type it correctly?");
 						}
 					}
-
+	
 					if (args[0].equalsIgnoreCase("night"))
 					{
 						if (Bukkit.getServer().getWorld(args[1]) != null)
 						{
 							Bukkit.getServer().getWorld(args[1])
-									.setTime(100000000);
+							.setTime(100000000);
 							s.sendMessage(ChatColor.GREEN + "Set " + args[1]
 									+ "'s time to night!");
 						} else
@@ -558,7 +558,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("facepalm"))
 		{
 			if (s instanceof Player)
@@ -578,7 +578,7 @@ public class PlayerCommands implements CommandExecutor
 						ChatColor.RED + "Console /facepalm'd");
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("heal"))
 		{
 			if (args.length < 1)
@@ -594,7 +594,7 @@ public class PlayerCommands implements CommandExecutor
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -620,12 +620,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -642,7 +642,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("feed"))
 		{
 			if (args.length < 1)
@@ -658,7 +658,7 @@ public class PlayerCommands implements CommandExecutor
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -684,12 +684,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -706,7 +706,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("god"))
 		{
 			if (args.length < 1)
@@ -733,7 +733,7 @@ public class PlayerCommands implements CommandExecutor
 									+ "Godmode enabled!");
 							CommandBin.plugin.saveConfig();
 						}
-
+	
 						if (args[0].equalsIgnoreCase("off"))
 						{
 							CommandBin.plugin.getConfig().set(
@@ -745,7 +745,7 @@ public class PlayerCommands implements CommandExecutor
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -754,7 +754,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("explode"))
 		{
 			if (args.length < 2)
@@ -774,11 +774,11 @@ public class PlayerCommands implements CommandExecutor
 					if (CommandBin.plugin.pCheck(((Player) s),
 							"CommandBin.general.explode"))
 					{
-
+	
 						float radius = Integer.parseInt(args[1]);
-
+	
 						Player target = Bukkit.getServer().getPlayer(args[0]);
-
+	
 						if (target != null)
 						{
 							target.getWorld().createExplosion(
@@ -792,19 +792,19 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
 					float radius = Integer.parseInt(args[1]);
-
+	
 					Player target = Bukkit.getServer().getPlayer(args[0]);
-
+	
 					if (target != null)
 					{
 						target.getWorld().createExplosion(target.getLocation(),
@@ -816,7 +816,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("light"))
 		{
 			if (args.length < 2)
@@ -837,26 +837,26 @@ public class PlayerCommands implements CommandExecutor
 							"CommandBin.general.light"))
 					{
 						Player target = Bukkit.getServer().getPlayer(args[0]);
-
+	
 						int i = Integer.parseInt(args[1]) * 10; // Always
-																// remember to
-																// multiply by
-																// 10,
-																// milliseconds
-																// ftw.
-
+						// remember to
+						// multiply by
+						// 10,
+						// milliseconds
+						// ftw.
+	
 						if (target != null)
 						{
 							target.setFireTicks(i);
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -875,7 +875,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("roll"))
 		{
 			if (args.length < 2)
@@ -901,15 +901,15 @@ public class PlayerCommands implements CommandExecutor
 						long rounded = Math.round(rand);
 						Bukkit.getServer().broadcastMessage(
 								ChatColor.GREEN + ((Player) s).getName()
-										+ " Rolled " + ChatColor.RED + args[0]
+								+ " Rolled " + ChatColor.RED + args[0]
 										+ ChatColor.GREEN + " and "
 										+ ChatColor.RED + args[1]
-										+ ChatColor.GREEN + " and got: "
-										+ rounded);
+												+ ChatColor.GREEN + " and got: "
+												+ rounded);
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -918,13 +918,13 @@ public class PlayerCommands implements CommandExecutor
 					long rounded = Math.round(rand);
 					Bukkit.getServer().broadcastMessage(
 							ChatColor.GREEN + "Console rolled " + ChatColor.RED
-									+ args[0] + ChatColor.GREEN + " and "
-									+ ChatColor.RED + args[1] + ChatColor.GREEN
-									+ " and got: " + rounded);
+							+ args[0] + ChatColor.GREEN + " and "
+							+ ChatColor.RED + args[1] + ChatColor.GREEN
+							+ " and got: " + rounded);
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("smoke"))
 		{
 			if (args.length < 1)
@@ -949,10 +949,10 @@ public class PlayerCommands implements CommandExecutor
 									((Player) s).getName() + ".smoke", true);
 							CommandBin.plugin.saveConfig();
 							((Player) s)
-									.sendMessage(ChatColor.GREEN
-											+ "You are now a walking chimney! *giggles*");
+							.sendMessage(ChatColor.GREEN
+									+ "You are now a walking chimney! *giggles*");
 						}
-
+	
 						if (args[0].equalsIgnoreCase("off"))
 						{
 							CommandBin.plugin.getConfig().set(
@@ -964,7 +964,7 @@ public class PlayerCommands implements CommandExecutor
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -973,7 +973,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("explosionstick"))
 		{
 			if (args.length < 1)
@@ -1003,7 +1003,7 @@ public class PlayerCommands implements CommandExecutor
 							((Player) s).getInventory().addItem(
 									new ItemStack(Material.STICK, 1));
 						}
-
+	
 						if (args[0].equalsIgnoreCase("off"))
 						{
 							CommandBin.plugin.getConfig().set(
@@ -1018,12 +1018,12 @@ public class PlayerCommands implements CommandExecutor
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("lightningstick"))
 		{
 			if (args.length < 1)
@@ -1053,7 +1053,7 @@ public class PlayerCommands implements CommandExecutor
 							((Player) s).getInventory().addItem(
 									new ItemStack(Material.STICK, 1));
 						}
-
+	
 						if (args[0].equalsIgnoreCase("off"))
 						{
 							CommandBin.plugin.getConfig().set(
@@ -1066,7 +1066,7 @@ public class PlayerCommands implements CommandExecutor
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1075,7 +1075,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("slap"))
 		{
 			if (args.length < 2)
@@ -1089,7 +1089,7 @@ public class PlayerCommands implements CommandExecutor
 					s.sendMessage("/slap [player] [hardness]");
 				}
 			}
-
+	
 			else
 			{
 				if (s instanceof Player)
@@ -1101,7 +1101,7 @@ public class PlayerCommands implements CommandExecutor
 						if (target != null)
 						{
 							double i = Integer.parseInt(args[1]) * 0.4;
-
+	
 							target.setVelocity(new Vector(i, i, 0));
 							target.sendMessage(ChatColor.GREEN
 									+ ((Player) s).getName() + " slapped you!");
@@ -1110,12 +1110,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1133,7 +1133,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("clear"))
 		{
 			if (args.length < 1)
@@ -1149,7 +1149,7 @@ public class PlayerCommands implements CommandExecutor
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1175,12 +1175,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1197,9 +1197,9 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("i")) // Incredibly messy, must get a decent /i
-										// working.
+			// working.
 		{
 			if (args.length < 1)
 			{
@@ -1225,8 +1225,7 @@ public class PlayerCommands implements CommandExecutor
 							id = Integer.parseInt(args[0]);
 						} catch (NumberFormatException e)
 						{
-							Material mat = Material.getMaterial(args[0]
-									.toUpperCase().replace(" ", "_"));
+							Material mat = Material.getMaterial(args[0].toUpperCase().replace(" ", "_"));
 							id = (mat != null ? mat.getId() : -1);
 						}
 						if (args.length > 1)
@@ -1248,11 +1247,22 @@ public class PlayerCommands implements CommandExecutor
 								new ItemStack(id, amount));
 						((Player) s).sendMessage(ChatColor.GREEN
 								+ "You obtained " + id);
+						
+						if(CommandBin.plugin.getConfig().getBoolean("setting.debugitems")) {
+							System.out.println(((Player) s).getName() + " spawned " + args[1] + " of " + args[0]);
+							for(Player p : Bukkit.getServer().getOnlinePlayers())
+							{
+								if(p.isOp())
+								{
+									p.sendMessage(((Player) s).getName() + " spawned " + args[1] + " of " + args[0]);
+								}
+							}
+						}
 						return true;
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1261,7 +1271,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("msg"))
 		{
 			if (args.length < 2)
@@ -1301,7 +1311,7 @@ public class PlayerCommands implements CommandExecutor
 									+ ((Player) s).getName() + " > "
 									+ target.getName() + "] "
 									+ x.toString().trim();
-
+	
 							if (CommandBin.plugin.getConfig().getBoolean(
 									"settings.opscanseepms"))
 							{
@@ -1314,19 +1324,19 @@ public class PlayerCommands implements CommandExecutor
 									}
 								}
 							}
-
+	
 							target.sendMessage(from);
 							((Player) s).sendMessage(to);
 							System.out.println(op);
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1346,7 +1356,7 @@ public class PlayerCommands implements CommandExecutor
 								+ x.toString().trim();
 						String op = ChatColor.DARK_RED + "[CONSOLE > "
 								+ target.getName() + "] " + x.toString().trim();
-
+	
 						if (CommandBin.plugin.getConfig().getBoolean(
 								"settings.opscanseepms"))
 						{
@@ -1359,7 +1369,7 @@ public class PlayerCommands implements CommandExecutor
 								}
 							}
 						}
-
+	
 						target.sendMessage(from);
 						((Player) s).sendMessage(to);
 						System.out.println(op);
@@ -1367,7 +1377,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("nick"))
 		{
 			if (args.length < 2)
@@ -1400,24 +1410,24 @@ public class PlayerCommands implements CommandExecutor
 										+ ((Player) s).getName()
 										+ " changed your name to " + args[1]);
 								CommandBin.plugin.getConfig()
-										.set(target.getName() + ".nickname",
-												args[1]);
+								.set(target.getName() + ".nickname",
+										args[1]);
 								CommandBin.plugin.saveConfig();
 							} else
 							{
 								((Player) s)
-										.sendMessage(ChatColor.RED
-												+ "That name is too long. It must be below 20 characters. Sorry :(");
+								.sendMessage(ChatColor.RED
+										+ "That name is too long. It must be below 20 characters. Sorry :(");
 							}
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1443,7 +1453,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("setxp"))
 		{
 			if (args.length < 2)
@@ -1478,12 +1488,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1500,7 +1510,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("kill"))
 		{
 			if (args.length < 1)
@@ -1532,12 +1542,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1554,7 +1564,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("up"))
 		{
 			if (args.length < 1)
@@ -1574,8 +1584,8 @@ public class PlayerCommands implements CommandExecutor
 							"CommandBin.general.up"))
 					{
 						((Player) s).getLocation().getBlock()
-								.getRelative(0, Integer.parseInt(args[0]), 0)
-								.setType(Material.GLASS);
+						.getRelative(0, Integer.parseInt(args[0]), 0)
+						.setType(Material.GLASS);
 						Location tpblock = ((Player) s)
 								.getLocation()
 								.getBlock()
@@ -1587,7 +1597,7 @@ public class PlayerCommands implements CommandExecutor
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1595,7 +1605,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("unlimited"))
 		{
 			if (args.length < 1)
@@ -1629,12 +1639,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1653,7 +1663,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("delunlimited"))
 		{
 			if (args.length < 1)
@@ -1688,12 +1698,12 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.PlayerOffline);
+							.sendMessage(CommandBin.plugin.PlayerOffline);
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1713,7 +1723,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("mytime"))
 		{
 			if (args.length < 1)
@@ -1739,26 +1749,26 @@ public class PlayerCommands implements CommandExecutor
 							((Player) s).sendMessage(ChatColor.GREEN
 									+ "You set your time to day!");
 						}
-
+	
 						if (args[0].equalsIgnoreCase("night"))
 						{
 							((Player) s).setPlayerTime(100000000, false);
 							((Player) s).sendMessage(ChatColor.GREEN
 									+ "You set your time to night!");
 						}
-
+	
 						if (args[0].equalsIgnoreCase("reset"))
 						{
 							((Player) s).setPlayerTime(((Player) s).getWorld()
 									.getTime(), true);
 							((Player) s)
-									.sendMessage(ChatColor.GREEN
-											+ "You reset your time to the server time!");
+							.sendMessage(ChatColor.GREEN
+									+ "You reset your time to the server time!");
 						}
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1767,7 +1777,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("armour"))
 		{
 			if (args.length < 1)
@@ -1795,10 +1805,10 @@ public class PlayerCommands implements CommandExecutor
 									new ItemStack(Material.LEATHER_CHESTPLATE,
 											1));
 							((Player) s).getInventory()
-									.setLeggings(
-											new ItemStack(
-													Material.LEATHER_LEGGINGS,
-													1));
+							.setLeggings(
+									new ItemStack(
+											Material.LEATHER_LEGGINGS,
+											1));
 							((Player) s).getInventory().setBoots(
 									new ItemStack(Material.LEATHER_BOOTS, 1));
 							((Player) s).sendMessage(ChatColor.GREEN
@@ -1806,10 +1816,10 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.NoPermission);
+							.sendMessage(CommandBin.plugin.NoPermission);
 						}
 					}
-
+	
 					if (args[0].equalsIgnoreCase("iron"))
 					{
 						if (CommandBin.plugin.pCheck(((Player) s),
@@ -1825,14 +1835,14 @@ public class PlayerCommands implements CommandExecutor
 									new ItemStack(Material.IRON_BOOTS, 1));
 							((Player) s).sendMessage(ChatColor.GREEN
 									+ "You received " + args[0] + " armour!");
-
+	
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.NoPermission);
+							.sendMessage(CommandBin.plugin.NoPermission);
 						}
 					}
-
+	
 					if (args[0].equalsIgnoreCase("diamond"))
 					{
 						if (CommandBin.plugin.pCheck(((Player) s),
@@ -1844,10 +1854,10 @@ public class PlayerCommands implements CommandExecutor
 									new ItemStack(Material.DIAMOND_CHESTPLATE,
 											1));
 							((Player) s).getInventory()
-									.setLeggings(
-											new ItemStack(
-													Material.DIAMOND_LEGGINGS,
-													1));
+							.setLeggings(
+									new ItemStack(
+											Material.DIAMOND_LEGGINGS,
+											1));
 							((Player) s).getInventory().setBoots(
 									new ItemStack(Material.DIAMOND_BOOTS, 1));
 							((Player) s).sendMessage(ChatColor.GREEN
@@ -1855,10 +1865,10 @@ public class PlayerCommands implements CommandExecutor
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.NoPermission);
+							.sendMessage(CommandBin.plugin.NoPermission);
 						}
 					}
-
+	
 					if (args[0].equalsIgnoreCase("gold"))
 					{
 						if (CommandBin.plugin.pCheck(((Player) s),
@@ -1874,24 +1884,24 @@ public class PlayerCommands implements CommandExecutor
 									new ItemStack(Material.GOLD_BOOTS, 1));
 							((Player) s).sendMessage(ChatColor.GREEN
 									+ "You received " + args[0] + " armour!");
-
+	
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.NoPermission);
+							.sendMessage(CommandBin.plugin.NoPermission);
 						}
 					}
-
+	
 					if (args[0].equalsIgnoreCase("chainmail"))
 					{
 						if (CommandBin.plugin.pCheck(((Player) s),
 								"CommandBin.general.armour.chainmail"))
 						{
 							((Player) s).getInventory()
-									.setHelmet(
-											new ItemStack(
-													Material.CHAINMAIL_HELMET,
-													1));
+							.setHelmet(
+									new ItemStack(
+											Material.CHAINMAIL_HELMET,
+											1));
 							((Player) s).getInventory().setChestplate(
 									new ItemStack(
 											Material.CHAINMAIL_CHESTPLATE, 1));
@@ -1902,11 +1912,11 @@ public class PlayerCommands implements CommandExecutor
 									new ItemStack(Material.CHAINMAIL_BOOTS, 1));
 							((Player) s).sendMessage(ChatColor.GREEN
 									+ "You received " + args[0] + " armour!");
-
+	
 						} else
 						{
 							((Player) s)
-									.sendMessage(CommandBin.plugin.NoPermission);
+							.sendMessage(CommandBin.plugin.NoPermission);
 						}
 					}
 				} else
@@ -1916,7 +1926,7 @@ public class PlayerCommands implements CommandExecutor
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("me"))
 		{
 			if (args.length < 1)
@@ -1936,21 +1946,22 @@ public class PlayerCommands implements CommandExecutor
 							"CommandBin.general.me"))
 					{
 						StringBuilder x = new StringBuilder();
-
+	
 						int i;
-
+	
 						for (i = 0; i < args.length; i++)
 						{
 							x.append(args[i]).append(" ");
 						}
-
+	
 						Bukkit.getServer().broadcastMessage(
-								"* " + ChatColor.AQUA + ((Player) s).getName() + ": " + ChatColor.WHITE 
-										+ x.toString().trim());
+								"* " + ChatColor.AQUA + ((Player) s).getName()
+								+ ": " + ChatColor.WHITE
+								+ x.toString().trim());
 					} else
 					{
 						((Player) s)
-								.sendMessage(CommandBin.plugin.NoPermission);
+						.sendMessage(CommandBin.plugin.NoPermission);
 					}
 				} else
 				{
@@ -1960,12 +1971,13 @@ public class PlayerCommands implements CommandExecutor
 					{
 						x.append(args[i]).append(" ");
 					}
-					Bukkit.getServer().broadcastMessage("* " + 
-							ChatColor.RED + "Console: " + ChatColor.WHITE + x.toString().trim());
+					Bukkit.getServer().broadcastMessage(
+							"* " + ChatColor.RED + "Console: "
+									+ ChatColor.WHITE + x.toString().trim());
 				}
 			}
 		}
-
+	
 		if (l.equalsIgnoreCase("more"))
 		{
 			if (s instanceof Player)
@@ -1985,8 +1997,8 @@ public class PlayerCommands implements CommandExecutor
 			} else
 			{
 				s.sendMessage(ChatColor.RED + "You can't do that in-console!");
+				}
 			}
+			return false;
 		}
-		return false;
 	}
-}
