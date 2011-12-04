@@ -28,7 +28,7 @@ public class TrollCommands implements CommandExecutor
 					{
 						if(target != null) {
 							target.getWorld().dropItemNaturally(target.getLocation(), new ItemStack(Material.DIAMOND, 0));
-							s.sendMessage(ChatColor.GREEN + "You trolled " + target.getName());
+							s.sendMessage(ChatColor.GREEN + "You trolled " + target.getName()+"!");
 						} else {
 						s.sendMessage(CommandBin.plugin.PlayerOffline);
 					}
