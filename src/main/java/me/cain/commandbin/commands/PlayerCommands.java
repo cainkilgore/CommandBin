@@ -1128,6 +1128,11 @@ public class PlayerCommands implements CommandExecutor
 					}
 				} else
 				{
+					if(Integer.parseInt(args[1]) > 10000) {
+						Player p = (Player) s;
+						p.sendMessage(ChatColor.RED+"You can't use that high a number!");
+						return true;
+					}
 					Player target = Bukkit.getServer().getPlayer(args[0]);
 					if (target != null)
 					{
