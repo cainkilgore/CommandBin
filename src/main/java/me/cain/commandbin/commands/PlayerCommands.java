@@ -303,11 +303,13 @@
 				{
 					for (Player p : Bukkit.getServer().getOnlinePlayers())
 					{
-						p.teleport(((Player) s).getLocation());
-						p.sendMessage(ChatColor.GREEN + ((Player) s).getName()
-								+ " has teleported you!");
-						((Player) s).sendMessage(ChatColor.GREEN
-								+ "Teleported everyone to you!");
+						if(!p.getDisplayName().equals(((Player) s).getDisplayName())) {
+							p.teleport(((Player) s).getLocation());
+							p.sendMessage(ChatColor.GREEN + ((Player) s).getName()
+									+ " has teleported you!");
+							((Player) s).sendMessage(ChatColor.GREEN
+									+ "Teleported everyone to you!");
+						}
 					}
 				} else
 				{
