@@ -43,7 +43,9 @@ public class PListener extends PlayerListener {
 				{
 				e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN, 0).setType(Material.SNOW);
 				}
-				
+				if((e.getPlayer()).getLocation().getBlock().getRelative(BlockFace.DOWN, 1).getType() == Material.WATER) {
+					e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN, 0).setType(Material.ICE);
+				}
 				if(e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN, 1).getType() == Material.SNOW)
 				{
 					e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN, 1).setType(Material.SNOW_BLOCK);
