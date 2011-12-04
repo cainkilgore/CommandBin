@@ -6,6 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.CreatureType;
 import org.bukkit.event.block.Action;
@@ -43,9 +44,14 @@ public class PListener extends PlayerListener {
 				{
 				e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN, 0).setType(Material.SNOW);
 				}
+				
+				
 				if((e.getPlayer()).getLocation().getBlock().getRelative(BlockFace.DOWN, 1).getType() == Material.WATER) {
-					e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN, 0).setType(Material.ICE);
+					Block b = e.getPlayer().getLocation().getBlock().getChunk().getBlock(e.getPlayer().getLocation().getBlockX()-1, e.getPlayer().getLocation().getBlockY(), e.getPlayer().getLocation().getBlockZ());
+					b.setType(Material.ICE);
 				}
+				
+				
 				if(e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN, 1).getType() == Material.SNOW)
 				{
 					e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN, 1).setType(Material.SNOW_BLOCK);
