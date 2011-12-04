@@ -1933,15 +1933,8 @@
 		{
 			if (args.length < 1)
 			{
-				if (s instanceof Player)
-				{
-					((Player) s).sendMessage("/" + l.toString() + " [message]");
-				} else
-				{
-					s.sendMessage("/me [message]");
-				}
-			} else
-			{
+				return false;
+			} else {
 				if (s instanceof Player)
 				{
 					if (CommandBin.plugin.pCheck(((Player) s),
@@ -1951,14 +1944,13 @@
 	
 						int i;
 	
-						for (i = 0; i < args.length; i++)
+						for (String a : args)
 						{
-							x.append(args[i]).append(" ");
+							x.append(a+" ");
 						}
 	
 						Bukkit.getServer().broadcastMessage(
-								"* " + ChatColor.AQUA + ((Player) s).getName()
-								+ ": " + ChatColor.WHITE
+								ChatColor.AQUA+"* "+((Player) s).getDisplayName()+" "
 								+ x.toString().trim());
 					} else
 					{
