@@ -18,14 +18,26 @@ public class FakeJoinLeaveCommands implements CommandExecutor
 		{
 			if(s instanceof Player)
 			{
-				if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.join"))
-				{
-					Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + ((Player) s).getName() + " has joined the game");
+				if(args.length > 0) {
+					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.join"))
+					{
+						Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + args[0] + " has joined the game");
+					}
+					else
+					{
+						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+					}
+				} else {
+					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.join"))
+					{
+						Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + ((Player) s).getName() + " has joined the game");
+					}
+					else
+					{
+						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+					}
 				}
-				else
-				{
-					((Player) s).sendMessage(CommandBin.plugin.NoPermission);
-				}
+				
 			}
 			else
 			{
@@ -37,13 +49,24 @@ public class FakeJoinLeaveCommands implements CommandExecutor
 		{
 			if(s instanceof Player)
 			{
-				if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.leave"))
-				{
-					Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + ((Player) s).getName() + " has left the game");
-				}
-				else
-				{
-					((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+				if(args.length > 0) {
+					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.leave"))
+					{
+						Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + args[0] + " has left the game");
+					}
+					else
+					{
+						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+					}
+				} else {
+					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.leave"))
+					{
+						Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + ((Player) s).getName() + " has left the game");
+					}
+					else
+					{
+						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+					}
 				}
 			}
 			else
