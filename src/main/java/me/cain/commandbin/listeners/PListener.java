@@ -47,7 +47,7 @@ public class PListener extends PlayerListener {
 				
 				
 				if((e.getPlayer()).getLocation().getBlock().getRelative(BlockFace.DOWN, 1).getType() == Material.WATER) {
-					Block b = e.getPlayer().getLocation().getBlock().getChunk().getBlock(e.getPlayer().getLocation().getBlockX()-1, e.getPlayer().getLocation().getBlockY(), e.getPlayer().getLocation().getBlockZ());
+					Block b = e.getPlayer().getLocation().getBlock().getChunk().getBlock(e.getPlayer().getLocation().getBlockX(), e.getPlayer().getLocation().getBlockY()-1, e.getPlayer().getLocation().getBlockZ());
 					b.setType(Material.ICE);
 				}
 				
