@@ -4,6 +4,7 @@ import main.java.me.cain.commandbin.CommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
@@ -43,6 +44,7 @@ public class PlayerCommands implements CommandExecutor
 							((Player) s).teleport(target.getLocation());
 							((Player) s).sendMessage(ChatColor.GREEN
 									+ "Teleported to " + target.getName());
+							((Player) s).getWorld().playEffect(((Player) s).getLocation(), Effect.SMOKE, 20);
 						} else
 						{
 							((Player) s)

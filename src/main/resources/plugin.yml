@@ -1,5 +1,5 @@
 name: CommandBin
-version: 1.32
+version: 1.33
 author: CainFoool
 main: main.java.me.cain.commandbin.CommandBin
 commands:
