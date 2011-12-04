@@ -1,25 +1,25 @@
-	package main.java.me.cain.commandbin.commands;
-	
-	import main.java.me.cain.commandbin.CommandBin;
-	
-	import org.bukkit.Bukkit;
-	import org.bukkit.ChatColor;
-	import org.bukkit.Location;
-	import org.bukkit.Material;
-	import org.bukkit.block.BlockFace;
-	import org.bukkit.command.Command;
-	import org.bukkit.command.CommandExecutor;
-	import org.bukkit.command.CommandSender;
-	import org.bukkit.entity.Player;
-	import org.bukkit.inventory.ItemStack;
-	import org.bukkit.util.Vector;
-	
-	public class PlayerCommands implements CommandExecutor
+package main.java.me.cain.commandbin.commands;
+
+import main.java.me.cain.commandbin.CommandBin;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.block.BlockFace;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.util.Vector;
+
+public class PlayerCommands implements CommandExecutor
+{
+
+	public boolean onCommand(CommandSender s, Command c, String l, String[] args)
 	{
-	
-		public boolean onCommand(CommandSender s, Command c, String l, String[] args)
-		{
-			if (l.equalsIgnoreCase("tp"))
+		if (l.equalsIgnoreCase("tp"))
 		{
 			if (args.length < 1)
 			{
@@ -76,7 +76,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("tphere"))
 		{
 			if (args.length < 1)
@@ -121,7 +121,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("tp2p"))
 		{
 			if (args.length < 2)
@@ -182,7 +182,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("put"))
 		{
 			if (args.length < 1)
@@ -231,7 +231,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("setspawn"))
 		{
 			if (s instanceof Player)
@@ -255,7 +255,7 @@
 						+ "You must be in-game to set the spawn!");
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("spawn"))
 		{
 			if (s instanceof Player)
@@ -293,7 +293,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("tpall"))
 		{
 			if (s instanceof Player)
@@ -321,7 +321,7 @@
 						+ "You must be in-game to teleport everyone to you!");
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("tpworld"))
 		{
 			if (args.length < 1)
@@ -382,7 +382,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("shoot"))
 		{
 			if (args.length < 1)
@@ -436,7 +436,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("strike"))
 		{
 			if (args.length < 1)
@@ -489,7 +489,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("time"))
 		{
 			if (args.length < 1)
@@ -515,7 +515,7 @@
 									+ "You have set it to day-time!");
 							((Player) s).getWorld().setTime(0);
 						}
-	
+
 						if (args[0].equalsIgnoreCase("night"))
 						{
 							((Player) s).sendMessage(ChatColor.GREEN
@@ -542,7 +542,7 @@
 									+ "This world does not exist. Did you type it correctly?");
 						}
 					}
-	
+
 					if (args[0].equalsIgnoreCase("night"))
 					{
 						if (Bukkit.getServer().getWorld(args[1]) != null)
@@ -560,7 +560,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("facepalm"))
 		{
 			if (s instanceof Player)
@@ -580,7 +580,7 @@
 						ChatColor.RED + "Console /facepalm'd");
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("heal"))
 		{
 			if (args.length < 1)
@@ -644,7 +644,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("feed"))
 		{
 			if (args.length < 1)
@@ -708,7 +708,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("god"))
 		{
 			if (args.length < 1)
@@ -735,7 +735,7 @@
 									+ "Godmode enabled!");
 							CommandBin.plugin.saveConfig();
 						}
-	
+
 						if (args[0].equalsIgnoreCase("off"))
 						{
 							CommandBin.plugin.getConfig().set(
@@ -756,7 +756,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("explode"))
 		{
 			if (args.length < 2)
@@ -776,11 +776,11 @@
 					if (CommandBin.plugin.pCheck(((Player) s),
 							"CommandBin.general.explode"))
 					{
-	
+
 						float radius = Integer.parseInt(args[1]);
-	
+
 						Player target = Bukkit.getServer().getPlayer(args[0]);
-	
+
 						if (target != null)
 						{
 							target.getWorld().createExplosion(
@@ -804,9 +804,9 @@
 				} else
 				{
 					float radius = Integer.parseInt(args[1]);
-	
+
 					Player target = Bukkit.getServer().getPlayer(args[0]);
-	
+
 					if (target != null)
 					{
 						target.getWorld().createExplosion(target.getLocation(),
@@ -818,7 +818,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("light"))
 		{
 			if (args.length < 2)
@@ -839,14 +839,14 @@
 							"CommandBin.general.light"))
 					{
 						Player target = Bukkit.getServer().getPlayer(args[0]);
-	
+
 						int i = Integer.parseInt(args[1]) * 10; // Always
 						// remember to
 						// multiply by
 						// 10,
 						// milliseconds
 						// ftw.
-	
+
 						if (target != null)
 						{
 							target.setFireTicks(i);
@@ -877,7 +877,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("roll"))
 		{
 			if (args.length < 2)
@@ -926,7 +926,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("smoke"))
 		{
 			if (args.length < 1)
@@ -954,7 +954,7 @@
 							.sendMessage(ChatColor.GREEN
 									+ "You are now a walking chimney! *giggles*");
 						}
-	
+
 						if (args[0].equalsIgnoreCase("off"))
 						{
 							CommandBin.plugin.getConfig().set(
@@ -975,7 +975,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("explosionstick"))
 		{
 			if (args.length < 1)
@@ -1005,7 +1005,7 @@
 							((Player) s).getInventory().addItem(
 									new ItemStack(Material.STICK, 1));
 						}
-	
+
 						if (args[0].equalsIgnoreCase("off"))
 						{
 							CommandBin.plugin.getConfig().set(
@@ -1025,7 +1025,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("lightningstick"))
 		{
 			if (args.length < 1)
@@ -1055,7 +1055,7 @@
 							((Player) s).getInventory().addItem(
 									new ItemStack(Material.STICK, 1));
 						}
-	
+
 						if (args[0].equalsIgnoreCase("off"))
 						{
 							CommandBin.plugin.getConfig().set(
@@ -1077,21 +1077,23 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("slap"))
 		{
 			if (args.length < 2)
 			{
 				if (s instanceof Player)
 				{
+
+
 					((Player) s).sendMessage("/" + l.toString()
 							+ " [player] [hardness]");
 				} else
 				{
-					s.sendMessage("/slap [player] [hardness]");
+					return false;
 				}
 			}
-	
+
 			else
 			{
 				if (s instanceof Player)
@@ -1099,11 +1101,16 @@
 					if (CommandBin.plugin.pCheck(((Player) s),
 							"CommandBin.general.slap"))
 					{
+						if(Integer.parseInt(args[1]) > 10000) {
+							Player p = (Player) s;
+							p.sendMessage(ChatColor.RED+"You can't use that high a number!");
+							return true;
+						}
 						Player target = Bukkit.getServer().getPlayer(args[0]);
 						if (target != null)
 						{
 							double i = Integer.parseInt(args[1]) * 0.4;
-	
+
 							target.setVelocity(new Vector(i, i, 0));
 							target.sendMessage(ChatColor.GREEN
 									+ ((Player) s).getName() + " slapped you!");
@@ -1135,7 +1142,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("clear"))
 		{
 			if (args.length < 1)
@@ -1199,7 +1206,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("i")) // Incredibly messy, must get a decent /i
 			// working.
 		{
@@ -1249,7 +1256,7 @@
 								new ItemStack(id, amount));
 						((Player) s).sendMessage(ChatColor.GREEN
 								+ "You obtained " + id);
-						
+
 						if(CommandBin.plugin.getConfig().getBoolean("setting.debugitems")) {
 							System.out.println(((Player) s).getName() + " spawned " + args[1] + " of " + args[0]);
 							for(Player p : Bukkit.getServer().getOnlinePlayers())
@@ -1273,7 +1280,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("msg"))
 		{
 			if (args.length < 2)
@@ -1313,7 +1320,7 @@
 									+ ((Player) s).getName() + " > "
 									+ target.getName() + "] "
 									+ x.toString().trim();
-	
+
 							if (CommandBin.plugin.getConfig().getBoolean(
 									"settings.opscanseepms"))
 							{
@@ -1326,7 +1333,7 @@
 									}
 								}
 							}
-	
+
 							target.sendMessage(from);
 							((Player) s).sendMessage(to);
 							System.out.println(op);
@@ -1358,7 +1365,7 @@
 								+ x.toString().trim();
 						String op = ChatColor.DARK_RED + "[CONSOLE > "
 								+ target.getName() + "] " + x.toString().trim();
-	
+
 						if (CommandBin.plugin.getConfig().getBoolean(
 								"settings.opscanseepms"))
 						{
@@ -1371,7 +1378,7 @@
 								}
 							}
 						}
-	
+
 						target.sendMessage(from);
 						((Player) s).sendMessage(to);
 						System.out.println(op);
@@ -1379,7 +1386,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("nick"))
 		{
 			if (args.length < 2)
@@ -1455,7 +1462,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("setxp"))
 		{
 			if (args.length < 2)
@@ -1512,7 +1519,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("kill"))
 		{
 			if (args.length < 1)
@@ -1566,7 +1573,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("up"))
 		{
 			if (args.length < 1)
@@ -1607,7 +1614,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("unlimited"))
 		{
 			if (args.length < 1)
@@ -1665,7 +1672,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("delunlimited"))
 		{
 			if (args.length < 1)
@@ -1725,7 +1732,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("mytime"))
 		{
 			if (args.length < 1)
@@ -1751,14 +1758,14 @@
 							((Player) s).sendMessage(ChatColor.GREEN
 									+ "You set your time to day!");
 						}
-	
+
 						if (args[0].equalsIgnoreCase("night"))
 						{
 							((Player) s).setPlayerTime(100000000, false);
 							((Player) s).sendMessage(ChatColor.GREEN
 									+ "You set your time to night!");
 						}
-	
+
 						if (args[0].equalsIgnoreCase("reset"))
 						{
 							((Player) s).setPlayerTime(((Player) s).getWorld()
@@ -1779,7 +1786,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("armour"))
 		{
 			if (args.length < 1)
@@ -1821,7 +1828,7 @@
 							.sendMessage(CommandBin.plugin.NoPermission);
 						}
 					}
-	
+
 					if (args[0].equalsIgnoreCase("iron"))
 					{
 						if (CommandBin.plugin.pCheck(((Player) s),
@@ -1837,14 +1844,14 @@
 									new ItemStack(Material.IRON_BOOTS, 1));
 							((Player) s).sendMessage(ChatColor.GREEN
 									+ "You received " + args[0] + " armour!");
-	
+
 						} else
 						{
 							((Player) s)
 							.sendMessage(CommandBin.plugin.NoPermission);
 						}
 					}
-	
+
 					if (args[0].equalsIgnoreCase("diamond"))
 					{
 						if (CommandBin.plugin.pCheck(((Player) s),
@@ -1870,7 +1877,7 @@
 							.sendMessage(CommandBin.plugin.NoPermission);
 						}
 					}
-	
+
 					if (args[0].equalsIgnoreCase("gold"))
 					{
 						if (CommandBin.plugin.pCheck(((Player) s),
@@ -1886,14 +1893,14 @@
 									new ItemStack(Material.GOLD_BOOTS, 1));
 							((Player) s).sendMessage(ChatColor.GREEN
 									+ "You received " + args[0] + " armour!");
-	
+
 						} else
 						{
 							((Player) s)
 							.sendMessage(CommandBin.plugin.NoPermission);
 						}
 					}
-	
+
 					if (args[0].equalsIgnoreCase("chainmail"))
 					{
 						if (CommandBin.plugin.pCheck(((Player) s),
@@ -1914,7 +1921,7 @@
 									new ItemStack(Material.CHAINMAIL_BOOTS, 1));
 							((Player) s).sendMessage(ChatColor.GREEN
 									+ "You received " + args[0] + " armour!");
-	
+
 						} else
 						{
 							((Player) s)
@@ -1928,7 +1935,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("me"))
 		{
 			if (args.length < 1)
@@ -1941,17 +1948,15 @@
 							"CommandBin.general.me"))
 					{
 						StringBuilder x = new StringBuilder();
-	
-						int i;
-	
+
 						for (String a : args)
 						{
 							x.append(a+" ");
 						}
-	
+
 						Bukkit.getServer().broadcastMessage(
 								ChatColor.AQUA+"* "+((Player) s).getDisplayName()+" "
-								+ x.toString().trim());
+										+ x.toString().trim());
 					} else
 					{
 						((Player) s)
@@ -1971,7 +1976,7 @@
 				}
 			}
 		}
-	
+
 		if (l.equalsIgnoreCase("more"))
 		{
 			if (s instanceof Player)
@@ -1991,8 +1996,8 @@
 			} else
 			{
 				s.sendMessage(ChatColor.RED + "You can't do that in-console!");
-				}
 			}
-			return false;
 		}
+		return false;
 	}
+}
