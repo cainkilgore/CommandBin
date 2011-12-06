@@ -1,47 +1,8 @@
 name: CommandBin
-version: 1.33
+version: 1.32
 author: CainFoool
 main: main.java.me.cain.commandbin.CommandBin
 commands:
-   showrecent:
-    description: Shows recent updates
-    usage: /<command>
-   register:
-    description: Registers you with the server
-    permission: core.register
-    usage: /<command> [password]
-   fart:
-    description: Do you really need a description?
-    permission: core.fart
-    usage: /<command>
-   afk:
-    description: Sets the user AFK or not
-    permission: core.afk
-    usage: /<command>
-   list:
-    description: Lists online players
-    usage: /<command>
-   makesay:
-    description: Makes others say things :3
-    usage: /<command>
-   puke:
-    description: Makes you puke
-    usage: /<command>
-   cut:
-    description: Suicide
-    usage: /<command>
-   touch:
-    description: Oh la la!
-    usage: /<command> [little boys]
-   lick:
-    description: Oh la la!
-    usage: /<command> [little boys]
-   broadcast:
-    description: Broadcast a Message
-    usage: /<command> [message]
-   slit:
-    description: Broadcast a Message
-    usage: /<command>
    tp:
        description: 'Teleport to a player'
    tphere:
