@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -30,26 +30,26 @@ public class ExplosionBowCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck(((Player) s), "CommandBin.general.explosionbow"))
+					if(BMCommandBin.plugin.pCheck(((Player) s), "CommandBin.general.explosionbow"))
 					{
 						if(args[0].equalsIgnoreCase("on"))
 						{
-							CommandBin.plugin.getConfig().set(((Player) s).getName() + ".explosionbow", true);
+							BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".explosionbow", true);
 							((Player) s).sendMessage(ChatColor.AQUA + "Explosion Bow Enabled!");
 							((Player) s).sendMessage("Shoot with a bow as normal!");
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.saveConfig();
 						}
 						
 						if(args[0].equalsIgnoreCase("off"))
 						{
-							CommandBin.plugin.getConfig().set(((Player) s).getName() + ".explosionbow", false);
+							BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".explosionbow", false);
 							((Player) s).sendMessage(ChatColor.AQUA + "Explosion Bow Disabled!");
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.saveConfig();
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else

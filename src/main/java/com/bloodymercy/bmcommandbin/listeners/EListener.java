@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.listeners;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -22,7 +22,7 @@ public class EListener extends EntityListener {
 		if(e.getEntity() instanceof Player)
 		{
 			Player player = (Player) (Player) e.getEntity();
-			if(CommandBin.plugin.getConfig().getBoolean(player.getName() + ".godmode"))
+			if(BMCommandBin.plugin.getConfig().getBoolean(player.getName() + ".godmode"))
 			{
 				e.setCancelled(true);				
 			}
@@ -32,7 +32,7 @@ public class EListener extends EntityListener {
 	
 	public void onEntityDeath(EntityDeathEvent e)
 	{
-		if(CommandBin.plugin.getConfig().getBoolean("settings.dropxpondeath", false))
+		if(BMCommandBin.plugin.getConfig().getBoolean("settings.dropxpondeath", false))
 		{
 			e.setDroppedExp(0);
 		}
@@ -41,7 +41,7 @@ public class EListener extends EntityListener {
 	
 	public void onEntityExplode(EntityExplodeEvent e)
 	{
-		if(CommandBin.plugin.getConfig().getBoolean("settings.blockcreeperexplosions", true))
+		if(BMCommandBin.plugin.getConfig().getBoolean("settings.blockcreeperexplosions", true))
 		{
 			e.setCancelled(true);
 		}
@@ -57,7 +57,7 @@ public class EListener extends EntityListener {
 		{
 			if(((Arrow) e.getEntity()).getShooter() instanceof Player)
 			{
-				if(CommandBin.plugin.getConfig().getBoolean(((Player)((Arrow) e.getEntity()).getShooter()).getName() + ".torchbow"))
+				if(BMCommandBin.plugin.getConfig().getBoolean(((Player)((Arrow) e.getEntity()).getShooter()).getName() + ".torchbow"))
 				{
 					e.getEntity().getLocation().getBlock().setType(Material.TORCH);
 				}
@@ -65,41 +65,41 @@ public class EListener extends EntityListener {
 			
 			if(((Arrow) e.getEntity()).getShooter() instanceof Player)
 			{
-				if(CommandBin.plugin.getConfig().getBoolean(((Player)((Arrow) e.getEntity()).getShooter()).getName() + ".explosionbow"))
+				if(BMCommandBin.plugin.getConfig().getBoolean(((Player)((Arrow) e.getEntity()).getShooter()).getName() + ".explosionbow"))
 				{
-					int radius = CommandBin.plugin.getConfig().getInt("settings.bowexplosionradius");
+					int radius = BMCommandBin.plugin.getConfig().getInt("settings.bowexplosionradius");
 					e.getEntity().getWorld().createExplosion(e.getEntity().getLocation(), radius);
 				}
 			}
 			
 			if(((Arrow) e.getEntity()).getShooter() instanceof Player)
 			{
-				if(CommandBin.plugin.getConfig().getBoolean(((Player)((Arrow) e.getEntity()).getShooter()).getName() + ".crossbow"))
+				if(BMCommandBin.plugin.getConfig().getBoolean(((Player)((Arrow) e.getEntity()).getShooter()).getName() + ".crossbow"))
 				{
-					final int radius = CommandBin.plugin.getConfig().getInt("settings.bowexplosionradius");
+					final int radius = BMCommandBin.plugin.getConfig().getInt("settings.bowexplosionradius");
 
 					e.getEntity().getLocation().getBlock().setType(Material.REDSTONE_TORCH_ON);
-					Bukkit.getScheduler().scheduleAsyncDelayedTask(CommandBin.plugin, new Runnable() 
+					Bukkit.getScheduler().scheduleAsyncDelayedTask(BMCommandBin.plugin, new Runnable() 
 					{
 						public void run()
 						{
 							e.getEntity().getLocation().getBlock().setType(Material.REDSTONE_TORCH_OFF);
-							Bukkit.getScheduler().scheduleAsyncDelayedTask(CommandBin.plugin, new Runnable() 
+							Bukkit.getScheduler().scheduleAsyncDelayedTask(BMCommandBin.plugin, new Runnable() 
 							{
 								public void run()
 								{
 									e.getEntity().getLocation().getBlock().setType(Material.REDSTONE_TORCH_ON);
-									Bukkit.getScheduler().scheduleAsyncDelayedTask(CommandBin.plugin, new Runnable() 
+									Bukkit.getScheduler().scheduleAsyncDelayedTask(BMCommandBin.plugin, new Runnable() 
 									{
 										public void run()
 										{
 											e.getEntity().getLocation().getBlock().setType(Material.REDSTONE_TORCH_OFF);
-											Bukkit.getScheduler().scheduleAsyncDelayedTask(CommandBin.plugin, new Runnable() 
+											Bukkit.getScheduler().scheduleAsyncDelayedTask(BMCommandBin.plugin, new Runnable() 
 											{
 												public void run()
 												{
 													e.getEntity().getLocation().getBlock().setType(Material.REDSTONE_TORCH_ON);
-													Bukkit.getScheduler().scheduleAsyncDelayedTask(CommandBin.plugin, new Runnable() 
+													Bukkit.getScheduler().scheduleAsyncDelayedTask(BMCommandBin.plugin, new Runnable() 
 													{
 														public void run()
 														{
@@ -130,7 +130,7 @@ public class EListener extends EntityListener {
 	
 	public void onEndermanPickup(EndermanPickupEvent e)
 	{
-		if(CommandBin.plugin.getConfig().getBoolean("settings.endermangriefing", false))
+		if(BMCommandBin.plugin.getConfig().getBoolean("settings.endermangriefing", false))
 		{
 			e.setCancelled(true);
 		}
@@ -139,7 +139,7 @@ public class EListener extends EntityListener {
 	
 	public void onEndermanPlace(EndermanPlaceEvent e)
 	{
-		if(CommandBin.plugin.getConfig().getBoolean("settings.endermangriefing", false))
+		if(BMCommandBin.plugin.getConfig().getBoolean("settings.endermangriefing", false))
 		{
 			e.setCancelled(true);
 		}

@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.listeners;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
@@ -24,21 +24,21 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 
 public class PListener extends PlayerListener {
 
-	static CommandBin derp;
+	static BMCommandBin derp;
 	
 	public void onPlayerMove(PlayerMoveEvent e)
 	{
-			if(CommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".frozen"))
+			if(BMCommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".frozen"))
 			{
 				e.setCancelled(true);
 			}
 			
-			if(CommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".smoke"))
+			if(BMCommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".smoke"))
 			{
 				e.getPlayer().getWorld().playEffect(e.getPlayer().getLocation(), Effect.SMOKE, 5);
 			}
 		
-			if(CommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".snowman"))
+			if(BMCommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".snowman"))
 			{
 				if(!(e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN, 1).getType() == Material.AIR))
 				{
@@ -63,13 +63,13 @@ public class PListener extends PlayerListener {
 	
 	public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent e)
 	{
-			if(CommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".handicapped"))
+			if(BMCommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".handicapped"))
 			{
-				e.getPlayer().sendMessage(ChatColor.RED + CommandBin.plugin.getConfig().getString("settings.playercannotusecommands"));
+				e.getPlayer().sendMessage(ChatColor.RED + BMCommandBin.plugin.getConfig().getString("settings.playercannotusecommands"));
 				e.setCancelled(true);
 			}
 			
-			if(CommandBin.plugin.getConfig().getBoolean("jail.players." + e.getPlayer().getName()))
+			if(BMCommandBin.plugin.getConfig().getBoolean("jail.players." + e.getPlayer().getName()))
 			{
 				e.setCancelled(true);
 				e.getPlayer().sendMessage(ChatColor.RED + "You are jailed. Stop trying to use commands!");
@@ -79,9 +79,9 @@ public class PListener extends PlayerListener {
 	
 	public void onPlayerChat(PlayerChatEvent e)
 	{
-			if(CommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".muted"))
+			if(BMCommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".muted"))
 			{
-				e.getPlayer().sendMessage(ChatColor.RED + CommandBin.plugin.getConfig().getString("settings.playerismuted"));
+				e.getPlayer().sendMessage(ChatColor.RED + BMCommandBin.plugin.getConfig().getString("settings.playerismuted"));
 				e.setCancelled(true);
 			}
 			
@@ -102,7 +102,7 @@ public class PListener extends PlayerListener {
 	{
 		if(e.getAction() == Action.RIGHT_CLICK_AIR)
 		{
-				if(CommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".explosionstick"))
+				if(BMCommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".explosionstick"))
 				{
 					if(e.getPlayer().getItemInHand().getType() == Material.STICK)
 					{
@@ -111,7 +111,7 @@ public class PListener extends PlayerListener {
 					}
 				}
 
-				if(CommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".lightningstick"))
+				if(BMCommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".lightningstick"))
 				{
 					if(e.getPlayer().getItemInHand().getType() == Material.STICK)
 					{
@@ -123,7 +123,7 @@ public class PListener extends PlayerListener {
 		
 		if(e.getAction() == Action.LEFT_CLICK_BLOCK)
 		{
-			if(CommandBin.plugin.getConfig().getBoolean("settings.spawn-enderdragon-on-hitting-enderegg"))
+			if(BMCommandBin.plugin.getConfig().getBoolean("settings.spawn-enderdragon-on-hitting-enderegg"))
 			{
 				if(e.getClickedBlock().getType() == Material.DRAGON_EGG)
 				{ // Full Maven Support! :) 
@@ -135,7 +135,7 @@ public class PListener extends PlayerListener {
 			}
 		}
 		
-		if(CommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".frozen"))
+		if(BMCommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".frozen"))
 		{
 			e.setCancelled(true);
 		}
@@ -144,27 +144,27 @@ public class PListener extends PlayerListener {
 	
 	public void onPlayerLogin(PlayerLoginEvent e)
 	{
-			if(CommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".banned"))
+			if(BMCommandBin.plugin.getConfig().getBoolean(e.getPlayer().getName() + ".banned"))
 			{
-				e.setKickMessage(CommandBin.plugin.getConfig().get(e.getPlayer().getName() + ".banreason").toString());
-				e.disallow(Result.KICK_BANNED, "You were banned for: " + ChatColor.GRAY + CommandBin.plugin.getConfig().get(e.getPlayer().getName() + ".banreason").toString());
+				e.setKickMessage(BMCommandBin.plugin.getConfig().get(e.getPlayer().getName() + ".banreason").toString());
+				e.disallow(Result.KICK_BANNED, "You were banned for: " + ChatColor.GRAY + BMCommandBin.plugin.getConfig().get(e.getPlayer().getName() + ".banreason").toString());
 			}
 			return;
 	}
 	
 	public void onPlayerJoin(PlayerJoinEvent e)
 	{
-		if(CommandBin.plugin.getConfig().get("settings.joinmessage") != null)
+		if(BMCommandBin.plugin.getConfig().get("settings.joinmessage") != null)
 		{
-			e.setJoinMessage(ChatColor.YELLOW + e.getPlayer().getName() + " " + CommandBin.plugin.getConfig().get("settings.joinmessage").toString());
+			e.setJoinMessage(ChatColor.YELLOW + e.getPlayer().getName() + " " + BMCommandBin.plugin.getConfig().get("settings.joinmessage").toString());
 		}
 		
-		if(CommandBin.plugin.getConfig().get(e.getPlayer().getName() + ".nickname") != null)
+		if(BMCommandBin.plugin.getConfig().get(e.getPlayer().getName() + ".nickname") != null)
 		{
-			e.getPlayer().setDisplayName(CommandBin.plugin.getConfig().getString(e.getPlayer().getName() + ".nickname"));
+			e.getPlayer().setDisplayName(BMCommandBin.plugin.getConfig().getString(e.getPlayer().getName() + ".nickname"));
 		}
 		
-		String motd = CommandBin.plugin.getConfig().getString("settings.message-of-the-day");
+		String motd = BMCommandBin.plugin.getConfig().getString("settings.message-of-the-day");
 		for(String str : motd.split("/break"))
 		{
 			e.getPlayer().sendMessage(str.replace("[p]", e.getPlayer().getName()));
@@ -172,16 +172,16 @@ public class PListener extends PlayerListener {
 		
 
 		
-		if(CommandBin.plugin.getConfig().getBoolean("bannedips." + e.getPlayer().getAddress().getAddress().getHostAddress().toString().replace(".", "")))
+		if(BMCommandBin.plugin.getConfig().getBoolean("bannedips." + e.getPlayer().getAddress().getAddress().getHostAddress().toString().replace(".", "")))
 		{
 			e.getPlayer().kickPlayer("You have been IP banned from this server");
 			e.setJoinMessage("");
 			e.getPlayer().sendMessage("your ip is banned ;O");
 		}
 		
-		if(CommandBin.plugin.pCheck(e.getPlayer(), "CommandBin.other.strikeonjoin"))
+		if(BMCommandBin.plugin.pCheck(e.getPlayer(), "CommandBin.other.strikeonjoin"))
 		{
-			if(CommandBin.plugin.getConfig().getBoolean("settings.lightningonjoin"))
+			if(BMCommandBin.plugin.getConfig().getBoolean("settings.lightningonjoin"))
 			{
 				e.getPlayer().getWorld().strikeLightningEffect(e.getPlayer().getLocation());
 			}
@@ -192,9 +192,9 @@ public class PListener extends PlayerListener {
 	
 	public void onPlayerQuit(PlayerQuitEvent e)
 	{
-		if(CommandBin.plugin.getConfig().get("settings.leavemessage") != null)
+		if(BMCommandBin.plugin.getConfig().get("settings.leavemessage") != null)
 		{
-			e.setQuitMessage(ChatColor.YELLOW + e.getPlayer().getName() + " " + CommandBin.plugin.getConfig().get("settings.leavemessage").toString());
+			e.setQuitMessage(ChatColor.YELLOW + e.getPlayer().getName() + " " + BMCommandBin.plugin.getConfig().get("settings.leavemessage").toString());
 		}
 		return;
 	}
@@ -207,9 +207,9 @@ public class PListener extends PlayerListener {
 	
 	public void onPlayerEggThrow(PlayerEggThrowEvent e)
 	{
-		if(CommandBin.plugin.getConfig().getBoolean("settings.teleportonthrowegg"))
+		if(BMCommandBin.plugin.getConfig().getBoolean("settings.teleportonthrowegg"))
 		{
-			if(CommandBin.plugin.pCheck(e.getPlayer(), "CommandBin.general.canteleportonthrowegg"))
+			if(BMCommandBin.plugin.pCheck(e.getPlayer(), "CommandBin.general.canteleportonthrowegg"))
 			{
 				e.getPlayer().teleport(e.getEgg().getLocation());
 				e.getPlayer().sendMessage(ChatColor.GREEN + "Teleported to the egg!");

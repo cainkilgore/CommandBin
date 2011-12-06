@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -30,25 +30,25 @@ public class CrossBowCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.crossbow"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.crossbow"))
 					{
 						if(args[0].equalsIgnoreCase("on"))
 						{
-							CommandBin.plugin.getConfig().set(((Player) s).getName() + ".crossbow", true);
+							BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".crossbow", true);
 							((Player) s).sendMessage(ChatColor.AQUA + "Crossbow enabled!");
 							((Player) s).sendMessage("Shoot with a bow!");
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.saveConfig();
 						}
 						if(args[0].equalsIgnoreCase("off"))
 						{
-							CommandBin.plugin.getConfig().set(((Player) s).getName() + ".crossbow", false);
+							BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".crossbow", false);
 							((Player) s).sendMessage(ChatColor.RED + "Crossbow disabled!");
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.saveConfig();
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else

@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -24,16 +24,16 @@ public class TrollCommands implements CommandExecutor
 				if(s instanceof Player)
 				{
 					Player target = Bukkit.getServer().getPlayer(args[0]);
-					if(CommandBin.plugin.pCheck(((Player) s), "CommandBin.general.troll"))
+					if(BMCommandBin.plugin.pCheck(((Player) s), "CommandBin.general.troll"))
 					{
 						if(target != null) {
 							target.getWorld().dropItemNaturally(target.getLocation(), new ItemStack(Material.DIAMOND, 0));
 							s.sendMessage(ChatColor.GREEN + "You trolled " + target.getName()+"!");
 						} else {
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 					} else {
-						s.sendMessage(CommandBin.plugin.NoPermission);
+						s.sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				} else {
 					Player target = Bukkit.getServer().getPlayer(args[0]);

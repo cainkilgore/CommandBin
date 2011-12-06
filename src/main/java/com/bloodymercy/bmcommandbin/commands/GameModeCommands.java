@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -21,14 +21,14 @@ public class GameModeCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.creative"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.creative"))
 					{
 						((Player) s).setGameMode(GameMode.CREATIVE);
 						((Player) s).sendMessage(ChatColor.GREEN + "You gamemode is now creative!");
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -43,7 +43,7 @@ public class GameModeCommands implements CommandExecutor
 				
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.creative.others"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.creative.others"))
 					{
 						if(target != null)
 						{
@@ -52,12 +52,12 @@ public class GameModeCommands implements CommandExecutor
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+							((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -69,7 +69,7 @@ public class GameModeCommands implements CommandExecutor
 					}
 					else
 					{
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 				}
 			}
@@ -81,14 +81,14 @@ public class GameModeCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.survival"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.survival"))
 					{
 						((Player) s).setGameMode(GameMode.SURVIVAL);
 						((Player) s).sendMessage(ChatColor.GREEN + "Your gamemode is now survival!");
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -100,7 +100,7 @@ public class GameModeCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.survival.others"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.survival.others"))
 					{
 						Player target = Bukkit.getServer().getPlayer(args[0]);
 						if(target != null)
@@ -110,12 +110,12 @@ public class GameModeCommands implements CommandExecutor
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+							((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -128,7 +128,7 @@ public class GameModeCommands implements CommandExecutor
 					}
 					else
 					{
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 				}
 			}

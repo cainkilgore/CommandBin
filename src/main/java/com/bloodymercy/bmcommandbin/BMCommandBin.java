@@ -14,10 +14,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.nijiko.permissions.PermissionHandler;
 import com.nijikokun.bukkit.Permissions.Permissions;
 
-public class CommandBin extends JavaPlugin {
+public class BMCommandBin extends JavaPlugin {
 
 	public String Plugin = "[CommandBin] ";
-	public static CommandBin plugin;
+	public static BMCommandBin plugin;
 	public static PermissionHandler permissionHandler;
 	public String NoPermission = ChatColor.GRAY + "You have no permission to use this command.";
 	public String PlayerOffline = ChatColor.RED + "This player is offline";

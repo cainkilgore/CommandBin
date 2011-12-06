@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.listeners;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -15,21 +15,21 @@ public class BListener extends BlockListener {
 	
 	public void onBlockPlace(BlockPlaceEvent e)
 	{
-		if(CommandBin.plugin.getConfig().get(e.getPlayer().getName() + ".unlimited") != null)
+		if(BMCommandBin.plugin.getConfig().get(e.getPlayer().getName() + ".unlimited") != null)
 		{
-			if(CommandBin.plugin.getConfig().get(e.getPlayer().getName() + ".unlimited").equals(true))
+			if(BMCommandBin.plugin.getConfig().get(e.getPlayer().getName() + ".unlimited").equals(true))
 			{
 				e.getPlayer().setItemInHand(new ItemStack(e.getPlayer().getItemInHand().getType(), 64));
 			}
 		}
 		
-		if(CommandBin.plugin.getConfig().get("settings.block-placing-tnt") != null)
+		if(BMCommandBin.plugin.getConfig().get("settings.block-placing-tnt") != null)
 		{
-			if(CommandBin.plugin.getConfig().get("settings.block-placing-tnt").equals(true))
+			if(BMCommandBin.plugin.getConfig().get("settings.block-placing-tnt").equals(true))
 			{
 				if(e.getBlock().getType() == Material.TNT)
 				{
-					if(!CommandBin.plugin.pCheck(e.getPlayer(), "CommandBin.general.tntbypass"))
+					if(!BMCommandBin.plugin.pCheck(e.getPlayer(), "CommandBin.general.tntbypass"))
 					{
 						e.setCancelled(true);
 						e.getPlayer().sendMessage(ChatColor.RED + "Your administrator has disabled the placement of TNT.");
@@ -38,13 +38,13 @@ public class BListener extends BlockListener {
 			}
 		}
 		
-		if(CommandBin.plugin.getConfig().get("settings.block-placing-lava") != null)
+		if(BMCommandBin.plugin.getConfig().get("settings.block-placing-lava") != null)
 		{
-			if(CommandBin.plugin.getConfig().get("settings.block-placing-lava").equals(true))
+			if(BMCommandBin.plugin.getConfig().get("settings.block-placing-lava").equals(true))
 			{
 				if(e.getBlock().getType() == Material.LAVA || e.getBlock().getType() == Material.LAVA_BUCKET)
 				{
-					if(!CommandBin.plugin.pCheck(e.getPlayer(), "CommandBin.general.lavabypass"))
+					if(!BMCommandBin.plugin.pCheck(e.getPlayer(), "CommandBin.general.lavabypass"))
 					{
 						e.setCancelled(true);
 						e.getPlayer().sendMessage(ChatColor.RED + "Your administrator has disabled the placement of LAVA.");
@@ -62,7 +62,7 @@ public class BListener extends BlockListener {
 		
 		Block brokenblock = e.getBlock();
 		
-		if(CommandBin.plugin.getConfig().getBoolean("settings.mineablemobspawners"))
+		if(BMCommandBin.plugin.getConfig().getBoolean("settings.mineablemobspawners"))
 		{
 			if(e.getPlayer().getItemInHand().getType() == Material.DIAMOND_PICKAXE)
 			{
@@ -73,7 +73,7 @@ public class BListener extends BlockListener {
 			}
 		}
 		
-		if(CommandBin.plugin.getConfig().getBoolean("settings.orebroadcast.coalore"))
+		if(BMCommandBin.plugin.getConfig().getBoolean("settings.orebroadcast.coalore"))
 		{
 			if(e.getBlock().getType() == Material.COAL_ORE)
 			{
@@ -81,7 +81,7 @@ public class BListener extends BlockListener {
 			}
 		}
 		
-		if(CommandBin.plugin.getConfig().getBoolean("settings.orebroadcast.ironore"))
+		if(BMCommandBin.plugin.getConfig().getBoolean("settings.orebroadcast.ironore"))
 		{
 			if(e.getBlock().getType() == Material.IRON_ORE)
 			{
@@ -89,7 +89,7 @@ public class BListener extends BlockListener {
 			}
 		}
 		
-		if(CommandBin.plugin.getConfig().getBoolean("settings.orebroadcast.goldore"))
+		if(BMCommandBin.plugin.getConfig().getBoolean("settings.orebroadcast.goldore"))
 		{
 			if(e.getBlock().getType() == Material.GOLD_ORE)
 			{
@@ -97,7 +97,7 @@ public class BListener extends BlockListener {
 			}
 		}
 		
-		if(CommandBin.plugin.getConfig().getBoolean("settings.orebroadcast.diamondore"))
+		if(BMCommandBin.plugin.getConfig().getBoolean("settings.orebroadcast.diamondore"))
 		{
 			if(e.getBlock().getType() == Material.DIAMOND_ORE)
 			{
@@ -105,7 +105,7 @@ public class BListener extends BlockListener {
 			}
 		}
 		
-		if(CommandBin.plugin.getConfig().getBoolean("settings.orebroadcast.redstoneore"))
+		if(BMCommandBin.plugin.getConfig().getBoolean("settings.orebroadcast.redstoneore"))
 		{
 			if(e.getBlock().getType() == Material.REDSTONE_ORE)
 			{
@@ -113,7 +113,7 @@ public class BListener extends BlockListener {
 			}
 		}
 		
-		if(CommandBin.plugin.getConfig().getBoolean("settings.orebroadcast.lapislazuliore"))
+		if(BMCommandBin.plugin.getConfig().getBoolean("settings.orebroadcast.lapislazuliore"))
 		{
 			if(e.getBlock().getType() == Material.LAPIS_ORE)
 			{

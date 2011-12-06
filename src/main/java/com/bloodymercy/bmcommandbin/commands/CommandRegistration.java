@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.command.CommandExecutor;
 
@@ -11,161 +11,161 @@ public class CommandRegistration
 		
 		// Teleportation Commands
 		CommandExecutor TeleporterCommands = new PlayerCommands();
-		CommandBin.plugin.getCommand("tp").setExecutor(TeleporterCommands);
-		CommandBin.plugin.getCommand("tphere").setExecutor(TeleporterCommands);
-		CommandBin.plugin.getCommand("tpall").setExecutor(TeleporterCommands);
-		CommandBin.plugin.getCommand("tp2p").setExecutor(TeleporterCommands);
-		CommandBin.plugin.getCommand("put").setExecutor(TeleporterCommands);
-		CommandBin.plugin.getCommand("tpworld").setExecutor(TeleporterCommands);
-		CommandBin.plugin.getCommand("spawn").setExecutor(TeleporterCommands);
-		CommandBin.plugin.getCommand("setspawn").setExecutor(TeleporterCommands);
+		BMCommandBin.plugin.getCommand("tp").setExecutor(TeleporterCommands);
+		BMCommandBin.plugin.getCommand("tphere").setExecutor(TeleporterCommands);
+		BMCommandBin.plugin.getCommand("tpall").setExecutor(TeleporterCommands);
+		BMCommandBin.plugin.getCommand("tp2p").setExecutor(TeleporterCommands);
+		BMCommandBin.plugin.getCommand("put").setExecutor(TeleporterCommands);
+		BMCommandBin.plugin.getCommand("tpworld").setExecutor(TeleporterCommands);
+		BMCommandBin.plugin.getCommand("spawn").setExecutor(TeleporterCommands);
+		BMCommandBin.plugin.getCommand("setspawn").setExecutor(TeleporterCommands);
 		//
 		
 		// World Commands
 		CommandExecutor WorldCommands = new WorldCommands();
-		CommandBin.plugin.getCommand("createworld").setExecutor(WorldCommands);
-		CommandBin.plugin.getCommand("unloadworld").setExecutor(WorldCommands);
+		BMCommandBin.plugin.getCommand("createworld").setExecutor(WorldCommands);
+		BMCommandBin.plugin.getCommand("unloadworld").setExecutor(WorldCommands);
 		//
 		
 		// Administration Commands
 		CommandExecutor AdminCommands = new AdministrationCommands();
-		CommandBin.plugin.getCommand("shutdown").setExecutor(AdminCommands);
-		CommandBin.plugin.getCommand("cmdbin").setExecutor(AdminCommands);
+		BMCommandBin.plugin.getCommand("shutdown").setExecutor(AdminCommands);
+		BMCommandBin.plugin.getCommand("cmdbin").setExecutor(AdminCommands);
 		//
 		
 		// Fake Join/Leave Commands
 		CommandExecutor FakeJL = new FakeJoinLeaveCommands();
-		CommandBin.plugin.getCommand("join").setExecutor(FakeJL);
-		CommandBin.plugin.getCommand("leave").setExecutor(FakeJL);
+		BMCommandBin.plugin.getCommand("join").setExecutor(FakeJL);
+		BMCommandBin.plugin.getCommand("leave").setExecutor(FakeJL);
 		//
 		
 		// Debug Commands
 		CommandExecutor Debug = new DebugCommands();
-		CommandBin.plugin.getCommand("ping").setExecutor(Debug);
+		BMCommandBin.plugin.getCommand("ping").setExecutor(Debug);
 		//
 		
 		// Game Mode Commands
 		CommandExecutor GM = new GameModeCommands();
-		CommandBin.plugin.getCommand("creative").setExecutor(GM);
-		CommandBin.plugin.getCommand("survival").setExecutor(GM);
+		BMCommandBin.plugin.getCommand("creative").setExecutor(GM);
+		BMCommandBin.plugin.getCommand("survival").setExecutor(GM);
 		//
 		
 		// Weather Control Commands
 		CommandExecutor WeatherControl = new WeatherCommands();
-		CommandBin.plugin.getCommand("rain").setExecutor(WeatherControl);
-		CommandBin.plugin.getCommand("sun").setExecutor(WeatherControl);
+		BMCommandBin.plugin.getCommand("rain").setExecutor(WeatherControl);
+		BMCommandBin.plugin.getCommand("sun").setExecutor(WeatherControl);
 		//
 		
 		// Player Commands
 		CommandExecutor PlayerCommands = new PlayerCommands();
-		CommandBin.plugin.getCommand("shoot").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("strike").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("heal").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("feed").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("god").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("facepalm").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("explode").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("light").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("roll").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("smoke").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("explosionstick").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("lightningstick").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("slap").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("msg").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("clear").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("kill").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("i").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("time").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("nick").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("setxp").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("up").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("unlimited").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("delunlimited").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("mytime").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("armour").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("me").setExecutor(PlayerCommands);
-		CommandBin.plugin.getCommand("more").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("shoot").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("strike").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("heal").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("feed").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("god").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("facepalm").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("explode").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("light").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("roll").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("smoke").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("explosionstick").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("lightningstick").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("slap").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("msg").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("clear").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("kill").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("i").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("time").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("nick").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("setxp").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("up").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("unlimited").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("delunlimited").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("mytime").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("armour").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("me").setExecutor(PlayerCommands);
+		BMCommandBin.plugin.getCommand("more").setExecutor(PlayerCommands);
 		//
 		
 		// Snowman Commands
 		CommandExecutor SnowmanCommands = new SnowmanCommands();
-		CommandBin.plugin.getCommand("snowman").setExecutor(SnowmanCommands);
-		CommandBin.plugin.getCommand("unsnowman").setExecutor(SnowmanCommands);
+		BMCommandBin.plugin.getCommand("snowman").setExecutor(SnowmanCommands);
+		BMCommandBin.plugin.getCommand("unsnowman").setExecutor(SnowmanCommands);
 		//
 		
 		// Moderation Commands
 		CommandExecutor ModCommands = new ModerationCommands();
-		CommandBin.plugin.getCommand("kick").setExecutor(ModCommands);
-		CommandBin.plugin.getCommand("ban").setExecutor(ModCommands);
-		CommandBin.plugin.getCommand("unban").setExecutor(ModCommands);
-		CommandBin.plugin.getCommand("freeze").setExecutor(ModCommands);
-		CommandBin.plugin.getCommand("unfreeze").setExecutor(ModCommands);
-		CommandBin.plugin.getCommand("handicap").setExecutor(ModCommands);
-		CommandBin.plugin.getCommand("unhandicap").setExecutor(ModCommands);
-		CommandBin.plugin.getCommand("mute").setExecutor(ModCommands);
-		CommandBin.plugin.getCommand("unmute").setExecutor(ModCommands);
-		CommandBin.plugin.getCommand("who").setExecutor(ModCommands);
-		CommandBin.plugin.getCommand("paid").setExecutor(ModCommands);
-		CommandBin.plugin.getCommand("banip").setExecutor(ModCommands);
-		CommandBin.plugin.getCommand("unbanip").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("kick").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("ban").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("unban").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("freeze").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("unfreeze").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("handicap").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("unhandicap").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("mute").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("unmute").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("who").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("paid").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("banip").setExecutor(ModCommands);
+		BMCommandBin.plugin.getCommand("unbanip").setExecutor(ModCommands);
 		//
 		
 		// Spawn Mob Commands
 		CommandExecutor MobCommands = new MobCommands();
-		CommandBin.plugin.getCommand("spawnmob").setExecutor(MobCommands);
-		CommandBin.plugin.getCommand("killmobs").setExecutor(MobCommands);
+		BMCommandBin.plugin.getCommand("spawnmob").setExecutor(MobCommands);
+		BMCommandBin.plugin.getCommand("killmobs").setExecutor(MobCommands);
 		//
 		
 		// Home Commands
 		CommandExecutor HomeCommands = new HomeCommands();
-		CommandBin.plugin.getCommand("home").setExecutor(HomeCommands);
-		CommandBin.plugin.getCommand("sethome").setExecutor(HomeCommands);
+		BMCommandBin.plugin.getCommand("home").setExecutor(HomeCommands);
+		BMCommandBin.plugin.getCommand("sethome").setExecutor(HomeCommands);
 		//
 		
 		// Warp Commands
 		CommandExecutor WarpCommands = new WarpCommands();
-		CommandBin.plugin.getCommand("warp").setExecutor(WarpCommands);
-		CommandBin.plugin.getCommand("setwarp").setExecutor(WarpCommands);
-		CommandBin.plugin.getCommand("delwarp").setExecutor(WarpCommands);
+		BMCommandBin.plugin.getCommand("warp").setExecutor(WarpCommands);
+		BMCommandBin.plugin.getCommand("setwarp").setExecutor(WarpCommands);
+		BMCommandBin.plugin.getCommand("delwarp").setExecutor(WarpCommands);
 		//
 		
 		// Torch Bow Commands
 		CommandExecutor tb = new TorchBowCommands();
-		CommandBin.plugin.getCommand("torchbow").setExecutor(tb);
+		BMCommandBin.plugin.getCommand("torchbow").setExecutor(tb);
 		//
 		
 		// Help Page Commands
 		CommandExecutor help = new HelpCommands();
-		CommandBin.plugin.getCommand("cbhelp").setExecutor(help);
+		BMCommandBin.plugin.getCommand("cbhelp").setExecutor(help);
 		//
 		
 		// Explosion Bow Commands
 		CommandExecutor ex = new ExplosionBowCommands();
-		CommandBin.plugin.getCommand("explosionbow").setExecutor(ex);
+		BMCommandBin.plugin.getCommand("explosionbow").setExecutor(ex);
 		//
 		
 		// Crossbow Commands
 		CommandExecutor cb = new CrossBowCommands();
-		CommandBin.plugin.getCommand("crossbow").setExecutor(cb);
+		BMCommandBin.plugin.getCommand("crossbow").setExecutor(cb);
 		//
 		
 		// Jail Commands
 		CommandExecutor jail = new JailCommands();
-		CommandBin.plugin.getCommand("jail").setExecutor(jail);
-		CommandBin.plugin.getCommand("unjail").setExecutor(jail);
-		CommandBin.plugin.getCommand("setjail").setExecutor(jail);
-		CommandBin.plugin.getCommand("setunjail").setExecutor(jail);
+		BMCommandBin.plugin.getCommand("jail").setExecutor(jail);
+		BMCommandBin.plugin.getCommand("unjail").setExecutor(jail);
+		BMCommandBin.plugin.getCommand("setjail").setExecutor(jail);
+		BMCommandBin.plugin.getCommand("setunjail").setExecutor(jail);
 		//
 		
 		// Troll Commands
 		CommandExecutor Troll = new TrollCommands();
-		CommandBin.plugin.getCommand("troll").setExecutor(Troll);
+		BMCommandBin.plugin.getCommand("troll").setExecutor(Troll);
 		// Before anyone judges, I made this out of entire boredom D: 
 		//
 		
 		// Say Command (works in-console and in-game)
 		CommandExecutor say = new SayCommand();
-		CommandBin.plugin.getCommand("say").setExecutor(say);
+		BMCommandBin.plugin.getCommand("say").setExecutor(say);
 		//
 	}
 }

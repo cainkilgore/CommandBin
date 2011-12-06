@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -26,20 +26,20 @@ public class WarpCommands implements CommandExecutor
 				}
 				else
 				{
-					if(CommandBin.plugin.pCheck(((Player) s), "CommandBin.general.setwarp"))
+					if(BMCommandBin.plugin.pCheck(((Player) s), "CommandBin.general.setwarp"))
 					{
 						double x = ((Player) s).getLocation().getX();
 						double y = ((Player) s).getLocation().getY();
 						double z = ((Player) s).getLocation().getZ();
 						World world = ((Player) s).getWorld();
 						
-						if(!((CommandBin.plugin.getConfig().getString("settings.warps." + args[0])) != null))
+						if(!((BMCommandBin.plugin.getConfig().getString("settings.warps." + args[0])) != null))
 						{
-							CommandBin.plugin.getConfig().set("settings.warps." + args[0] + ".x", x);
-							CommandBin.plugin.getConfig().set("settings.warps." + args[0] + ".y", y);
-							CommandBin.plugin.getConfig().set("settings.warps." + args[0] + ".z", z);
-							CommandBin.plugin.getConfig().set("settings.warps." + args[0] + ".world", world.getName());
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.getConfig().set("settings.warps." + args[0] + ".x", x);
+							BMCommandBin.plugin.getConfig().set("settings.warps." + args[0] + ".y", y);
+							BMCommandBin.plugin.getConfig().set("settings.warps." + args[0] + ".z", z);
+							BMCommandBin.plugin.getConfig().set("settings.warps." + args[0] + ".world", world.getName());
+							BMCommandBin.plugin.saveConfig();
 							((Player) s).sendMessage(ChatColor.GREEN + "Warp '" + args[0] + "' created.");
 							((Player) s).sendMessage(ChatColor.GREEN + "Use /warp " + args[0] + " to teleport!");
 						}
@@ -50,7 +50,7 @@ public class WarpCommands implements CommandExecutor
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 			}
@@ -63,14 +63,14 @@ public class WarpCommands implements CommandExecutor
 				}
 				else
 				{
-					if(CommandBin.plugin.pCheck(((Player) s), "CommandBin.general.warp"))
+					if(BMCommandBin.plugin.pCheck(((Player) s), "CommandBin.general.warp"))
 					{
-						if(CommandBin.plugin.getConfig().get("settings.warps." + args[0]) != null)
+						if(BMCommandBin.plugin.getConfig().get("settings.warps." + args[0]) != null)
 						{
-							double x = CommandBin.plugin.getConfig().getDouble("settings.warps." + args[0] + ".x");
-							double y = CommandBin.plugin.getConfig().getDouble("settings.warps." + args[0] + ".y");
-							double z = CommandBin.plugin.getConfig().getDouble("settings.warps." + args[0] + ".z");
-							String world = (String) CommandBin.plugin.getConfig().get("settings.warps." + args[0] + ".world");
+							double x = BMCommandBin.plugin.getConfig().getDouble("settings.warps." + args[0] + ".x");
+							double y = BMCommandBin.plugin.getConfig().getDouble("settings.warps." + args[0] + ".y");
+							double z = BMCommandBin.plugin.getConfig().getDouble("settings.warps." + args[0] + ".z");
+							String world = (String) BMCommandBin.plugin.getConfig().get("settings.warps." + args[0] + ".world");
 							
 							((Player) s).teleport(new Location(Bukkit.getServer().getWorld(world), x,y,z));
 							((Player) s).sendMessage(ChatColor.GREEN + "Teleported to warp '" + args[0] + "' successfully!");
@@ -82,7 +82,7 @@ public class WarpCommands implements CommandExecutor
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 			}
@@ -95,13 +95,13 @@ public class WarpCommands implements CommandExecutor
 				}
 				else
 				{
-					if(CommandBin.plugin.pCheck(((Player) s), "CommandBin.general.delwarp"))
+					if(BMCommandBin.plugin.pCheck(((Player) s), "CommandBin.general.delwarp"))
 					{
-						if(!(CommandBin.plugin.getConfig().get("settings.warps." + args[0]) == null))
+						if(!(BMCommandBin.plugin.getConfig().get("settings.warps." + args[0]) == null))
 						{
-							CommandBin.plugin.getConfig().set("settings.warps." + args[0], null);
+							BMCommandBin.plugin.getConfig().set("settings.warps." + args[0], null);
 							((Player) s).sendMessage(ChatColor.GREEN + "Warp '" + args[0] + "' removed!");
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.saveConfig();
 						}
 						else
 						{
@@ -110,7 +110,7 @@ public class WarpCommands implements CommandExecutor
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 			}

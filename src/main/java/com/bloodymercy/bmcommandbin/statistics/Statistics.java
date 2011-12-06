@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 public class Statistics
 {
@@ -14,7 +14,7 @@ public class Statistics
 		String url = String.format("http://cain.donaghey.x10.mx/usage/counter.php");
 		// String url2 = String.format("http://cain.donaghey.x10.mx/usage/total.php");
 		 
-		 System.out.println(CommandBin.plugin.Plugin + "[Stats] Starting up CommandBin has been logged online!");
+		 System.out.println(BMCommandBin.plugin.Plugin + "[Stats] Starting up CommandBin has been logged online!");
 		 try
 			{
 				new URL(url).openConnection().getInputStream();

@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -26,7 +26,7 @@ public class WorldCommands implements CommandExecutor
 			}
 			else
 			{
-				if(CommandBin.plugin.pCheck(sender, "CommandBin.world.create"))
+				if(BMCommandBin.plugin.pCheck(sender, "CommandBin.world.create"))
 				{
 					sender.sendMessage(ChatColor.RED + "World creation in progress.. please wait.");
 					Bukkit.getServer().createWorld(args[0], Environment.NORMAL);
@@ -34,7 +34,7 @@ public class WorldCommands implements CommandExecutor
 				}
 				else
 				{
-					sender.sendMessage(CommandBin.plugin.NoPermission);
+					sender.sendMessage(BMCommandBin.plugin.NoPermission);
 				}
 			}
 		}
@@ -47,14 +47,14 @@ public class WorldCommands implements CommandExecutor
 			}
 			else
 			{
-				if(CommandBin.plugin.pCheck(sender, "CommandBin.world.unload"))
+				if(BMCommandBin.plugin.pCheck(sender, "CommandBin.world.unload"))
 				{
 					Bukkit.getServer().unloadWorld(args[0], true);
 					sender.sendMessage(ChatColor.GREEN + "'" + args[0] + "' unloaded successfully!");
 				}
 				else
 				{
-					sender.sendMessage(CommandBin.plugin.NoPermission);
+					sender.sendMessage(BMCommandBin.plugin.NoPermission);
 				}
 			}
 		}

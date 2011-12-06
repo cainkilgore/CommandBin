@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 public class SayCommand implements CommandExecutor
 {
 	
-	String console = CommandBin.plugin.getConfig().getString("settings.consolename");
+	String console = BMCommandBin.plugin.getConfig().getString("settings.consolename");
 	
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args) {
 		if(l.equalsIgnoreCase("say"))
@@ -31,13 +31,13 @@ public class SayCommand implements CommandExecutor
 				
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.say"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.say"))
 					{
 						Bukkit.getServer().broadcastMessage("<" + ChatColor.RED + console + ChatColor.WHITE + "> " + ChatColor.WHITE + x.toString().trim());
 					}
 					else
 					{
-						s.sendMessage(CommandBin.plugin.NoPermission);
+						s.sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				} else {
 					Bukkit.getServer().broadcastMessage("<" + ChatColor.RED + console + ChatColor.WHITE + "> " + ChatColor.WHITE + x.toString().trim());

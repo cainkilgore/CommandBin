@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -19,22 +19,22 @@ public class FakeJoinLeaveCommands implements CommandExecutor
 			if(s instanceof Player)
 			{
 				if(args.length > 0) {
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.join"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.join"))
 					{
 						Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + args[0] + " has joined the game");
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				} else {
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.join"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.join"))
 					{
 						Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + ((Player) s).getName() + " has joined the game");
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				
@@ -50,22 +50,22 @@ public class FakeJoinLeaveCommands implements CommandExecutor
 			if(s instanceof Player)
 			{
 				if(args.length > 0) {
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.leave"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.leave"))
 					{
 						Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + args[0] + " has left the game");
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				} else {
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.leave"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.leave"))
 					{
 						Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + ((Player) s).getName() + " has left the game");
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 			}

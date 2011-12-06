@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -22,16 +22,16 @@ public class AdministrationCommands implements CommandExecutor
 				{
 					((Player) s).sendMessage(ChatColor.YELLOW + "+++++++++CommandBin++++++++++");
 					((Player) s).sendMessage(ChatColor.GREEN + "+ Over 70 commands in CommandBin!");
-					((Player) s).sendMessage(ChatColor.RED + "+ Version: " + CommandBin.plugin.getDescription().getVersion());
-					((Player) s).sendMessage(ChatColor.LIGHT_PURPLE + "+ Developer: " + CommandBin.plugin.getDescription().getAuthors());
+					((Player) s).sendMessage(ChatColor.RED + "+ Version: " + BMCommandBin.plugin.getDescription().getVersion());
+					((Player) s).sendMessage(ChatColor.LIGHT_PURPLE + "+ Developer: " + BMCommandBin.plugin.getDescription().getAuthors());
 					((Player) s).sendMessage(ChatColor.YELLOW + "+++++++++++++++++++++++++++++");
 				}
 				else
 				{
 					s.sendMessage(ChatColor.YELLOW + "+++++++++CommandBin++++++++++");
 					s.sendMessage(ChatColor.GREEN + "+ Over 70 commands in CommandBin!");
-					s.sendMessage(ChatColor.RED + "+ Version: " + CommandBin.plugin.getDescription().getVersion());
-					s.sendMessage(ChatColor.LIGHT_PURPLE + "+ Developer: " + CommandBin.plugin.getDescription().getAuthors());
+					s.sendMessage(ChatColor.RED + "+ Version: " + BMCommandBin.plugin.getDescription().getVersion());
+					s.sendMessage(ChatColor.LIGHT_PURPLE + "+ Developer: " + BMCommandBin.plugin.getDescription().getAuthors());
 					s.sendMessage(ChatColor.YELLOW + "+++++++++++++++++++++++++++++");
 				}
 			}
@@ -41,20 +41,20 @@ public class AdministrationCommands implements CommandExecutor
 				{
 					if(s instanceof Player)
 					{
-						if(CommandBin.plugin.pCheck((Player) s, "CommandBin.admin.reload"))
+						if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.admin.reload"))
 						{
-							CommandBin.plugin.reloadConfig();
+							BMCommandBin.plugin.reloadConfig();
 							((Player) s).sendMessage(ChatColor.GREEN + "CommandBin Configuration Reloaded!");
 						}
 	
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+							((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 						}
 					}
 					else
 					{
-						CommandBin.plugin.reloadConfig();
+						BMCommandBin.plugin.reloadConfig();
 						s.sendMessage(ChatColor.GREEN + "CommandBin Configuration Reloaded!");
 					}
 				}
@@ -79,7 +79,7 @@ public class AdministrationCommands implements CommandExecutor
 				{
 					if(s instanceof Player)
 					{
-						if(CommandBin.plugin.pCheck((Player) s, "CommandBin.admin.debug"))
+						if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.admin.debug"))
 						{
 							Runtime rt = Runtime.getRuntime();
 							double max = Math.floor(rt.maxMemory() / 1024.0 / 1024.0);
@@ -88,7 +88,7 @@ public class AdministrationCommands implements CommandExecutor
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+							((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 						}
 					}
 					else
@@ -106,14 +106,14 @@ public class AdministrationCommands implements CommandExecutor
 		{
 			if(s instanceof Player)
 			{
-				if(CommandBin.plugin.pCheck((Player) s, "CommandBin.admin.shutdown"))
+				if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.admin.shutdown"))
 				{
 					Bukkit.getServer().broadcastMessage(ChatColor.RED + "Server is going down!");
 					Bukkit.getServer().shutdown();
 				}
 				else
 				{
-					((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+					((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 				}
 			}
 			else

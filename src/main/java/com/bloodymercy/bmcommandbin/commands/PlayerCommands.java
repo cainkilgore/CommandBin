@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -379,7 +379,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.teleport.tp")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
@@ -388,10 +388,10 @@ public class PlayerCommands implements CommandExecutor {
                                     + "Teleported to " + target.getName());
                             ((Player) s).getWorld().playEffect(((Player) s).getLocation(), Effect.SMOKE, 20);
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     if (args.length < 2) {
@@ -405,7 +405,7 @@ public class PlayerCommands implements CommandExecutor {
                                     + target.getName() + " to "
                                     + target2.getName());
                         } else {
-                            s.sendMessage(CommandBin.plugin.PlayerOffline);
+                            s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     }
                 }
@@ -421,7 +421,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.teleport.tphere")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
@@ -432,10 +432,10 @@ public class PlayerCommands implements CommandExecutor {
                             target.sendMessage(((Player) s).getName()
                                     + " teleported you!");
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     s.sendMessage(ChatColor.RED
@@ -454,7 +454,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.teleport.tp2p")) {
                         Player target1 = Bukkit.getServer().getPlayer(args[0]);
                         Player target2 = Bukkit.getServer().getPlayer(args[1]);
@@ -470,10 +470,10 @@ public class PlayerCommands implements CommandExecutor {
                                     + ((Player) s).getName() + " teleported "
                                     + target1.getName() + " to you!");
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target1 = Bukkit.getServer().getPlayer(args[0]);
@@ -484,7 +484,7 @@ public class PlayerCommands implements CommandExecutor {
                                 + target1.getName() + " to "
                                 + target2.getName());
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -499,7 +499,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.teleport.put")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
@@ -512,10 +512,10 @@ public class PlayerCommands implements CommandExecutor {
                                     + ((Player) s).getName()
                                     + " teleported you to where he/she was looking at!");
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     s.sendMessage(ChatColor.RED
@@ -526,7 +526,7 @@ public class PlayerCommands implements CommandExecutor {
 
         if (l.equalsIgnoreCase("setspawn")) {
             if (s instanceof Player) {
-                if (CommandBin.plugin.pCheck(((Player) s),
+                if (BMCommandBin.plugin.pCheck(((Player) s),
                         "CommandBin.teleport.setspawn")) {
                     ((Player) s).getWorld().setSpawnLocation(
                             (int) ((Player) s).getLocation().getX(),
@@ -535,7 +535,7 @@ public class PlayerCommands implements CommandExecutor {
                     ((Player) s).sendMessage(ChatColor.GREEN
                             + " World spawn set!");
                 } else {
-                    ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                    ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                 }
             } else {
                 s.sendMessage(ChatColor.RED
@@ -545,7 +545,7 @@ public class PlayerCommands implements CommandExecutor {
 
         if (l.equalsIgnoreCase("spawn")) {
             if (s instanceof Player) {
-                if (CommandBin.plugin.pCheck(((Player) s),
+                if (BMCommandBin.plugin.pCheck(((Player) s),
                         "CommandBin.teleport.spawn")) {
                     ((Player) s).teleport(((Player) s).getWorld().getSpawnLocation());
                     ((Player) s).sendMessage(ChatColor.GREEN
@@ -553,7 +553,7 @@ public class PlayerCommands implements CommandExecutor {
                             + ((Player) s).getWorld().getName().toLowerCase()
                             + "'");
                 } else {
-                    ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                    ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                 }
             } else {
                 if (args.length < 1) {
@@ -565,7 +565,7 @@ public class PlayerCommands implements CommandExecutor {
                         s.sendMessage(ChatColor.GREEN + "Teleported "
                                 + target.getName() + " to spawn!");
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -573,7 +573,7 @@ public class PlayerCommands implements CommandExecutor {
 
         if (l.equalsIgnoreCase("tpall")) {
             if (s instanceof Player) {
-                if (CommandBin.plugin.pCheck(((Player) s),
+                if (BMCommandBin.plugin.pCheck(((Player) s),
                         "CommandBin.teleport.tpall")) {
                     for (Player p : Bukkit.getServer().getOnlinePlayers()) {
                         if (!p.getDisplayName().equals(((Player) s).getDisplayName())) {
@@ -585,7 +585,7 @@ public class PlayerCommands implements CommandExecutor {
                         }
                     }
                 } else {
-                    ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                    ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                 }
             } else {
                 s.sendMessage(ChatColor.RED
@@ -602,7 +602,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.teleport.world")) {
                         if (Bukkit.getServer().getWorld(args[0]) != null) {
                             ((Player) s).teleport(Bukkit.getServer().getWorld(args[0]).getSpawnLocation());
@@ -614,7 +614,7 @@ public class PlayerCommands implements CommandExecutor {
                                     + args[0] + "' does not exist.");
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     if (Bukkit.getServer().getWorld(args[1]) != null) {
@@ -625,7 +625,7 @@ public class PlayerCommands implements CommandExecutor {
                                     + target.getName() + " to '" + args[1]
                                     + "'");
                         } else {
-                            s.sendMessage(CommandBin.plugin.PlayerOffline);
+                            s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
                         s.sendMessage(ChatColor.RED
@@ -644,7 +644,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.shoot")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
@@ -656,10 +656,10 @@ public class PlayerCommands implements CommandExecutor {
                                     + ((Player) s).getName()
                                     + " shot you into the air!");
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
@@ -668,7 +668,7 @@ public class PlayerCommands implements CommandExecutor {
                         s.sendMessage(ChatColor.GREEN + "You shot "
                                 + target.getName() + " into the air!");
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -683,7 +683,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.strike")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
@@ -694,10 +694,10 @@ public class PlayerCommands implements CommandExecutor {
                             target.sendMessage(ChatColor.GREEN
                                     + ((Player) s).getName() + " striked you!");
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
@@ -706,7 +706,7 @@ public class PlayerCommands implements CommandExecutor {
                         s.sendMessage(ChatColor.GREEN
                                 + "You struck lightning at " + target.getName());
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -722,7 +722,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.time")) {
                         if (args[0].equalsIgnoreCase("day")) {
                             ((Player) s).sendMessage(ChatColor.GREEN
@@ -736,7 +736,7 @@ public class PlayerCommands implements CommandExecutor {
                             ((Player) s).getWorld().setTime(10000000);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     if (args[0].equalsIgnoreCase("day")) {
@@ -766,12 +766,12 @@ public class PlayerCommands implements CommandExecutor {
 
         if (l.equalsIgnoreCase("facepalm")) {
             if (s instanceof Player) {
-                if (CommandBin.plugin.pCheck(((Player) s),
+                if (BMCommandBin.plugin.pCheck(((Player) s),
                         "CommandBin.general.facepalm")) {
                     Bukkit.getServer().broadcastMessage(
                             ((Player) s).getName() + " facepalm'd");
                 } else {
-                    ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                    ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                 }
             } else {
                 Bukkit.getServer().broadcastMessage(
@@ -782,20 +782,20 @@ public class PlayerCommands implements CommandExecutor {
         if (l.equalsIgnoreCase("heal")) {
             if (args.length < 1) {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.heal.others")) {
                         ((Player) s).setHealth(20);
                         ((Player) s).sendMessage(ChatColor.GREEN
                                 + "Your health bar is now full!");
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     s.sendMessage("/heal [player]");
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.heal.others")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
@@ -807,10 +807,10 @@ public class PlayerCommands implements CommandExecutor {
                                     + ((Player) s).getName()
                                     + " restored your health!");
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
@@ -819,7 +819,7 @@ public class PlayerCommands implements CommandExecutor {
                         s.sendMessage(ChatColor.GREEN + target.getName()
                                 + "'s health bar is now full!");
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -828,20 +828,20 @@ public class PlayerCommands implements CommandExecutor {
         if (l.equalsIgnoreCase("feed")) {
             if (args.length < 1) {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.feed")) {
                         ((Player) s).setFoodLevel(20);
                         ((Player) s).sendMessage(ChatColor.GREEN
                                 + "Your food bar is now full!");
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     s.sendMessage("/feed [player]");
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.feed.others")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
@@ -853,10 +853,10 @@ public class PlayerCommands implements CommandExecutor {
                                     + ((Player) s).getName()
                                     + " set your food bar to full!");
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
@@ -865,7 +865,7 @@ public class PlayerCommands implements CommandExecutor {
                         s.sendMessage(ChatColor.GREEN + target.getName()
                                 + "'s food level is now full!");
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -880,25 +880,25 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.god")) {
                         if (args[0].equalsIgnoreCase("on")) {
-                            CommandBin.plugin.getConfig().set(
+                            BMCommandBin.plugin.getConfig().set(
                                     ((Player) s).getName() + ".godmode", true);
                             ((Player) s).sendMessage(ChatColor.GREEN
                                     + "Godmode enabled!");
-                            CommandBin.plugin.saveConfig();
+                            BMCommandBin.plugin.saveConfig();
                         }
 
                         if (args[0].equalsIgnoreCase("off")) {
-                            CommandBin.plugin.getConfig().set(
+                            BMCommandBin.plugin.getConfig().set(
                                     ((Player) s).getName() + ".godmode", false);
                             ((Player) s).sendMessage(ChatColor.GREEN
                                     + "Godmode disabled!");
-                            CommandBin.plugin.saveConfig();
+                            BMCommandBin.plugin.saveConfig();
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     s.sendMessage(ChatColor.RED
@@ -917,7 +917,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.explode")) {
 
                         float radius = Integer.parseInt(args[1]);
@@ -934,10 +934,10 @@ public class PlayerCommands implements CommandExecutor {
                                     + ((Player) s).getName()
                                     + " created a explosion at your location.");
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     float radius = Integer.parseInt(args[1]);
@@ -948,7 +948,7 @@ public class PlayerCommands implements CommandExecutor {
                         target.getWorld().createExplosion(target.getLocation(),
                                 radius);
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -964,7 +964,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.light")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
 
@@ -978,10 +978,10 @@ public class PlayerCommands implements CommandExecutor {
                         if (target != null) {
                             target.setFireTicks(i);
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
@@ -992,7 +992,7 @@ public class PlayerCommands implements CommandExecutor {
                                 + target.getName() + " on fire for " + i
                                 + " seconds!");
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -1008,7 +1008,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.roll")) {
                         Double rand = ((Math.random() * (Integer.parseInt(args[1]) - Integer.parseInt(args[0]))) + Integer.parseInt(args[0]));
                         long rounded = Math.round(rand);
@@ -1020,7 +1020,7 @@ public class PlayerCommands implements CommandExecutor {
                                 + ChatColor.GREEN + " and got: "
                                 + rounded);
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Double rand = ((Math.random() * (Integer.parseInt(args[1]) - Integer.parseInt(args[0]))) + Integer.parseInt(args[0]));
@@ -1043,25 +1043,25 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.smoke")) {
                         if (args[0].equalsIgnoreCase("on")) {
-                            CommandBin.plugin.getConfig().set(
+                            BMCommandBin.plugin.getConfig().set(
                                     ((Player) s).getName() + ".smoke", true);
-                            CommandBin.plugin.saveConfig();
+                            BMCommandBin.plugin.saveConfig();
                             ((Player) s).sendMessage(ChatColor.GREEN
                                     + "You are now a walking chimney! *giggles*");
                         }
 
                         if (args[0].equalsIgnoreCase("off")) {
-                            CommandBin.plugin.getConfig().set(
+                            BMCommandBin.plugin.getConfig().set(
                                     ((Player) s).getName() + ".smoke", false);
-                            CommandBin.plugin.saveConfig();
+                            BMCommandBin.plugin.saveConfig();
                             ((Player) s).sendMessage(ChatColor.GREEN
                                     + "You are no longer the walking chimney!");
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     s.sendMessage(ChatColor.RED
@@ -1079,13 +1079,13 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.explosionstick")) {
                         if (args[0].equalsIgnoreCase("on")) {
-                            CommandBin.plugin.getConfig().set(
+                            BMCommandBin.plugin.getConfig().set(
                                     ((Player) s).getName() + ".explosionstick",
                                     true);
-                            CommandBin.plugin.saveConfig();
+                            BMCommandBin.plugin.saveConfig();
                             ((Player) s).sendMessage(ChatColor.AQUA
                                     + "Explosion stick enabled");
                             ((Player) s).getInventory().addItem(
@@ -1093,17 +1093,17 @@ public class PlayerCommands implements CommandExecutor {
                         }
 
                         if (args[0].equalsIgnoreCase("off")) {
-                            CommandBin.plugin.getConfig().set(
+                            BMCommandBin.plugin.getConfig().set(
                                     ((Player) s).getName() + ".explosionstick",
                                     false);
-                            CommandBin.plugin.saveConfig();
+                            BMCommandBin.plugin.saveConfig();
                             ((Player) s).sendMessage(ChatColor.AQUA
                                     + "Explosion stick disabled");
                             ((Player) s).getInventory().remove(
                                     new ItemStack(Material.STICK, 1));
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 }
             }
@@ -1118,29 +1118,29 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.lightningstick")) {
                         if (args[0].equalsIgnoreCase("on")) {
-                            CommandBin.plugin.getConfig().set(
+                            BMCommandBin.plugin.getConfig().set(
                                     ((Player) s).getName() + ".lightningstick",
                                     true);
                             ((Player) s).sendMessage(ChatColor.AQUA
                                     + "Lightning stick enabled");
-                            CommandBin.plugin.saveConfig();
+                            BMCommandBin.plugin.saveConfig();
                             ((Player) s).getInventory().addItem(
                                     new ItemStack(Material.STICK, 1));
                         }
 
                         if (args[0].equalsIgnoreCase("off")) {
-                            CommandBin.plugin.getConfig().set(
+                            BMCommandBin.plugin.getConfig().set(
                                     ((Player) s).getName() + ".lightningstick",
                                     false);
                             ((Player) s).sendMessage(ChatColor.AQUA
                                     + "Lightning stick disabled");
-                            CommandBin.plugin.saveConfig();
+                            BMCommandBin.plugin.saveConfig();
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     s.sendMessage(ChatColor.RED
@@ -1161,7 +1161,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.slap")) {
                         if (Integer.parseInt(args[1]) > 10000) {
                             Player p = (Player) s;
@@ -1178,10 +1178,10 @@ public class PlayerCommands implements CommandExecutor {
                             ((Player) s).sendMessage(ChatColor.GREEN
                                     + "You slapped " + target.getName());
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     if (Integer.parseInt(args[1]) > 10000) {
@@ -1196,7 +1196,7 @@ public class PlayerCommands implements CommandExecutor {
                         s.sendMessage(ChatColor.GREEN + "You slapped "
                                 + target.getName());
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -1205,13 +1205,13 @@ public class PlayerCommands implements CommandExecutor {
         if (l.equalsIgnoreCase("clear")) {
             if (args.length < 1) {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.clear")) {
                         ((Player) s).getInventory().clear();
                         ((Player) s).sendMessage(ChatColor.GREEN
                                 + "Inventory cleared!");
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     s.sendMessage("/clear [player]");
@@ -1219,7 +1219,7 @@ public class PlayerCommands implements CommandExecutor {
             } else {
                 if (s instanceof Player) {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.clear.others")) {
                         if (target != null) {
                             target.getInventory().clear();
@@ -1230,10 +1230,10 @@ public class PlayerCommands implements CommandExecutor {
                                     + "Successfully cleared "
                                     + target.getName() + "'s inventory!");
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
@@ -1242,7 +1242,7 @@ public class PlayerCommands implements CommandExecutor {
                         s.sendMessage(ChatColor.GREEN + "You cleared "
                                 + target.getName() + "'s inventory!");
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -1260,7 +1260,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.item")) {
                         int id = -1;
                         int amount = 1;
@@ -1286,7 +1286,7 @@ public class PlayerCommands implements CommandExecutor {
                         ((Player) s).sendMessage(ChatColor.GREEN
                                 + "You obtained " + id);
 
-                        if (CommandBin.plugin.getConfig().getBoolean("setting.debugitems")) {
+                        if (BMCommandBin.plugin.getConfig().getBoolean("setting.debugitems")) {
                             System.out.println(((Player) s).getName() + " spawned " + args[1] + " of " + args[0]);
                             for (Player p : Bukkit.getServer().getOnlinePlayers()) {
                                 if (p.isOp()) {
@@ -1296,7 +1296,7 @@ public class PlayerCommands implements CommandExecutor {
                         }
                         return true;
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     s.sendMessage(ChatColor.RED
@@ -1315,7 +1315,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.msg")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
@@ -1336,7 +1336,7 @@ public class PlayerCommands implements CommandExecutor {
                                     + target.getName() + "] "
                                     + x.toString().trim();
 
-                            if (CommandBin.plugin.getConfig().getBoolean(
+                            if (BMCommandBin.plugin.getConfig().getBoolean(
                                     "settings.opscanseepms")) {
                                 for (Player p : Bukkit.getServer().getOnlinePlayers()) {
                                     if (p.isOp()) {
@@ -1349,10 +1349,10 @@ public class PlayerCommands implements CommandExecutor {
                             ((Player) s).sendMessage(to);
                             System.out.println(op);
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
@@ -1370,7 +1370,7 @@ public class PlayerCommands implements CommandExecutor {
                         String op = ChatColor.DARK_RED + "[CONSOLE > "
                                 + target.getName() + "] " + x.toString().trim();
 
-                        if (CommandBin.plugin.getConfig().getBoolean(
+                        if (BMCommandBin.plugin.getConfig().getBoolean(
                                 "settings.opscanseepms")) {
                             for (Player p : Bukkit.getServer().getOnlinePlayers()) {
                                 if (p.isOp()) {
@@ -1397,7 +1397,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.nick")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
@@ -1409,25 +1409,25 @@ public class PlayerCommands implements CommandExecutor {
                                 target.sendMessage(ChatColor.GREEN
                                         + ((Player) s).getName()
                                         + " changed your name to " + args[1]);
-                                CommandBin.plugin.getConfig().set(target.getName() + ".nickname",
+                                BMCommandBin.plugin.getConfig().set(target.getName() + ".nickname",
                                         args[1]);
-                                CommandBin.plugin.saveConfig();
+                                BMCommandBin.plugin.saveConfig();
                             } else {
                                 ((Player) s).sendMessage(ChatColor.RED
                                         + "That name is too long. It must be below 20 characters. Sorry :(");
                             }
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
                     if (target != null) {
                         if (args[1].length() < 20) {
                             target.setDisplayName(args[1]);
-                            CommandBin.plugin.getConfig().set(
+                            BMCommandBin.plugin.getConfig().set(
                                     target.getName() + ".nickname", args[1]);
                             s.sendMessage(ChatColor.GREEN + target.getName()
                                     + "'s nickname is now " + args[1]);
@@ -1436,7 +1436,7 @@ public class PlayerCommands implements CommandExecutor {
                                     + "The nickname must be below 20 letters!");
                         }
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -1452,7 +1452,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.setxp")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
@@ -1466,10 +1466,10 @@ public class PlayerCommands implements CommandExecutor {
                                     + " set your experience points to "
                                     + args[1]);
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
@@ -1478,7 +1478,7 @@ public class PlayerCommands implements CommandExecutor {
                         s.sendMessage(ChatColor.GREEN + target.getName()
                                 + "'s experience is now " + args[1]);
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -1493,7 +1493,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.kill")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
@@ -1505,10 +1505,10 @@ public class PlayerCommands implements CommandExecutor {
                             target.sendMessage(ChatColor.GREEN
                                     + ((Player) s).getName() + " killed you!");
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
@@ -1517,7 +1517,7 @@ public class PlayerCommands implements CommandExecutor {
                         s.sendMessage(ChatColor.GREEN + "You killed "
                                 + target.getName());
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -1532,7 +1532,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.up")) {
                         ((Player) s).getLocation().getBlock().getRelative(0, Integer.parseInt(args[0]), 0).setType(Material.GLASS);
                         Location tpblock = ((Player) s).getLocation().getBlock().getRelative(0, Integer.parseInt(args[0]) + 2,
@@ -1541,7 +1541,7 @@ public class PlayerCommands implements CommandExecutor {
                         ((Player) s).sendMessage(ChatColor.RED + "You went up "
                                 + args[0] + " blocks!");
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     s.sendMessage(ChatColor.RED + "You can't go up in console!");
@@ -1558,11 +1558,11 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.unlimited")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
-                            CommandBin.plugin.getConfig().set(
+                            BMCommandBin.plugin.getConfig().set(
                                     target.getName() + ".unlimited", true);
                             target.sendMessage(ChatColor.GREEN
                                     + ((Player) s).getName()
@@ -1570,23 +1570,23 @@ public class PlayerCommands implements CommandExecutor {
                             ((Player) s).sendMessage(ChatColor.GREEN
                                     + "Successfully gave " + target.getName()
                                     + " unlimited block usage!");
-                            CommandBin.plugin.saveConfig();
+                            BMCommandBin.plugin.saveConfig();
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
                     if (target != null) {
-                        CommandBin.plugin.getConfig().set(
+                        BMCommandBin.plugin.getConfig().set(
                                 target.getName() + ".unlimited", true);
                         s.sendMessage(ChatColor.GREEN + "You gave "
                                 + target.getName() + " unlimited block usage!");
-                        CommandBin.plugin.saveConfig();
+                        BMCommandBin.plugin.saveConfig();
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -1601,11 +1601,11 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.unlimited")) {
                         Player target = Bukkit.getServer().getPlayer(args[0]);
                         if (target != null) {
-                            CommandBin.plugin.getConfig().set(
+                            BMCommandBin.plugin.getConfig().set(
                                     target.getName() + ".unlimited", false);
                             target.sendMessage(ChatColor.GREEN
                                     + ((Player) s).getName()
@@ -1614,24 +1614,24 @@ public class PlayerCommands implements CommandExecutor {
                                     + "Successfully removed "
                                     + target.getName()
                                     + "'s unlimited block usage!");
-                            CommandBin.plugin.saveConfig();
+                            BMCommandBin.plugin.saveConfig();
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     Player target = Bukkit.getServer().getPlayer(args[0]);
                     if (target != null) {
-                        CommandBin.plugin.getConfig().set(
+                        BMCommandBin.plugin.getConfig().set(
                                 target.getName() + ".unlimited", false);
                         s.sendMessage(ChatColor.GREEN + "You removed "
                                 + target.getName()
                                 + "'s unlimited block usage!");
-                        CommandBin.plugin.saveConfig();
+                        BMCommandBin.plugin.saveConfig();
                     } else {
-                        s.sendMessage(CommandBin.plugin.PlayerOffline);
+                        s.sendMessage(BMCommandBin.plugin.PlayerOffline);
                     }
                 }
             }
@@ -1647,7 +1647,7 @@ public class PlayerCommands implements CommandExecutor {
                 }
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.mytime")) {
                         if (args[0].equalsIgnoreCase("day")) {
                             ((Player) s).setPlayerTime(0, false);
@@ -1667,7 +1667,7 @@ public class PlayerCommands implements CommandExecutor {
                                     + "You reset your time to the server time!");
                         }
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     s.sendMessage(ChatColor.RED
@@ -1687,7 +1687,7 @@ public class PlayerCommands implements CommandExecutor {
             } else {
                 if (s instanceof Player) {
                     if (args[0].equalsIgnoreCase("leather")) {
-                        if (CommandBin.plugin.pCheck(((Player) s),
+                        if (BMCommandBin.plugin.pCheck(((Player) s),
                                 "CommandBin.general.armour.leather")) {
                             ((Player) s).getInventory().setHelmet(
                                     new ItemStack(Material.LEATHER_HELMET, 1));
@@ -1703,12 +1703,12 @@ public class PlayerCommands implements CommandExecutor {
                             ((Player) s).sendMessage(ChatColor.GREEN
                                     + "You received " + args[0] + " armour!");
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                         }
                     }
 
                     if (args[0].equalsIgnoreCase("iron")) {
-                        if (CommandBin.plugin.pCheck(((Player) s),
+                        if (BMCommandBin.plugin.pCheck(((Player) s),
                                 "CommandBin.general.armour.iron")) {
                             ((Player) s).getInventory().setHelmet(
                                     new ItemStack(Material.IRON_HELMET, 1));
@@ -1722,12 +1722,12 @@ public class PlayerCommands implements CommandExecutor {
                                     + "You received " + args[0] + " armour!");
 
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                         }
                     }
 
                     if (args[0].equalsIgnoreCase("diamond")) {
-                        if (CommandBin.plugin.pCheck(((Player) s),
+                        if (BMCommandBin.plugin.pCheck(((Player) s),
                                 "CommandBin.general.armour.diamond")) {
                             ((Player) s).getInventory().setHelmet(
                                     new ItemStack(Material.DIAMOND_HELMET, 1));
@@ -1743,12 +1743,12 @@ public class PlayerCommands implements CommandExecutor {
                             ((Player) s).sendMessage(ChatColor.GREEN
                                     + "You received " + args[0] + " armour!");
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                         }
                     }
 
                     if (args[0].equalsIgnoreCase("gold")) {
-                        if (CommandBin.plugin.pCheck(((Player) s),
+                        if (BMCommandBin.plugin.pCheck(((Player) s),
                                 "CommandBin.general.armour.gold")) {
                             ((Player) s).getInventory().setHelmet(
                                     new ItemStack(Material.GOLD_HELMET, 1));
@@ -1762,12 +1762,12 @@ public class PlayerCommands implements CommandExecutor {
                                     + "You received " + args[0] + " armour!");
 
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                         }
                     }
 
                     if (args[0].equalsIgnoreCase("chainmail")) {
-                        if (CommandBin.plugin.pCheck(((Player) s),
+                        if (BMCommandBin.plugin.pCheck(((Player) s),
                                 "CommandBin.general.armour.chainmail")) {
                             ((Player) s).getInventory().setHelmet(
                                     new ItemStack(
@@ -1785,7 +1785,7 @@ public class PlayerCommands implements CommandExecutor {
                                     + "You received " + args[0] + " armour!");
 
                         } else {
-                            ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                            ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                         }
                     }
                 } else {
@@ -1800,7 +1800,7 @@ public class PlayerCommands implements CommandExecutor {
                 return false;
             } else {
                 if (s instanceof Player) {
-                    if (CommandBin.plugin.pCheck(((Player) s),
+                    if (BMCommandBin.plugin.pCheck(((Player) s),
                             "CommandBin.general.me")) {
                         StringBuilder x = new StringBuilder();
 
@@ -1812,7 +1812,7 @@ public class PlayerCommands implements CommandExecutor {
                                 ChatColor.AQUA + "* " + ((Player) s).getDisplayName() + " "
                                 + x.toString().trim());
                     } else {
-                        ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                        ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                     }
                 } else {
                     StringBuilder x = new StringBuilder();
@@ -1829,14 +1829,14 @@ public class PlayerCommands implements CommandExecutor {
 
         if (l.equalsIgnoreCase("more")) {
             if (s instanceof Player) {
-                if (CommandBin.plugin.pCheck(((Player) s),
+                if (BMCommandBin.plugin.pCheck(((Player) s),
                         "CommandBin.general.more")) {
                     ((Player) s).getInventory().addItem(
                             new ItemStack(((Player) s).getItemInHand().getType(), 64));
                     ((Player) s).sendMessage(ChatColor.GREEN
                             + "Received 64 of what you're holding!");
                 } else {
-                    ((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+                    ((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
                 }
             } else {
                 s.sendMessage(ChatColor.RED + "You can't do that in-console!");

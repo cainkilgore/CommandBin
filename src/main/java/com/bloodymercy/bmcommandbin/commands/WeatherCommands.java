@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -18,14 +18,14 @@ public class WeatherCommands implements CommandExecutor
 		{
 			if(s instanceof Player)
 			{
-				if(CommandBin.plugin.pCheck(((Player) s), "CommandBin.general.weather"))
+				if(BMCommandBin.plugin.pCheck(((Player) s), "CommandBin.general.weather"))
 				{
 					((Player) s).getWorld().setStorm(false);
 					Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + ((Player) s).getName() + " has made the sun shine!");
 				}
 				else
 				{
-					((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+					((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 				}
 			}
 			else
@@ -53,7 +53,7 @@ public class WeatherCommands implements CommandExecutor
 		{
 			if(s instanceof Player)
 			{
-				if(CommandBin.plugin.pCheck(((Player) s), "CommandBin.general.weather"))
+				if(BMCommandBin.plugin.pCheck(((Player) s), "CommandBin.general.weather"))
 				{
 					((Player) s).getWorld().setStorm(true);
 					((Player) s).getWorld().setThundering(true);
@@ -61,7 +61,7 @@ public class WeatherCommands implements CommandExecutor
 				}
 				else
 				{
-					((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+					((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 				}
 			}
 			else

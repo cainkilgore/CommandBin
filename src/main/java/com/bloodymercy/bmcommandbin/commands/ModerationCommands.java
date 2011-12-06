@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -38,7 +38,7 @@ public class ModerationCommands implements CommandExecutor
 				Player target = Bukkit.getServer().getPlayer(args[0]);
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.kick"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.kick"))
 					{
 						if(target != null)
 						{
@@ -49,19 +49,19 @@ public class ModerationCommands implements CommandExecutor
 								x.append(args[i] + " ");
 							}
 							target.kickPlayer(x.toString().trim());
-							if(CommandBin.plugin.getConfig().get("settings.broadcastkick").equals(true))
+							if(BMCommandBin.plugin.getConfig().get("settings.broadcastkick").equals(true))
 							{
 								Bukkit.getServer().broadcastMessage(ChatColor.RED + ((Player) s).getName() + " has kicked " + target.getName());
 							}
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+							((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -75,14 +75,14 @@ public class ModerationCommands implements CommandExecutor
 							x.append(args[i] + " ");
 						}
 						target.kickPlayer(x.toString().trim());
-						if(CommandBin.plugin.getConfig().get("settings.broadcastkick").equals(true))
+						if(BMCommandBin.plugin.getConfig().get("settings.broadcastkick").equals(true))
 						{
 							Bukkit.getServer().broadcastMessage(ChatColor.RED + ((Player) s).getName() + " has kicked " + target.getName());
 						}
 					}
 					else
 					{
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 				}
 			}
@@ -105,7 +105,7 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.ban"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.ban"))
 					{
 						Player target = Bukkit.getServer().getPlayer(args[0]);
 						if(target != null)
@@ -118,18 +118,18 @@ public class ModerationCommands implements CommandExecutor
 							}
 							((Player) s).sendMessage("You banned " + target.getName());
 							target.kickPlayer(x.toString().trim());
-							CommandBin.plugin.getConfig().set(target.getName() + ".banned", true);
-							CommandBin.plugin.getConfig().set(target.getName() + ".banreason", args[1]);
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.getConfig().set(target.getName() + ".banned", true);
+							BMCommandBin.plugin.getConfig().set(target.getName() + ".banreason", args[1]);
+							BMCommandBin.plugin.saveConfig();
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+							((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -145,13 +145,13 @@ public class ModerationCommands implements CommandExecutor
 						}
 						s.sendMessage("You banned " + target.getName());
 						target.kickPlayer(x.toString().trim());
-						CommandBin.plugin.getConfig().set(target.getName() + ".banned", true);
-						CommandBin.plugin.getConfig().set(target.getName() + ".banreason", x.toString().trim());
-						CommandBin.plugin.saveConfig();
+						BMCommandBin.plugin.getConfig().set(target.getName() + ".banned", true);
+						BMCommandBin.plugin.getConfig().set(target.getName() + ".banreason", x.toString().trim());
+						BMCommandBin.plugin.saveConfig();
 					}
 					else
 					{
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 				}
 			}
@@ -174,23 +174,23 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.unban"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.unban"))
 					{
 						((Player) s).sendMessage(ChatColor.GREEN + ((Player) s).getName() + " successfully unbanned " + args[0] + "!");
-						CommandBin.plugin.getConfig().set(args[0] + ".banned", false);
-						CommandBin.plugin.getConfig().set(args[0] + ".banreason", null);
-						CommandBin.plugin.saveConfig();
+						BMCommandBin.plugin.getConfig().set(args[0] + ".banned", false);
+						BMCommandBin.plugin.getConfig().set(args[0] + ".banreason", null);
+						BMCommandBin.plugin.saveConfig();
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
 				{
 					s.sendMessage(ChatColor.GREEN + "Unbanned " + args[0] + "!");
-					CommandBin.plugin.getConfig().set(args[0] + ".banned", false);
-					CommandBin.plugin.saveConfig();
+					BMCommandBin.plugin.getConfig().set(args[0] + ".banned", false);
+					BMCommandBin.plugin.saveConfig();
 				}
 			}
 		}
@@ -212,24 +212,24 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.freeze"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.freeze"))
 					{
 						Player target = Bukkit.getServer().getPlayer(args[0]);
 						if(target != null)
 						{
-							CommandBin.plugin.getConfig().set(target.getName() + ".frozen", true);
+							BMCommandBin.plugin.getConfig().set(target.getName() + ".frozen", true);
 							((Player) s).sendMessage(ChatColor.GREEN + target.getName() + " has been frozen!");
 							target.sendMessage(ChatColor.GREEN + "You have been frozen by " + ((Player) s).getName());
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.saveConfig();
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+							((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -237,13 +237,13 @@ public class ModerationCommands implements CommandExecutor
 					Player target = Bukkit.getServer().getPlayer(args[0]);
 					if(target != null)
 					{
-						CommandBin.plugin.getConfig().set(target.getName() + ".frozen", true);
+						BMCommandBin.plugin.getConfig().set(target.getName() + ".frozen", true);
 						s.sendMessage(ChatColor.GREEN + "You froze " + target.getName());
-						CommandBin.plugin.saveConfig();
+						BMCommandBin.plugin.saveConfig();
 					}
 					else
 					{
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 				}
 			}
@@ -266,24 +266,24 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.freeze"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.freeze"))
 					{
 						Player target = Bukkit.getServer().getPlayer(args[0]);
 						if(target != null)
 						{
-							CommandBin.plugin.getConfig().set(target.getName() + ".frozen", false);
+							BMCommandBin.plugin.getConfig().set(target.getName() + ".frozen", false);
 							((Player) s).sendMessage(ChatColor.GREEN + "You have unfrozen " + target.getName());
 							target.sendMessage(ChatColor.GREEN + ((Player) s).getName() + " has unfrozen you.");
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.saveConfig();
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+							((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -291,13 +291,13 @@ public class ModerationCommands implements CommandExecutor
 					Player target = Bukkit.getServer().getPlayer(args[0]);
 					if(target != null)
 					{
-						CommandBin.plugin.getConfig().set(target.getName() + ".frozen", false);
-						CommandBin.plugin.saveConfig();
+						BMCommandBin.plugin.getConfig().set(target.getName() + ".frozen", false);
+						BMCommandBin.plugin.saveConfig();
 						s.sendMessage(ChatColor.GREEN + "You have unfrozen " + target.getName());
 					}
 					else
 					{
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 				}
 			}
@@ -320,24 +320,24 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.handicap"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.handicap"))
 					{
 						Player target = Bukkit.getServer().getPlayer(args[0]);
 						if(target != null)
 						{
-							CommandBin.plugin.getConfig().set(target.getName() + ".handicapped", true);
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.getConfig().set(target.getName() + ".handicapped", true);
+							BMCommandBin.plugin.saveConfig();
 							((Player) s).sendMessage(ChatColor.GREEN + target.getName() + " has been handicapped!");
 							target.sendMessage(ChatColor.GREEN + ((Player) s).getName() + " handicapped you!");
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+							((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -345,13 +345,13 @@ public class ModerationCommands implements CommandExecutor
 					Player target = Bukkit.getServer().getPlayer(args[0]);
 					if(target != null)
 					{
-						CommandBin.plugin.getConfig().set(target.getName() + ".handicapped", true);
-						CommandBin.plugin.saveConfig();
+						BMCommandBin.plugin.getConfig().set(target.getName() + ".handicapped", true);
+						BMCommandBin.plugin.saveConfig();
 						s.sendMessage(ChatColor.GREEN + "You have disabled " + target.getName() + "'s usage of commands!");
 					}
 					else
 					{
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 				}
 			}
@@ -374,24 +374,24 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.handicap"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.handicap"))
 					{
 						Player target = Bukkit.getServer().getPlayer(args[0]);
 						if(target != null)
 						{
-							CommandBin.plugin.getConfig().set(target.getName() + ".handicapped", false);
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.getConfig().set(target.getName() + ".handicapped", false);
+							BMCommandBin.plugin.saveConfig();
 							((Player) s).sendMessage(ChatColor.GREEN + target.getName() + " has been unhandicapped!");
 							target.sendMessage(ChatColor.GREEN + ((Player) s).getName() + " unhanddicapped you!");
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+							((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -399,9 +399,9 @@ public class ModerationCommands implements CommandExecutor
 					Player target = Bukkit.getServer().getPlayer(args[0]);
 					if(target != null)
 					{
-						CommandBin.plugin.getConfig().set(target.getName() + ".handicapped", false);
-						CommandBin.plugin.saveConfig();
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						BMCommandBin.plugin.getConfig().set(target.getName() + ".handicapped", false);
+						BMCommandBin.plugin.saveConfig();
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 				}
 			}
@@ -424,24 +424,24 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.mute"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.mute"))
 					{
 						Player target = Bukkit.getServer().getPlayer(args[0]);
 						if(target != null)
 						{
-							CommandBin.plugin.getConfig().set(target.getName() + ".muted", true);
+							BMCommandBin.plugin.getConfig().set(target.getName() + ".muted", true);
 							((Player) s).sendMessage(ChatColor.GREEN + "You have muted " + target.getName());
 							target.sendMessage(ChatColor.GREEN + ((Player) s).getName() + " has muted you!");
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.saveConfig();
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+							((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -449,13 +449,13 @@ public class ModerationCommands implements CommandExecutor
 					Player target = Bukkit.getServer().getPlayer(args[0]);
 					if(target != null)
 					{
-						CommandBin.plugin.getConfig().set(target.getName() + ".muted", true);
+						BMCommandBin.plugin.getConfig().set(target.getName() + ".muted", true);
 						s.sendMessage(ChatColor.GREEN + "You muted " + target.getName() + "!");
-						CommandBin.plugin.saveConfig();
+						BMCommandBin.plugin.saveConfig();
 					}
 					else
 					{
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 				}
 			}
@@ -479,24 +479,24 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.unmute"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.unmute"))
 					{
 						Player target = Bukkit.getServer().getPlayer(args[0]);
 						if(target != null)
 						{
-							CommandBin.plugin.getConfig().set(target.getName() + ".muted", false);
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.getConfig().set(target.getName() + ".muted", false);
+							BMCommandBin.plugin.saveConfig();
 							((Player) s).sendMessage(ChatColor.GREEN + "You have unmuted " + target.getName());
 							target.sendMessage(ChatColor.GREEN + ((Player) s).getName() + " has unmuted you!");
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+							((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -504,13 +504,13 @@ public class ModerationCommands implements CommandExecutor
 					Player target = Bukkit.getServer().getPlayer(args[0]);
 					if(target != null)
 					{
-						CommandBin.plugin.getConfig().set(target.getName() + ".muted", false);
-						CommandBin.plugin.saveConfig();
+						BMCommandBin.plugin.getConfig().set(target.getName() + ".muted", false);
+						BMCommandBin.plugin.saveConfig();
 						s.sendMessage(ChatColor.GREEN + "You unmuted " + target.getName());
 					}
 					else
 					{
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 				}
 			}
@@ -533,7 +533,7 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.who"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.who"))
 					{
 						Player target = Bukkit.getServer().getPlayer(args[0]);
 						if(target != null)
@@ -544,7 +544,7 @@ public class ModerationCommands implements CommandExecutor
 							((Player) s).sendMessage(ChatColor.GREEN + "IP Address: " + ChatColor.WHITE + target.getAddress());
 							((Player) s).sendMessage(ChatColor.GREEN + "Hostname: " + ChatColor.WHITE + target.getAddress().getHostName());
 							((Player) s).sendMessage(ChatColor.GREEN + "Co-Ordinates: " + ChatColor.RED + target.getLocation().getX() + ", " + target.getLocation().getY() + ", " + target.getLocation().getZ());
-							if(!CommandBin.plugin.getServer().getVersion().contains("1337"))
+							if(!BMCommandBin.plugin.getServer().getVersion().contains("1337"))
 							{
 								((Player) s).sendMessage("This server is not using the RB version of CraftBukkit. (1337)");
 							}
@@ -555,12 +555,12 @@ public class ModerationCommands implements CommandExecutor
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+							((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -574,7 +574,7 @@ public class ModerationCommands implements CommandExecutor
 						s.sendMessage(ChatColor.GREEN + "IP Address: " + ChatColor.WHITE + target.getAddress());
 						s.sendMessage(ChatColor.GREEN + "Hostname: " + ChatColor.WHITE + target.getAddress().getHostName());
 						s.sendMessage(ChatColor.GREEN + "Co-Ordinates: " + ChatColor.RED + target.getLocation().getX() + ", " + target.getLocation().getY() + ", " + target.getLocation().getZ());
-						if(!CommandBin.plugin.getServer().getVersion().contains("1337"))
+						if(!BMCommandBin.plugin.getServer().getVersion().contains("1337"))
 						{
 							s.sendMessage("This server is not using the RB version of CraftBukkit. (1337)");
 						}
@@ -585,7 +585,7 @@ public class ModerationCommands implements CommandExecutor
 					}
 					else
 					{
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 				}
 			}
@@ -608,14 +608,14 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.paid"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.paid"))
 					{
 						((Player) s).sendMessage(ChatColor.GREEN + args[0] + " has paid: ");
 						hasPaid(s, args[0].toString());
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -643,7 +643,7 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.banip"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.banip"))
 					{
 						Player target = Bukkit.getServer().getPlayer(args[0]);
 						if(target != null)
@@ -651,19 +651,19 @@ public class ModerationCommands implements CommandExecutor
 							String ip2 = target.getAddress().getAddress().getHostAddress().toString();
 							String ipworking = ip2.replace(".", "");
 							
-							CommandBin.plugin.getConfig().set("bannedips." + ipworking, true);
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.getConfig().set("bannedips." + ipworking, true);
+							BMCommandBin.plugin.saveConfig();
 							target.kickPlayer("Your IP address has been banned!");
 							((Player) s).sendMessage(ChatColor.GREEN + "IP " + target.getAddress() + " has been banned!");
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.PlayerOffline);
+							((Player) s).sendMessage(BMCommandBin.plugin.PlayerOffline);
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
@@ -674,14 +674,14 @@ public class ModerationCommands implements CommandExecutor
 						String ip2 = target.getAddress().getAddress().getHostAddress().toString();
 						String ipworking = ip2.replace(".", "");
 						
-						CommandBin.plugin.getConfig().set("bannedips." + ipworking, true);
-						CommandBin.plugin.saveConfig();
+						BMCommandBin.plugin.getConfig().set("bannedips." + ipworking, true);
+						BMCommandBin.plugin.saveConfig();
 						target.kickPlayer("Your IP address has been banned!");
 						s.sendMessage(ChatColor.GREEN + "IP " + target.getAddress() + " has been banned!");
 					}
 					else
 					{
-						s.sendMessage(CommandBin.plugin.PlayerOffline);
+						s.sendMessage(BMCommandBin.plugin.PlayerOffline);
 					}
 				}
 			}
@@ -704,22 +704,22 @@ public class ModerationCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.unbanip"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.unbanip"))
 					{
-						CommandBin.plugin.getConfig().set("bannedips." + args[0], false);
+						BMCommandBin.plugin.getConfig().set("bannedips." + args[0], false);
 						((Player) s).sendMessage(ChatColor.GREEN + "IP " + args[0] + " unbanned!");
-						CommandBin.plugin.saveConfig();
+						BMCommandBin.plugin.saveConfig();
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 				else
 				{
-					CommandBin.plugin.getConfig().set("bannedips." + args[0], false);
+					BMCommandBin.plugin.getConfig().set("bannedips." + args[0], false);
 					s.sendMessage(ChatColor.GREEN + "IP \"" + args[0] + "\" unbanned!");
-					CommandBin.plugin.saveConfig();
+					BMCommandBin.plugin.saveConfig();
 				}
 			}
 		}

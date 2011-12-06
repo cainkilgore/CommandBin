@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -28,7 +28,7 @@ public class MobCommands implements CommandExecutor
 				}
 				else
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.mob"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.mob"))
 					{
 						try
 						{
@@ -49,7 +49,7 @@ public class MobCommands implements CommandExecutor
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 			}
@@ -71,7 +71,7 @@ public class MobCommands implements CommandExecutor
 			{
 				if(s instanceof Player)
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.killmobs"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.killmobs"))
 					{
 						((Player) s).getWorld().getLivingEntities().removeAll(null);
 						((Player) s).sendMessage(ChatColor.GREEN + "All living entities removed!");

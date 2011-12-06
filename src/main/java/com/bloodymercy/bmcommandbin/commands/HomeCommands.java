@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -20,7 +20,7 @@ public class HomeCommands implements CommandExecutor
 		{
 			if(l.equalsIgnoreCase("sethome"))
 			{
-				if(CommandBin.plugin.getConfig().getBoolean("settings.multihomesupport"))
+				if(BMCommandBin.plugin.getConfig().getBoolean("settings.multihomesupport"))
 				{
 					if(args.length < 1)
 					{
@@ -28,59 +28,59 @@ public class HomeCommands implements CommandExecutor
 					}
 					else
 					{
-						if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.home"))
+						if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.home"))
 						{
 							double x = ((Player) s).getLocation().getX();
 							double y = ((Player) s).getLocation().getY();
 							double z = ((Player) s).getLocation().getZ();
 							World world = ((Player) s).getWorld();
 							
-							CommandBin.plugin.getConfig().set(((Player) s).getName() + ".home." + args[0] + ".x", x);
-							CommandBin.plugin.getConfig().set(((Player) s).getName() + ".home." + args[0] + ".y", y);
-							CommandBin.plugin.getConfig().set(((Player) s).getName() + ".home." + args[0] + ".z", z);
-							CommandBin.plugin.getConfig().set(((Player) s).getName() + ".home." + args[0] + ".world", world.getName());
+							BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".home." + args[0] + ".x", x);
+							BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".home." + args[0] + ".y", y);
+							BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".home." + args[0] + ".z", z);
+							BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".home." + args[0] + ".world", world.getName());
 							
 							((Player) s).sendMessage(ChatColor.GREEN + "Your new home '" + args[0] + "' is set.");
 							((Player) s).sendMessage(ChatColor.YELLOW + "Type '/home " + args[0] + "' to teleport");
 							
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.saveConfig();
 							
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+							((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 						}
 					}
 				}
 				else
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.home"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.home"))
 					{
 						double x = ((Player) s).getLocation().getX();
 						double y = ((Player) s).getLocation().getY();
 						double z = ((Player) s).getLocation().getZ();
 						World world = ((Player) s).getWorld();
 						
-						CommandBin.plugin.getConfig().set(((Player) s).getName() + ".home.x", x);
-						CommandBin.plugin.getConfig().set(((Player) s).getName() + ".home.y", y);
-						CommandBin.plugin.getConfig().set(((Player) s).getName() + ".home.z", z);
-						CommandBin.plugin.getConfig().set(((Player) s).getName() + ".home.world", world.getName());
+						BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".home.x", x);
+						BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".home.y", y);
+						BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".home.z", z);
+						BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".home.world", world.getName());
 						
 						((Player) s).sendMessage(ChatColor.GREEN + "Your new home is set!");
 						((Player) s).sendMessage(ChatColor.YELLOW + "Type /home to teleport to it!");
 						
-						CommandBin.plugin.saveConfig();
+						BMCommandBin.plugin.saveConfig();
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 			}
 			
 			if(l.equalsIgnoreCase("home"))
 			{
-				if(CommandBin.plugin.getConfig().getBoolean("settings.multihomesupport"))
+				if(BMCommandBin.plugin.getConfig().getBoolean("settings.multihomesupport"))
 				{
 					if(args.length < 1)
 					{
@@ -88,17 +88,17 @@ public class HomeCommands implements CommandExecutor
 					}
 					else
 					{
-						if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.home"))
+						if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.home"))
 						{
-							if(CommandBin.plugin.getConfig().get(((Player) s).getName() + ".home") != null)
+							if(BMCommandBin.plugin.getConfig().get(((Player) s).getName() + ".home") != null)
 							{
-								if(CommandBin.plugin.getConfig().get(((Player) s).getName() + ".home." + args[0]) != null)
+								if(BMCommandBin.plugin.getConfig().get(((Player) s).getName() + ".home." + args[0]) != null)
 								{
 									
-									double x = CommandBin.plugin.getConfig().getDouble(((Player) s).getName() + ".home." + args[0] + ".x");
-									double y = CommandBin.plugin.getConfig().getDouble(((Player) s).getName() + ".home." + args[0] + ".y");
-									double z = CommandBin.plugin.getConfig().getDouble(((Player) s).getName() + ".home." + args[0] + ".z");
-									String world = (String) CommandBin.plugin.getConfig().get(((Player) s).getName() + ".home." + args[0] + ".world");
+									double x = BMCommandBin.plugin.getConfig().getDouble(((Player) s).getName() + ".home." + args[0] + ".x");
+									double y = BMCommandBin.plugin.getConfig().getDouble(((Player) s).getName() + ".home." + args[0] + ".y");
+									double z = BMCommandBin.plugin.getConfig().getDouble(((Player) s).getName() + ".home." + args[0] + ".z");
+									String world = (String) BMCommandBin.plugin.getConfig().get(((Player) s).getName() + ".home." + args[0] + ".world");
 									
 									((Player) s).teleport(new Location(Bukkit.getServer().getWorld(world), x, y, z));
 									((Player) s).sendMessage(ChatColor.GREEN + "Teleported to your home '" + args[0] + "' !");
@@ -115,20 +115,20 @@ public class HomeCommands implements CommandExecutor
 						}
 						else
 						{
-							((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+							((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 						}
 					}
 				}
 				else
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.home"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.home"))
 					{
-						if(CommandBin.plugin.getConfig().get(((Player) s).getName() + ".home") != null)
+						if(BMCommandBin.plugin.getConfig().get(((Player) s).getName() + ".home") != null)
 						{
-							double x = CommandBin.plugin.getConfig().getDouble(((Player) s).getName() + ".home.x");
-							double y = CommandBin.plugin.getConfig().getDouble(((Player) s).getName() + ".home.y");
-							double z = CommandBin.plugin.getConfig().getDouble(((Player) s).getName() + ".home.z");
-							String world = (String) CommandBin.plugin.getConfig().get(((Player) s).getName() + ".home.world");
+							double x = BMCommandBin.plugin.getConfig().getDouble(((Player) s).getName() + ".home.x");
+							double y = BMCommandBin.plugin.getConfig().getDouble(((Player) s).getName() + ".home.y");
+							double z = BMCommandBin.plugin.getConfig().getDouble(((Player) s).getName() + ".home.z");
+							String world = (String) BMCommandBin.plugin.getConfig().get(((Player) s).getName() + ".home.world");
 							
 							((Player) s).teleport(new Location(Bukkit.getServer().getWorld(world), x, y, z));
 							((Player) s).sendMessage(ChatColor.GREEN + "Teleported to your home!");
@@ -140,7 +140,7 @@ public class HomeCommands implements CommandExecutor
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 			}

@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -22,26 +22,26 @@ public class TorchBowCommands implements CommandExecutor {
 				}
 				else
 				{
-					if(CommandBin.plugin.pCheck(((Player) s), "Commandbin.general.torchbow"))
+					if(BMCommandBin.plugin.pCheck(((Player) s), "Commandbin.general.torchbow"))
 					{
 						if(args[0].equalsIgnoreCase("on"))
 						{
-							CommandBin.plugin.getConfig().set(((Player) s).getName() + ".torchbow", true);
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".torchbow", true);
+							BMCommandBin.plugin.saveConfig();
 							((Player) s).sendMessage(ChatColor.GREEN + "Torchbow has been enabled.");
 							((Player) s).sendMessage(ChatColor.GREEN + "Shoot with a bow as normal!");
 						}
 						
 						if(args[0].equalsIgnoreCase("off"))
 						{
-							CommandBin.plugin.getConfig().set(((Player) s).getName() + ".torchbow", false);
-							CommandBin.plugin.saveConfig();
+							BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".torchbow", false);
+							BMCommandBin.plugin.saveConfig();
 							((Player) s).sendMessage(ChatColor.GREEN + "Torchbow has been disabled.");
 						}
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 			}

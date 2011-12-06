@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -24,7 +24,7 @@ public class HelpCommands implements CommandExecutor
 				}
 				else
 				{
-					if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.help"))
+					if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.help"))
 					{
 						if(args[0].equalsIgnoreCase("1"))
 						{
@@ -116,7 +116,7 @@ public class HelpCommands implements CommandExecutor
 					}
 					else
 					{
-						((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+						((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 					}
 				}
 			}

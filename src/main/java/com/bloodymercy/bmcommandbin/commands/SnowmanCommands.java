@@ -1,6 +1,6 @@
 package com.bloodymercy.bmcommandbin.commands;
 
-import com.bloodymercy.bmcommandbin.CommandBin;
+import com.bloodymercy.bmcommandbin.BMCommandBin;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -17,29 +17,29 @@ public class SnowmanCommands implements CommandExecutor
 		{
 			if(l.equalsIgnoreCase("snowman"))
 			{
-				if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.snowman"))
+				if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.snowman"))
 				{
-					CommandBin.plugin.getConfig().set(((Player) s).getName() + ".snowman", true);
+					BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".snowman", true);
 					((Player) s).sendMessage(ChatColor.GREEN + "You are now Frosty The Snowman! Start walking!");
-					CommandBin.plugin.saveConfig();
+					BMCommandBin.plugin.saveConfig();
 				}
 				else
 				{
-					((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+					((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 				}
 			}
 			
 			if(l.equalsIgnoreCase("unsnowman"))
 			{
-				if(CommandBin.plugin.pCheck((Player) s, "CommandBin.general.snowman"))
+				if(BMCommandBin.plugin.pCheck((Player) s, "CommandBin.general.snowman"))
 				{
-					CommandBin.plugin.getConfig().set(((Player) s).getName() + ".snowman", false);
+					BMCommandBin.plugin.getConfig().set(((Player) s).getName() + ".snowman", false);
 					((Player) s).sendMessage(ChatColor.GREEN + "You are no longer Frosty The Snowman. :(");
-					CommandBin.plugin.saveConfig();
+					BMCommandBin.plugin.saveConfig();
 				}
 				else
 				{
-					((Player) s).sendMessage(CommandBin.plugin.NoPermission);
+					((Player) s).sendMessage(BMCommandBin.plugin.NoPermission);
 				}
 			}
 		}
