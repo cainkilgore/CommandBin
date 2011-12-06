@@ -58,6 +58,16 @@ public class CommandRegistration
 		
 		// Player Commands
 		CommandExecutor PlayerCommands = new PlayerCommands();
+                BMCommandBin.plugin.getCommand("afk").setExecutor(PlayerCommands);
+                BMCommandBin.plugin.getCommand("register").setExecutor(PlayerCommands);
+                BMCommandBin.plugin.getCommand("list").setExecutor(PlayerCommands);
+                BMCommandBin.plugin.getCommand("touch").setExecutor(PlayerCommands);
+                BMCommandBin.plugin.getCommand("fart").setExecutor(PlayerCommands);
+                BMCommandBin.plugin.getCommand("makesay").setExecutor(PlayerCommands);
+                BMCommandBin.plugin.getCommand("puke").setExecutor(PlayerCommands);
+                BMCommandBin.plugin.getCommand("cut").setExecutor(PlayerCommands);
+                BMCommandBin.plugin.getCommand("broadcast").setExecutor(PlayerCommands);
+                BMCommandBin.plugin.getCommand("slit").setExecutor(PlayerCommands);
 		BMCommandBin.plugin.getCommand("shoot").setExecutor(PlayerCommands);
 		BMCommandBin.plugin.getCommand("strike").setExecutor(PlayerCommands);
 		BMCommandBin.plugin.getCommand("heal").setExecutor(PlayerCommands);
