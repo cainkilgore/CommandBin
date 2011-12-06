@@ -179,13 +179,14 @@ public class PListener extends PlayerListener {
 			e.getPlayer().sendMessage("your ip is banned ;O");
 		}
 		
-		if(BMCommandBin.plugin.pCheck(e.getPlayer(), "CommandBin.other.strikeonjoin"))
-		{
-			if(BMCommandBin.plugin.getConfig().getBoolean("settings.lightningonjoin"))
-			{
-				e.getPlayer().getWorld().strikeLightningEffect(e.getPlayer().getLocation());
-			}
-		}
+                // HOLY CRAP DIE SETTING DIE
+		//if(BMCommandBin.plugin.pCheck(e.getPlayer(), "CommandBin.other.strikeonjoin"))
+		//{
+		//	if(BMCommandBin.plugin.getConfig().getBoolean("settings.lightningonjoin"))
+		//	{
+		//		e.getPlayer().getWorld().strikeLightningEffect(e.getPlayer().getLocation());
+		//	}
+		//}
 		
 		return;
 	}
