@@ -1,6 +1,6 @@
-name: CommandBin
-version: 1.33
-author: CainFoool
+name: BMCommandBin
+version: 1.35
+author: SmilingDevil
 main: com.bloodymercy.bmcommandbin.BMCommandBin
 commands:
    showrecent:
