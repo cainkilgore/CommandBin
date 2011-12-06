@@ -1,7 +1,7 @@
 name: CommandBin
 version: 1.33
 author: CainFoool
-main: main.java.com.bloodymercy.bmcommandbin.BMCommandBin
+main: com.bloodymercy.bmcommandbin.BMCommandBin
 commands:
    showrecent:
     description: Shows recent updates
