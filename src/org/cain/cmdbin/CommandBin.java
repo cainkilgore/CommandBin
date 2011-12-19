@@ -66,11 +66,7 @@ public class CommandBin extends JavaPlugin{
 		ConsoleMessage("Successfully disabled CommandBin!");
 	}
 	public boolean pCheck(Player s, String node) {
-		if(getServer().getPluginManager().getPlugin("Permissions") != null) {
-			return permissionHandler.has(s, node);
-		} else {
 			return s.hasPermission(node);
-		}
 	}
 	
 	public void EventReg() {
