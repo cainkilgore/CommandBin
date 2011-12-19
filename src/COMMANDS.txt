@@ -1,0 +1,54 @@
+/godon - Enable god mode - CommandBin.godon
+/godoff - Disable god mode - CommandBin.godoff
+/cmdbin - CommandBin info - CommandBin.cmdbin
+/ban - Ban a player - CommandBin.ban
+/unban - Unban a player - CommandBin.unban
+/fsay - Fake say a message - CommandBin.fsay
+/freeze - Freeze a player - CommandBin.freeze
+/unfreeze - Unfreeze a player - CommandBin.unfreeze
+/survival - Play in survival mode - CommandBin.survival
+/creative - Play in creative mode - CommandBin.creative
+/handicap - Disable usage of commands - CommandBin.handicap
+/unhandicap - Enable usage of commands - CommandBin.unhandicap
+/home - Teleport to your home - CommandBin.home
+/sethome - Set your home - CommandBin.sethome
+/join - Fake join message - CommandBin.join
+/leave - Fake leave message - CommandBin.leave
+/kick - Kick a player - CommandBin.kick
+/msg - Message a player - CommandBin.msg
+/mute - Mute a player - CommandBin.mute
+/unmute - Unmute a player - CommandBin.unmute
+/nick - Change your nickname - CommandBin.nick
+/paid - Check to see if a user paid - CommandBin.paid
+/ping - Pong!
+/shoot - Shoot a player in the air - CommandBin.shoot
+/strike - Strike a player - CommandBin.strike
+/heal - Heal a player - CommandBin.heal
+/feed - Feed a player - CommandBin.feed
+/explode - Make a player explode - CommandBin.explode
+/light - Light a player on fire - CommandBin.light
+/slap - Slap a player - CommandBin.slap
+/clear - Clear your inventory - CommandBin.clear
+/kill - Kill a player - CommandBin.kill
+/me - Simple me message - CommandBin.me
+/loc - Get your location - CommandBin.loc
+/say - Say a message - CommandBin.say
+/mob - Spawn a mob - CommandBin.mob
+/tp - Teleport to a player - CommandBin.tp
+/tphere - Tele a player to you - CommandBin.tphere
+/tp2p - Tele one player to another - CommandBin.tp2p
+/spawn - Tele to spawn - CommandBin.spawn
+/setspawn - Set your world spawn - CommandBin.setspawn
+/tpall - Tele all players to you - CommandBin.tpall
+/put - Put a player where your looking - CommandBin.put
+/time - Change your world time - CommandBin.time
+/mytime - Change your player time - CommandBin.mytime
+/warp - Tele to a warp - CommandBin.warp
+/setwarp - Set a warp - CommandBin.setwarp
+/delwarp - Del a warp - CommandBin.delwarp
+/weather - Change the weather - CommandBin.weather
+/who - Information on a player - CommandBin.who
+/createworld - Create a world - CommandBin.createworld
+/tpworld - Teleport to a world - CommandBin.tpworld
+/unloadworld - Unload a world - CommandBin.unloadworld
+/xp - Change a player's XP - CommandBin.xp
