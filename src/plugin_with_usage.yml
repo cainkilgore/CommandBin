@@ -1,0 +1,224 @@
+name: CommandBin
+version: 1.40
+author: CainFoool
+main: org.cain.cmdbin.CommandBin
+commands:
+   tp:
+       description: 'Teleport to a player'
+       usage: /tp <player>
+       
+   tphere:
+       description: 'Teleport a player to you'
+       usage: /tphere <player>
+       
+   setspawn:
+       description: 'Set the worlds spawn location'
+       usage: /setspawn 
+       
+   spawn:
+       description: 'Teleport to the worlds spawn'
+       usage: /spawn
+       
+   tp2p:
+       description: 'Teleport a player to another player'
+       usage: /tp2p <player1> <player2> 
+       
+   tpall:
+       description: 'Teleport everyone to you'
+       usage: /tpall
+       
+   tpworld:
+       description: 'Teleport to a world'
+       usage: /<command> <world>
+       
+   createworld:
+       description: 'Create a world'
+       usage: /<command> <world>
+       
+   shutdown:
+       description: 'Shut down the server'
+       usage: /<command>
+       
+   unloadworld:
+       description: 'Unload a world'
+       usage: /<command> <world>
+       
+   cmdbin:
+       description: 'General stuff'
+       usage: /<command>
+       
+   join:
+       description: 'Fake Join Message'
+       usage: /<command>
+       
+   leave:
+       description: 'Fake Leave Message'
+       usage: /<command>
+       
+   ping:
+       description: 'Pong'
+       usage: /<command>
+       
+   creative:
+       description: 'Enable Creativity'
+       usage: /<command> <player>
+       
+   survival:
+       description: 'Enable the Survival'
+       usage: /<command> <player>
+       
+   shoot:
+       description: 'Shoot a player into the air'
+       usage: /<command> <player>
+       
+   strike:
+       description: 'Strike a player'
+       usage: /<command> <player>
+       
+   time:
+       description: 'Set the time of the world'
+       usage: /<command> <time/day>
+       
+   weather:
+       description: 'Make it rain or sun'
+       usage: /weather <sun/rain>
+       
+   kick:
+       description: 'Kick a player'
+       usage: /<command> <player>
+       
+   ban:
+       description: 'Ban a player'
+       usage: /<command> <player>
+       
+   unban:
+       description: 'Unban a player'
+       usage: /<command> <player>
+       
+   heal:
+       description: 'Heal a player'
+       usage: /<command> <player>
+       
+   feed:
+       description: 'Feed a player'
+       usage: /<command> <player>
+       
+   freeze:
+       description: 'Freeze a player'
+       usage: /<command> <player>
+       
+   unfreeze:
+       description: 'Unfreeze a player'
+       usage: /<command> <player>
+       
+   godon:
+       description: 'Set yourself to god enabled or disabled'
+       usage: /godon
+       
+   godoff:
+       description: 'Disable god mode'
+       usage: /godoff
+       
+   light:
+       description: 'Set somebody on fire'
+       usage: /<command> <player> <time>
+       
+   mute:
+       description: 'Mute a player'
+       usage: /<command> <player>
+       
+   unmute:
+       description: 'Unmute a Player'
+       usage: /<command> <player>
+       
+   slap:
+       description: 'Slap a player'
+       usage: /<command> <player>
+       
+   clear:
+       description: 'Clear your inventory'
+       usage: /<command> <player>
+       
+   who:
+       description: 'Details of a player'
+       usage: /<command> <player>
+       
+   msg:
+       description: 'Message a player'
+       usage: /<command> <message>
+       
+   sethome:
+       description: 'Set your home'
+       usage: /<command>
+       
+   home:
+       description: 'Teleport to your home'
+       usage: /<command>
+   setwarp:
+       description: 'Create a warp'
+       usage: /<command> <name>
+       
+   warp:
+       description: 'Teleport to a warp'
+       usage: /<command> <name>
+       
+   nick:
+       description: 'Set somebodys nickname'
+       usage: /<command> <name1> <name2>
+       
+   xp:
+       description: 'Set somebodys experience'
+       usage: /<command> <name> <xp>
+       
+   delwarp:
+       description: 'Delete a warp'
+       usage: /<command> <name>
+       
+   kill:
+       description: 'Kill a player'
+       usage: /<command> <player>
+       
+   mytime:
+       description: 'Set your time'
+       usage: /<command> <day/night>
+       
+   paid:
+       description: 'Check to see if a user paid legit'
+       usage: /<command> <player>
+       
+   put:
+       description: 'Put a player where you are looking'
+       usage: /<command> <player>
+       
+   me:
+       description: 'Simple me'
+       usage: /<command> <message>
+       
+   say:
+       description: 'Say a message'
+       usage: /<command> <message>
+       
+   loc:
+       description: 'Get your current location'
+       usage: /<command>
+       
+   fsay:
+       description: 'Make an online player say something'
+       usage: /<command> <player> <message> 
+       
+   handicap:
+       description: 'Disable a player from using commands'
+       usage: /handicap <player>
+   
+   unhandicap:
+       description: 'Reenable a player to use commands'
+       usage: /unhandicap <player> 
+       
+   explode:
+       description: 'Create an explosion at a players location'
+       usage: /explode <player>
+       
+   mob:
+       description: 'Spawn a mob'
+       usage: /mob <mobname>
+       

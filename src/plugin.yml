@@ -1,0 +1,170 @@
+name: CommandBin
+version: 1.40
+author: CainFoool
+main: org.cain.cmdbin.CommandBin
+commands:
+   tp:
+       description: 'Teleport to a player'
+       
+   tphere:
+       description: 'Teleport a player to you'
+       
+   setspawn:
+       description: 'Set the worlds spawn location'
+       
+   spawn:
+       description: 'Teleport to the worlds spawn'
+       
+   tp2p:
+       description: 'Teleport a player to another player'
+       
+   tpall:
+       description: 'Teleport everyone to you'
+       
+   tpworld:
+       description: 'Teleport to a world'
+       
+   createworld:
+       description: 'Create a world'
+       
+   shutdown:
+       description: 'Shut down the server'
+       
+   unloadworld:
+       description: 'Unload a world'
+       
+   cmdbin:
+       description: 'General stuff'
+       
+   join:
+       description: 'Fake Join Message'
+       
+   leave:
+       description: 'Fake Leave Message'
+       
+   ping:
+       description: 'Pong'
+       
+   creative:
+       description: 'Enable Creativity'
+       
+   survival:
+       description: 'Enable the Survival'
+       
+   shoot:
+       description: 'Shoot a player into the air'
+       
+   strike:
+       description: 'Strike a player'
+       
+   time:
+       description: 'Set the time of the world'
+       
+   weather:
+       description: 'Make it rain or sun'
+       
+   kick:
+       description: 'Kick a player'
+       
+   ban:
+       description: 'Ban a player'
+       
+   unban:
+       description: 'Unban a player'
+       
+   heal:
+       description: 'Heal a player'
+       
+   feed:
+       description: 'Feed a player'
+       
+   freeze:
+       description: 'Freeze a player'
+       
+   unfreeze:
+       description: 'Unfreeze a player'
+       
+   godon:
+       description: 'Set yourself to god enabled or disabled'
+       
+   godoff:
+       description: 'Disable god mode'
+       
+   light:
+       description: 'Set somebody on fire'
+       
+   mute:
+       description: 'Mute a player'
+       
+   unmute:
+       description: 'Unmute a Player'
+       
+   slap:
+       description: 'Slap a player'
+       
+   clear:
+       description: 'Clear your inventory'
+       
+   who:
+       description: 'Details of a player'
+       
+   msg:
+       description: 'Message a player'
+       
+   sethome:
+       description: 'Set your home'
+       
+   home:
+       description: 'Teleport to your home'
+       
+   setwarp:
+       description: 'Create a warp'
+       
+   warp:
+       description: 'Teleport to a warp'
+       
+   nick:
+       description: 'Set somebodys nickname'
+       
+   xp:
+       description: 'Set somebodys experience'
+       
+   delwarp:
+       description: 'Delete a warp'
+       
+   kill:
+       description: 'Kill a player'
+       
+   mytime:
+       description: 'Set your time'
+       
+   paid:
+       description: 'Check to see if a user paid legit'
+       
+   put:
+       description: 'Put a player where you are looking'
+       
+   me:
+       description: 'Simple me'
+       
+   say:
+       description: 'Say a message'
+       
+   loc:
+       description: 'Get your current location'
+       
+   fsay:
+       description: 'Make an online player say something'
+       
+   handicap:
+       description: 'Disable a player from using commands'
+   
+   unhandicap:
+       description: 'Reenable a player to use commands'
+       
+   explode:
+       description: 'Create an explosion at a players location'
+       
+   mob:
+       description: 'Spawn a mob'
+       
