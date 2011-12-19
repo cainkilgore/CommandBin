@@ -1,5 +1,8 @@
 package org.cain.cmdbin.listeners;
 
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.block.BlockFace;
 import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerListener;
@@ -19,6 +22,13 @@ public class CMDBinPListener extends PlayerListener {
 	public void onPlayerMove(PlayerMoveEvent e) {
 		if(CommandBin.cfg.getBoolean("players." + e.getPlayer().getName() + ".frozen")) {
 			e.setCancelled(true);
+		}
+		
+		if(CommandBin.cfg.getBoolean("settings.landmines")) {
+			Block bl = e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN, 1);
+			if(bl.getType() == Material.LAPIS_BLOCK) {
+				e.getPlayer().getWorld().createExplosion(e.getPlayer().getLocation(), 3);
+			}
 		}
 		return;
 	}
