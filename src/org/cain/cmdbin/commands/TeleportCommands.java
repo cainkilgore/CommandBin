@@ -1,5 +1,8 @@
 package org.cain.cmdbin.commands;
 
+import static org.bukkit.Bukkit.getPlayer;
+
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.BlockFace;
 import org.bukkit.command.Command;
@@ -19,7 +22,7 @@ public class TeleportCommands extends CommandBin {
 			} else {
 				if(s instanceof Player) {
 					Player p = (Player) s;
-					Player target = getServer().getPlayer(args[0]);
+					Player target = getPlayer(args[0]);
 					if(pCheck(p, perm)) {
 						if(target != null) {
 							p.teleport(target.getLocation());
@@ -42,7 +45,7 @@ public class TeleportCommands extends CommandBin {
 			} else {
 				if(s instanceof Player) {
 					Player p = (Player) s;
-					Player target = getServer().getPlayer(args[0]);
+					Player target = getPlayer(args[0]);
 					if(pCheck(p, perm)) {
 						if(target != null) {
 							target.teleport(p.getLocation());
@@ -63,8 +66,8 @@ public class TeleportCommands extends CommandBin {
 			if(args.length < 2) {
 				return false;
 			} else {
-				Player target = getServer().getPlayer(args[0]);
-				Player target2 = getServer().getPlayer(args[1]);
+				Player target = getPlayer(args[0]);
+				Player target2 = getPlayer(args[1]);
 				if(s instanceof Player) {
 					Player p = (Player) s;
 					if(pCheck(p, perm)) {
@@ -101,7 +104,7 @@ public class TeleportCommands extends CommandBin {
 				if(args.length < 1) {
 					return false;
 				} else {
-					Player target = getServer().getPlayer(args[0]);
+					Player target = getPlayer(args[0]);
 					if(target != null) {
 						target.teleport(target.getWorld().getSpawnLocation());
 						ConsoleMessage("Teleported player to spawn!");
@@ -133,7 +136,7 @@ public class TeleportCommands extends CommandBin {
 			if(s instanceof Player) {
 				Player p = (Player) s;
 				if(pCheck(p, perm)) {
-					for(Player po : getServer().getOnlinePlayers()) {
+					for(Player po : Bukkit.getServer().getOnlinePlayers()) {
 						po.teleport(p.getLocation());
 					}
 					PlayerMessage(p, "Teleported all players to you.");
@@ -149,7 +152,7 @@ public class TeleportCommands extends CommandBin {
 			} else {
 				if(s instanceof Player) {
 					Player p = (Player) s;
-					Player target = getServer().getPlayer(args[0]);
+					Player target = getPlayer(args[0]);
 					if(pCheck(p, perm)) {
 						if(target != null) {
 							Location loc = p.getTargetBlock(null, 0).getLocation()

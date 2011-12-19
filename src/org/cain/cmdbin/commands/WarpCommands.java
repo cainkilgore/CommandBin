@@ -11,6 +11,8 @@ import org.cain.cmdbin.CommandBin;
 
 public class WarpCommands extends CommandBin {
 	
+	CommandBin cmdbin;
+	
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args)
 	{
 		String perm = "CommandBin." + l.toLowerCase();
@@ -32,13 +34,13 @@ public class WarpCommands extends CommandBin {
 						double z = ((Player) s).getLocation().getZ();
 						World world = ((Player) s).getWorld();
 						
-						if(!((cfg.getString("settings.warps." + args[0])) != null))
+						if(!((CommandBin.cfg.getString("settings.warps." + args[0])) != null))
 						{
-							cfg.set("settings.warps." + args[0] + ".x", x);
-							cfg.set("settings.warps." + args[0] + ".y", y);
-							cfg.set("settings.warps." + args[0] + ".z", z);
-							cfg.set("settings.warps." + args[0] + ".world", world.getName());
-							saveConfig();
+							CommandBin.cfg.set("settings.warps." + args[0] + ".x", x);
+							CommandBin.cfg.set("settings.warps." + args[0] + ".y", y);
+							CommandBin.cfg.set("settings.warps." + args[0] + ".z", z);
+							CommandBin.cfg.set("settings.warps." + args[0] + ".world", world.getName());
+							CommandBin.cmdbin.saveConfig();
 							((Player) s).sendMessage(ChatColor.GREEN + "Warp '" + args[0] + "' created.");
 							((Player) s).sendMessage(ChatColor.GREEN + "Use /warp " + args[0] + " to teleport!");
 						}
@@ -98,7 +100,7 @@ public class WarpCommands extends CommandBin {
 					{
 						if(!(cfg.get("settings.warps." + args[0]) == null))
 						{
-							cfg.set("settings.warps." + args[0], null);
+							CommandBin.cfg.set("settings.warps." + args[0], null);
 							((Player) s).sendMessage(ChatColor.GREEN + "Warp '" + args[0] + "' removed!");
 							saveConfig();
 						}

@@ -57,7 +57,7 @@ public class CommandBin extends JavaPlugin{
 		setupPermissions();
 		ConsoleMessage("Successfully enabled CommandBin!");
 		RegisterCommands(true);
-		cfg = this.getConfig();
+		cfg = getConfig();
 		cfg.addDefault("settings.landmines", false);
 		saveConfig();
 	}

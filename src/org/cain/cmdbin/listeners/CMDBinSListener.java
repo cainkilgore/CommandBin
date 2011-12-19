@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.event.spout.SpoutCraftEnableEvent;
 import org.getspout.spoutapi.event.spout.SpoutListener;
 import org.getspout.spoutapi.player.SpoutPlayer;
@@ -14,6 +15,7 @@ public class CMDBinSListener extends SpoutListener {
 		if(CapeCheck(e.getPlayer())) {
 			e.getPlayer().setCape("http://dl.dropbox.com/u/7186172/cape/Bukkit.png");
 			// Maybe? e.getPlayer().setTitle(ChatColor.RED + e.getPlayer().getName());
+			SpoutManager.getSkyManager().setMoonSizePercent(e.getPlayer(), 500);
 		}
 		return;
 	}
