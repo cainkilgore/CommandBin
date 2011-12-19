@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/home/cain/Desktop/bukkit-1.0.0-R1-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="/home/cain/Desktop/Permissions.jar"/>
+	<classpathentry kind="lib" path="/home/cain/Desktop/SpoutPluginAPI.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

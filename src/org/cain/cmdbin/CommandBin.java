@@ -37,6 +37,7 @@ import org.cain.cmdbin.commands.WorldCommands;
 import org.cain.cmdbin.commands.XPCommands;
 import org.cain.cmdbin.listeners.CMDBinEListener;
 import org.cain.cmdbin.listeners.CMDBinPListener;
+import org.cain.cmdbin.listeners.CMDBinSListener;
 
 import com.nijiko.permissions.PermissionHandler;
 import com.nijikokun.bukkit.Permissions.Permissions;
@@ -77,6 +78,9 @@ public class CommandBin extends JavaPlugin{
 		re(Type.ENTITY_DAMAGE, new CMDBinEListener());
 		re(Type.PLAYER_CHAT, new CMDBinPListener());
 		re(Type.PLAYER_COMMAND_PREPROCESS, new CMDBinPListener());
+		if(getServer().getPluginManager().getPlugin("Spout") != null) {
+			re(Type.CUSTOM_EVENT, new CMDBinSListener());
+		}
 	}
 
 	public void re(Type type, Listener d) {
