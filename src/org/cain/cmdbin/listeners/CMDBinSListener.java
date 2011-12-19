@@ -20,7 +20,7 @@ public class CMDBinSListener extends SpoutListener {
 	
 	public boolean CapeCheck (SpoutPlayer p) {
 			try {
-				URL url = new URL("http://dl.dropbox.com/u/7186172/cape/Capes.txt");
+				URL url = new URL("http://blockout.co.uk/cape/capes.txt");
 				BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
 				String strLine;
 				while((strLine = br.readLine()) != null) {
