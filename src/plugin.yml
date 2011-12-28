@@ -210,6 +210,10 @@ commands:
        description: 'Create an explosion at a players location'
        usage: /explode <player>
        
+   m:
+       description: 'Same features of msg'
+       usage: /m <player> <message>
+       
    mob:
        description: 'Spawn a mob'
        usage: /mob <creature>

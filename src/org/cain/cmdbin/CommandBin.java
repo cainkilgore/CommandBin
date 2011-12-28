@@ -144,6 +144,7 @@ public class CommandBin extends JavaPlugin{
 			registerCommand("leave", jal);
 			registerCommand("kick", kck);
 			registerCommand("msg", msg);
+			registerCommand("m", msg);
 			registerCommand("mute", mut);
 			registerCommand("unmute", mut);
 			registerCommand("nick", nck);

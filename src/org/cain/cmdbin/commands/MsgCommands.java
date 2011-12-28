@@ -14,7 +14,7 @@ public class MsgCommands extends CommandBin {
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args) {
 		String perm = "CommandBin." + l.toLowerCase();
 		
-		if(l.equalsIgnoreCase("msg")) { 
+		if(l.equalsIgnoreCase("msg") || l.equalsIgnoreCase("m")) { 
 			if(args.length < 2) {
 				return false;
 			} else {
