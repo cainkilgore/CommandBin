@@ -334,9 +334,6 @@ public class PlayerCommands extends CommandBin {
 		if(s instanceof Player) {
 			Player p = (Player) s;
 			if(l.equalsIgnoreCase("loc")) {
-				if(args.length < 1) {
-					return false;
-				} else {
 					double x = p.getLocation().getX();
 					double y = p.getLocation().getY();
 					double z = p.getLocation().getZ();
@@ -348,7 +345,6 @@ public class PlayerCommands extends CommandBin {
 					} else {
 						PlayerMessage(p, NULL_PERMISSION);
 					}
-				}
 			}
 		} else {
 			ConsoleMessage("You can't check your location in-game!");

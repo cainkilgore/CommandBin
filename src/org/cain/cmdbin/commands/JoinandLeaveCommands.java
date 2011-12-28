@@ -16,7 +16,7 @@ public class JoinandLeaveCommands extends CommandBin {
 				return false;
 			} else {
 				StringBuilder x = new StringBuilder();
-				for(int i = 1; i < args.length; i++) {
+				for(int i = 0; i < args.length; i++) {
 					x.append(args[i] + " ");
 				}
 				if(s instanceof Player) {
@@ -37,7 +37,7 @@ public class JoinandLeaveCommands extends CommandBin {
 				return false;
 			} else {
 				StringBuilder x = new StringBuilder();
-				for(int i = 1; i < args.length; i++) {
+				for(int i = 0; i < args.length; i++) {
 					x.append(args[i] + " ");
 				}
 				if(s instanceof Player) {

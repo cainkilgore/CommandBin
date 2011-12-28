@@ -5,9 +5,11 @@ main: org.cain.cmdbin.CommandBin
 commands:
    tp:
        description: 'Teleport to a player'
+       usage: /tp <player>
        
    tphere:
        description: 'Teleport a player to you'
+       usage: /tphere <player>
        
    setspawn:
        description: 'Set the worlds spawn location'
@@ -17,72 +19,91 @@ commands:
        
    tp2p:
        description: 'Teleport a player to another player'
+       usage: /tp2p <player> <target>
        
    tpall:
        description: 'Teleport everyone to you'
        
    tpworld:
        description: 'Teleport to a world'
+       usage: /tpworld <world>
        
    createworld:
        description: 'Create a world'
+       usage: /createworld <world>
        
    shutdown:
        description: 'Shut down the server'
        
    unloadworld:
        description: 'Unload a world'
+       usage: /unloadworld <world>
        
    cmdbin:
        description: 'General stuff'
        
    join:
        description: 'Fake Join Message'
+       usage: /join <message>
        
    leave:
        description: 'Fake Leave Message'
+       usage: /leave <message>
        
    ping:
        description: 'Pong'
        
    creative:
        description: 'Enable Creativity'
+       usage: /creative <player>
        
    survival:
        description: 'Enable the Survival'
+       usage: /survival <player>
        
    shoot:
        description: 'Shoot a player into the air'
+       usage: /shoot <player>
        
    strike:
        description: 'Strike a player'
+       usage: /strike <player>
        
    time:
        description: 'Set the time of the world'
+       usage: /time <day/night>
        
    weather:
        description: 'Make it rain or sun'
+       usage: /weather <sun/rain>
        
    kick:
        description: 'Kick a player'
+       usage: /kick <player> <reason>
        
    ban:
        description: 'Ban a player'
+       usage: /ban <player> <reason>
        
    unban:
        description: 'Unban a player'
+       usage: /unban <player>
        
    heal:
        description: 'Heal a player'
+       usage: /heal <player>
        
    feed:
        description: 'Feed a player'
+       usage: /feed <player>
        
    freeze:
        description: 'Freeze a player'
+       usage: /freeze <player>
        
    unfreeze:
        description: 'Unfreeze a player'
+       usage: /unfreeze <player>
        
    godon:
        description: 'Set yourself to god enabled or disabled'
@@ -92,79 +113,103 @@ commands:
        
    light:
        description: 'Set somebody on fire'
+       usage: /light <player> <time>
        
    mute:
        description: 'Mute a player'
+       usage: /mute <player>
        
    unmute:
        description: 'Unmute a Player'
+       usage: /unmute <player>
        
    slap:
        description: 'Slap a player'
+       usage: /slap <player>
        
    clear:
        description: 'Clear your inventory'
+       usage: /clear <player>
        
    who:
        description: 'Details of a player'
+       usage: /who <player>
        
    msg:
        description: 'Message a player'
+       usage: /msg <player> <message>
        
    sethome:
        description: 'Set your home'
+       usage: /sethome <home>
        
    home:
        description: 'Teleport to your home'
+       usage: /home <home>
        
    setwarp:
        description: 'Create a warp'
+       usage: /setwarp <warp>
        
    warp:
        description: 'Teleport to a warp'
+       usage: /warp <warp>
        
    nick:
        description: 'Set somebodys nickname'
+       usage: /nick <player> <nickname>
        
    xp:
        description: 'Set somebodys experience'
+       usage: /xp <player> <experience>
        
    delwarp:
        description: 'Delete a warp'
+       usage: /delwarp <warp>
        
    kill:
        description: 'Kill a player'
+       usage: /kill <player>
        
    mytime:
        description: 'Set your time'
+       usage: /mytime <day/night/reset>
        
    paid:
        description: 'Check to see if a user paid legit'
+       usage: /paid <player>
        
    put:
        description: 'Put a player where you are looking'
+       usage: /put <player>
        
    me:
        description: 'Simple me'
+       usage: /me <message>
        
    say:
        description: 'Say a message'
+       usage: /say <message>
        
    loc:
        description: 'Get your current location'
        
    fsay:
        description: 'Make an online player say something'
+       usage: /fsay <player> <message>
        
    handicap:
        description: 'Disable a player from using commands'
+       usage: /handicap <player>
    
    unhandicap:
        description: 'Reenable a player to use commands'
+       usage: /unhandicap <player>
        
    explode:
        description: 'Create an explosion at a players location'
+       usage: /explode <player>
        
    mob:
        description: 'Spawn a mob'
-       
+       usage: /mob <creature>

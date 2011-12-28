@@ -28,6 +28,7 @@ public class FreezeCommands extends CommandBin {
 							cfg.set("players." + target.getName() + ".frozen", true);
 							PlayerMessage(p, target.getName() + " has been frozen!");
 							PlayerMessage(p, "/unfreeze [" + target.getName() + "] to unfreeze him!");
+							CommandBin.cmdbin.saveConfig();
 						} else {
 							PlayerMessage(p, PLAYER_OFFLINE);
 						}
@@ -56,7 +57,8 @@ public class FreezeCommands extends CommandBin {
 					if(pCheck(p, perm)) {
 						Player target = getPlayer(args[0]);
 						if(target != null) {
-							cfg.set("players." + p.getName() + ".frozen", false);
+							cfg.set("players." + target.getName() + ".frozen", false);
+							CommandBin.cmdbin.saveConfig();
 							PlayerMessage(p, target.getName() + " has been unfrozen!");
 						} else {
 							PlayerMessage(p, PLAYER_OFFLINE);

@@ -1,5 +1,6 @@
 package org.cain.cmdbin.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -7,6 +8,8 @@ import org.bukkit.entity.Player;
 import org.cain.cmdbin.CommandBin;
 
 public class AdminCommands extends CommandBin {
+	
+	CommandBin cmdbin;
 
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args) {
 		String perm = "CommandBin." + l.toLowerCase();
@@ -27,7 +30,7 @@ public class AdminCommands extends CommandBin {
 		if(l.equalsIgnoreCase("cmdbin")) {
 			if(args.length < 1) {
 				s.sendMessage(ChatColor.GREEN + "- CommandBin by CainFoool");
-				s.sendMessage(ChatColor.RED + "- Version v" + getDescription().getVersion());
+				s.sendMessage(ChatColor.RED + "- Version v" + CommandBin.cmdbin.getDescription().getVersion());
 			} else {
 				if(args[0].equalsIgnoreCase("reload")) {
 					if(s instanceof Player) {
@@ -50,7 +53,7 @@ public class AdminCommands extends CommandBin {
 	
 	public void shutdownServer() {
 			Broadcast("Shutting down server!");
-			getServer().shutdown();
+			Bukkit.getServer().shutdown();
 	}
 
 }

@@ -17,7 +17,7 @@ public class SpawnMobCommands extends CommandBin {
 			} else {
 				if(s instanceof Player) {
 					Player p = (Player) s;
-					CreatureType mob = CreatureType.valueOf(args[0].toLowerCase());
+					CreatureType mob = CreatureType.valueOf(args[0].toUpperCase());
 					if(pCheck(p, perm)) {
 						if(mob != null) {
 							p.getWorld().spawnCreature(p.getTargetBlock(null, 0).getLocation(), mob);

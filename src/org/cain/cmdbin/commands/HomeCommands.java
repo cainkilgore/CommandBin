@@ -17,7 +17,7 @@ public class HomeCommands extends CommandBin {
 			if(l.equalsIgnoreCase("sethome")) {
 				if(cfg.getBoolean("settings.multihomesupport")) {
 					if(args.length < 1) {
-						((Player) s).sendMessage("/" + l.toString() + " [home-name]");
+						return false;
 					} else {
 						if(pCheck((Player) s, perm)) {
 							double x = ((Player) s).getLocation().getX();
@@ -57,7 +57,7 @@ public class HomeCommands extends CommandBin {
 			if(l.equalsIgnoreCase("home")) {
 				if(cfg.getBoolean("settings.multihomesupport")) {
 					if(args.length < 1) {
-						((Player) s).sendMessage("/" + l.toString() + " [home-name]");
+						return false;
 					} else {
 						if(pCheck((Player) s, perm)) {
 							if(cfg.get(((Player) s).getName() + ".home") != null) {

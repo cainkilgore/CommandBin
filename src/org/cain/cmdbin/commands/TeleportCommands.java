@@ -159,9 +159,10 @@ public class TeleportCommands extends CommandBin {
 									.getBlock().getRelative(BlockFace.UP, 2).getLocation();
 							target.teleport(loc);
 							PlayerMessage(p, "Teleported player to Target Block");
+						} else {
 							PlayerMessage(p, PLAYER_OFFLINE);
-						}
-					} else {
+					}
+					}else {
 						PlayerMessage(p, NULL_PERMISSION);
 					}
 				} else {
