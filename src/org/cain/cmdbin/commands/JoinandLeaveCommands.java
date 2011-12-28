@@ -52,7 +52,7 @@ public class JoinandLeaveCommands extends CommandBin {
 				}
 			}
 		}
-		return false;
+		return true;
 		
 	}
 

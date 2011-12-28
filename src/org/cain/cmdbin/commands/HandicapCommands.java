@@ -74,6 +74,6 @@ public class HandicapCommands extends CommandBin {
 				}
 			}
 		}
-		return false;
+		return true;
 	}
 }

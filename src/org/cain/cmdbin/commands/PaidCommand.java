@@ -32,7 +32,7 @@ public class PaidCommand extends CommandBin {
 				}
 			}
 		}
-		return false;
+		return true;
 	}
 	
 	public void hasPaid(CommandSender p, String user)

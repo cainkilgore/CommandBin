@@ -11,7 +11,9 @@ public class TimeCommands extends CommandBin {
 		String perm = "CommandBin." + l.toLowerCase();
 		if(l.equalsIgnoreCase("time")) {
 			if(args.length < 1) {
-				return false;
+				if(s instanceof Player) {
+					PlayerMessage((Player) s, "Current time: " + ((Player) s).getWorld().getTime());
+				}
 			} else {
 				if(s instanceof Player) {
 					Player p = (Player) s;
@@ -54,6 +56,6 @@ public class TimeCommands extends CommandBin {
 		}
 		
 		
-		return false;
+		return true;
 	}
 }

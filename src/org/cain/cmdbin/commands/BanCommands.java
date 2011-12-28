@@ -78,6 +78,6 @@ public class BanCommands extends CommandBin {
 				}
 			}
 		}
-		return false;
+		return true;
 	}
 }

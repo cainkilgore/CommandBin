@@ -77,7 +77,7 @@ public class FreezeCommands extends CommandBin {
 				}
 			}
 		}
-		return false;
+		return true;
 	}
 
 }

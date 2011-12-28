@@ -24,13 +24,15 @@ public class MsgCommands extends CommandBin {
 				}
 				if(s instanceof Player) {
 					Player p = (Player) s;
-					String MSGFRM = ChatColor.GREEN + "[MSG >- " + p.getName() + "] " + ChatColor.DARK_GREEN + x.toString().trim();
 					Player target = getPlayer(args[0]);
-					String MSGTO = ChatColor.GREEN + "[MSG -< " + target.getName() + "] " + ChatColor.DARK_GREEN + x.toString().trim();
 					if(pCheck(p, perm)) {
 						if(target != null) {
+							String MSGFRM = ChatColor.GREEN + "[MSG >- " + p.getName() + "] " + ChatColor.DARK_GREEN + x.toString().trim();
+							String MSGTO = ChatColor.GREEN + "[MSG -< " + target.getName() + "] " + ChatColor.DARK_GREEN + x.toString().trim();
 							PlayerMessage(target, MSGFRM);
 							PlayerMessage(p, MSGTO);
+							ConsoleMessage(p.getName() + " > " + target.getName() + ": " + x.toString().trim());
+							return true;
 						} else {
 							PlayerMessage(p, PLAYER_OFFLINE);
 						}
@@ -50,7 +52,7 @@ public class MsgCommands extends CommandBin {
 				}
 			}
 		}
-		return false;
+		return true;
 	}
 
 }

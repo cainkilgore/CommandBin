@@ -1,5 +1,5 @@
 name: CommandBin
-version: 1.40
+version: 1.41
 author: CainFoool
 main: org.cain.cmdbin.CommandBin
 commands:
@@ -217,3 +217,15 @@ commands:
    mob:
        description: 'Spawn a mob'
        usage: /mob <creature>
+       
+   snick:
+       description: 'Set the titlename of a player through Spout'
+       usage: /snick <player> <name>
+       
+   scape:
+       description: 'Set the cape of a player through Spout'
+       usage: /scape <player> <capeurl>
+       
+   sskin:
+       description: 'Set the skin of a player through Spout'
+       usage: /sskin <player> <skinurl>

@@ -47,7 +47,7 @@ public class XPCommands extends CommandBin {
 				}
 			}
 		}
-		return false;
+		return true;
 	}
 
 }

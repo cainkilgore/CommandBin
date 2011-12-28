@@ -41,7 +41,7 @@ public class KickCommands extends CommandBin {
 				}
 			}
 		}
-		return false;
+		return true;
 		
 	}
 

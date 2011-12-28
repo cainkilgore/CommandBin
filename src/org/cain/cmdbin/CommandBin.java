@@ -28,6 +28,7 @@ import org.cain.cmdbin.commands.PingCommand;
 import org.cain.cmdbin.commands.PlayerCommands;
 import org.cain.cmdbin.commands.SayCommand;
 import org.cain.cmdbin.commands.SpawnMobCommands;
+import org.cain.cmdbin.commands.SpoutCommands;
 import org.cain.cmdbin.commands.TeleportCommands;
 import org.cain.cmdbin.commands.TimeCommands;
 import org.cain.cmdbin.commands.WarpCommands;
@@ -59,6 +60,7 @@ public class CommandBin extends JavaPlugin{
 		RegisterCommands(true);
 		cfg = getConfig();
 		cfg.addDefault("settings.landmines", false);
+		cfg.options().copyDefaults();
 		saveConfig();
 	}
 	public void onDisable() {
@@ -66,7 +68,11 @@ public class CommandBin extends JavaPlugin{
 		ConsoleMessage("Successfully disabled CommandBin!");
 	}
 	public boolean pCheck(Player s, String node) {
+		if(permissionHandler != null) {
+			return permissionHandler.has(s,  node);
+		} else {
 			return s.hasPermission(node);
+		}
 	}
 	
 	public void EventReg() {
@@ -98,6 +104,7 @@ public class CommandBin extends JavaPlugin{
 	public boolean RegisterCommands(boolean b) {
 		
 		// All the executors. Yay!
+		CommandExecutor spt = new SpoutCommands();
 		CommandExecutor god = new GodCommands();
 		CommandExecutor adm = new AdminCommands();
 		CommandExecutor fsa = new FakeSayCommand();
@@ -181,6 +188,11 @@ public class CommandBin extends JavaPlugin{
 			registerCommand("tpworld", wld);
 			registerCommand("unloadworld", wld);
 			registerCommand("xp", xpc);
+			if(Bukkit.getServer().getPluginManager().getPlugin("Spout") != null) { // Derr Spout Commands
+				registerCommand("sskin", spt);
+				registerCommand("scape", spt);
+				registerCommand("snick", spt);
+			}
 		}
 		return false;
 	}

@@ -31,7 +31,7 @@ public class SayCommand extends CommandBin {
 			}
 		}
 	}
-		return false;
+		return true;
 	}
 
 }

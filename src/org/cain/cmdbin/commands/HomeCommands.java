@@ -47,7 +47,7 @@ public class HomeCommands extends CommandBin {
 						cfg.set(((Player) s).getName() + ".home.world", world.getName());
 						((Player) s).sendMessage(ChatColor.GREEN + "Your new home is set!");
 						((Player) s).sendMessage(ChatColor.YELLOW + "Type /home to teleport to it!");
-						saveConfig();
+						CommandBin.cmdbin.saveConfig();
 					}else{
 						((Player) s).sendMessage(NULL_PERMISSION);
 					}
@@ -98,7 +98,7 @@ public class HomeCommands extends CommandBin {
 		} else {
 			s.sendMessage(ChatColor.RED + "You can't use home commands in console!");
 		}
-		return false;
+		return true;
 	}
 
 }

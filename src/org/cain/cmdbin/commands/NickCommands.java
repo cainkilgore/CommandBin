@@ -39,7 +39,7 @@ public class NickCommands extends CommandBin{
 					}
 				}
 			}
-			return false;
+			return true;
 	}
 
 }

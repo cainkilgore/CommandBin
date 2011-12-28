@@ -41,7 +41,7 @@ public class GodCommands extends CommandBin {
 				ConsoleMessage(CONSOLE_SENDER);
 			}
 		}
-		return false;
+		return true;
 	}
 	
 

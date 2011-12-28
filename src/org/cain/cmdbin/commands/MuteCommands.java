@@ -72,6 +72,6 @@ public class MuteCommands extends CommandBin {
 				}
 			}
 		}	
-		return false;
+		return true;
 	}
 }

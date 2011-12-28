@@ -350,7 +350,7 @@ public class PlayerCommands extends CommandBin {
 			ConsoleMessage("You can't check your location in-game!");
 		}
 		
-		return false;
+		return true;
 		
 		
 	}

@@ -121,7 +121,7 @@ public class WarpCommands extends CommandBin {
 			s.sendMessage(ChatColor.RED + "You can't use Warps in console!");
 		}
 		
-		return false;
+		return true;
 	}
 
 	

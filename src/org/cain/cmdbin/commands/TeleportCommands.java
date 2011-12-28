@@ -173,6 +173,6 @@ public class TeleportCommands extends CommandBin {
 		
 		
 		// Do not code after this.
-		return false;
+		return true;
 	}
 }

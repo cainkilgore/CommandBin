@@ -34,7 +34,7 @@ public class SpawnMobCommands extends CommandBin {
 			}
 		}
 		
-		return false;
+		return true;
 	}
 
 }

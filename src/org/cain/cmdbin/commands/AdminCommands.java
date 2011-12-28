@@ -46,9 +46,28 @@ public class AdminCommands extends CommandBin {
 						ConsoleMessage("Configuration reloaded!");
 					}
 				}
+				
+				if(args[0].equalsIgnoreCase("ram")) {
+					if(s instanceof Player) {
+						Player p = (Player) s;
+						if(pCheck(p, perm + ".ram")) {
+							Runtime rt = Runtime.getRuntime();
+							double max = Math.floor(rt.maxMemory() / 1024.0 / 1024.0);
+							double free = Math.floor(rt.freeMemory() / 1024.0 / 1024.0);
+							((Player) s).sendMessage(ChatColor.RED + "" + free + " / " + max + " memory available");
+						} else {
+							PlayerMessage(p, NULL_PERMISSION);
+						}
+					} else {
+						Runtime rt = Runtime.getRuntime();
+						double max = Math.floor(rt.maxMemory() / 1024.0 / 1024.0);
+						double free = Math.floor(rt.freeMemory() / 1024.0 / 1024.0);
+						ConsoleMessage(ChatColor.RED + "" + free + " / " + max + " memory available");
+					}
+				}
 			}
 		}
-		return false;
+		return true;
 	}
 	
 	public void shutdownServer() {

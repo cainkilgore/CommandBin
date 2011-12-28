@@ -83,6 +83,6 @@ public class GameModeCommands extends CommandBin {
 				}
 			}
 		}	
-		return false;
+		return true;
 	}
 }

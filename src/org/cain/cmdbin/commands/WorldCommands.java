@@ -42,7 +42,7 @@ public class WorldCommands extends CommandBin {
 					Player p = (Player) s;
 					if(pCheck(p, perm)) {
 						if(Bukkit.getServer().getWorld(args[0]) != null) {
-							p.teleport(getServer().getWorld(args[0]).getSpawnLocation());
+							p.teleport(Bukkit.getServer().getWorld(args[0]).getSpawnLocation());
 							PlayerMessage(p, "Teleported!");
 						} else {
 							PlayerMessage(p, "This world does not exist.");
@@ -83,6 +83,6 @@ public class WorldCommands extends CommandBin {
 			}
 		}
 		
-		return false;
+		return true;
 	}
 }

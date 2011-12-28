@@ -16,7 +16,7 @@ public class PingCommand extends CommandBin {
 				ConsoleMessage("Pong!");
 			}
 		}
-		return false;
+		return true;
 	}
 
 	// Shortest class? I think so!! :) 

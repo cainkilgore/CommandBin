@@ -41,7 +41,7 @@ public class FakeSayCommand extends CommandBin {
 				}
 			}
 		}
-		return false;
+		return true;
 	}
 
 }

@@ -41,7 +41,7 @@ public class WeatherCommands extends CommandBin {
 				}
 			}
 		}
-		return false;
+		return true;
 	}
 
 }
