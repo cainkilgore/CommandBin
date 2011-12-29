@@ -11,7 +11,7 @@ public class SpawnMobCommands extends CommandBin {
 	
 	public boolean onCommand(CommandSender s, Command c, String l, String [] args) {
 		String perm = "CommandBin." + l.toLowerCase();
-		if(l.equalsIgnoreCase("mob")) {
+		if(l.equalsIgnoreCase("spawnmob")) {
 			if(args.length < 1) {
 				return false;
 			} else {

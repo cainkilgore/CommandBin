@@ -169,7 +169,7 @@ public class CommandBin extends JavaPlugin{
 			registerCommand("me", pco);
 			registerCommand("loc", pco);
 			registerCommand("say", say);
-			registerCommand("mob", smc);
+			registerCommand("spawnmob", smc);
 			registerCommand("tp", tpc);
 			registerCommand("tphere", tpc);
 			registerCommand("tp2p", tpc);

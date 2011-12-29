@@ -214,9 +214,9 @@ commands:
        description: 'Same features of msg'
        usage: /m <player> <message>
        
-   mob:
+   spawnmob:
        description: 'Spawn a mob'
-       usage: /mob <creature>
+       usage: /spawnmob <creature>
        
    snick:
        description: 'Set the titlename of a player through Spout'
