@@ -6,6 +6,8 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerListener;
+import org.bukkit.event.player.PlayerLoginEvent;
+import org.bukkit.event.player.PlayerLoginEvent.Result;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.cain.cmdbin.CommandBin;
 import org.cain.cmdbin.commands.FreezeCommands;
@@ -45,6 +47,12 @@ public class CMDBinPListener extends PlayerListener {
 			e.setCancelled(true);
 		}
 		return;
+	}
+	
+	public void onPlayerLogin(PlayerLoginEvent e) {
+		if(CommandBin.cfg.getBoolean("players." + e.getPlayer().getName() + ".banned")) {
+			e.disallow(Result.KICK_BANNED, CommandBin.cfg.getString("players." + e.getPlayer().getName() + ".banreason"));
+		}
 	}
 
 }

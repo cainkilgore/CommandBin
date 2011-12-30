@@ -79,6 +79,7 @@ public class CommandBin extends JavaPlugin{
 		re(Type.PLAYER_MOVE, new CMDBinPListener());
 		re(Type.ENTITY_DAMAGE, new CMDBinEListener());
 		re(Type.PLAYER_CHAT, new CMDBinPListener());
+		re(Type.PLAYER_LOGIN, new CMDBinPListener());
 		re(Type.PLAYER_COMMAND_PREPROCESS, new CMDBinPListener());
 		if(getServer().getPluginManager().getPlugin("Spout") != null) {
 			re(Type.CUSTOM_EVENT, new CMDBinSListener());

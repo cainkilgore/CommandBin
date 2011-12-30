@@ -50,9 +50,10 @@ public class BanCommands extends CommandBin {
 						target.kickPlayer("You were banned. Reason: " + x.toString().trim());
 						ConsoleMessage(target.getName() + " has been banned!");
 						ConsoleMessage(target.getName() + " Ban Reason: " + x.toString().trim());
+						CommandBin.cmdbin.saveConfig();
 					} else {
-						cfg.set("players." + args[0].toLowerCase() + ".banned", true);
-						cfg.set("players." + args[0].toLowerCase() + ".banreason", x.toString().trim());
+						cfg.set("players." + args[0] + ".banned", true);
+						cfg.set("players." + args[0] + ".banreason", x.toString().trim());
 						ConsoleMessage(args[0].toLowerCase() + " has been banned!");
 						ConsoleMessage(args[0].toLowerCase() + " Ban Reason: " + x.toString().trim());
 					}
@@ -69,11 +70,12 @@ public class BanCommands extends CommandBin {
 					if(pCheck(p, perm)) {
 						cfg.set("players." + args[0] + ".banned", false);
 						PlayerMessage(p, args[0] + " has been unbanned!");
+						CommandBin.cmdbin.saveConfig();
 					} else {
 						PlayerMessage(p, NULL_PERMISSION);
 					}
 				} else {
-					cfg.set("players." + args[0].toLowerCase() + ".banned", false);
+					cfg.set("players." + args[0] + ".banned", false);
 					ConsoleMessage(args[0] + " has been unbanned!");
 				}
 			}
