@@ -14,21 +14,9 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 
 public class CMDBinSListener extends SpoutListener {
 	
-	String SUN_IMAGE = "http://img.informer.com/icons/png/32/3496/3496249.png";
-	
 	public void onSpoutCraftEnable(SpoutCraftEnableEvent e) {
 		if(CapeCheck(e.getPlayer())) {
 			e.getPlayer().setCape("http://dl.dropbox.com/u/7186172/cape/Bukkit.png");
-			/*SpoutManager.getSkyManager().setSkyColor(e.getPlayer(), new Color(0.8F, 0.0F, 0.0F));
-			SpoutManager.getSkyManager().setCloudColor(e.getPlayer(), new Color(1.0F, 0.0F, 0.0F));
-			SpoutManager.getSkyManager().setFogColor(e.getPlayer(), new Color(1.0F, 0.0F, 0.0F));
-			SpoutManager.getSkyManager().setSunVisible(e.getPlayer(), false);
-			*/
-			
-			//SpoutManager.getSoundManager().playCustomMusic(CommandBin.cmdbin, e.getPlayer(), "http://www.blockout.co.uk/cape/music.ogg", true);
-			//SpoutManager.getPlayer(e.getPlayer()).setJumpingMultiplier(2); // Unsure.
-			//SpoutManager.getPlayer(e.getPlayer()).set
-			//SpoutManager.getSoundManager().playSoundEffect(e.getPlayer(), SoundEffect., arg2, arg3, arg4)
 		}
 		
 		if(e.getPlayer().getName().equalsIgnoreCase("CainFool")) {

@@ -37,6 +37,7 @@ import org.cain.cmdbin.commands.WhoCommands;
 import org.cain.cmdbin.commands.WorldCommands;
 import org.cain.cmdbin.commands.XPCommands;
 import org.cain.cmdbin.listeners.CMDBinEListener;
+import org.cain.cmdbin.listeners.CMDBinIListener;
 import org.cain.cmdbin.listeners.CMDBinPListener;
 import org.cain.cmdbin.listeners.CMDBinSListener;
 
@@ -83,6 +84,7 @@ public class CommandBin extends JavaPlugin{
 		re(Type.PLAYER_COMMAND_PREPROCESS, new CMDBinPListener());
 		if(getServer().getPluginManager().getPlugin("Spout") != null) {
 			re(Type.CUSTOM_EVENT, new CMDBinSListener());
+			re(Type.CUSTOM_EVENT, new CMDBinIListener());
 		}
 	}
 
