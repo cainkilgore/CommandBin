@@ -47,7 +47,7 @@ import com.nijikokun.bukkit.Permissions.Permissions;
 public class CommandBin extends JavaPlugin{
 	
 	public String PLAYER_OFFLINE = "This player is currently offline.";
-	public String NULL_PERMISSION = "You have no permission to use this command.";
+	public String NULL_PERMISSION = "You do not have permission to use this command.";
 	public String CONSOLE_SENDER = "You mustn't be on console, but in game to use this command.";
 	public static PermissionHandler permissionHandler;
 	public static CommandBin cmdbin;
