@@ -1,0 +1,14 @@
+name: CommandBin
+version: 4.0
+author: CainFoool
+main: org.caindonaghey.commandbin.CommandBin
+commands:
+   tp:
+       description: 'Teleport to a player, teleport a player to co-ordinates, teleport a player to another player'
+       usage: /tp [player] <player/xyz>
+   tphere:
+       description: 'Teleport a player to your current location'
+       usage: /tphere [player]
+   spawn:
+       description: 'Teleport you or another player to current world spawn location'
+       usage: /spawn <player>
