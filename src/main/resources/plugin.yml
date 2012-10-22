@@ -12,3 +12,6 @@ commands:
    spawn:
        description: 'Teleport you or another player to current world spawn location'
        usage: /spawn <player>
+   setspawn:
+       description: 'Set the current world spawn location for players'
+       usage: /setspawn
