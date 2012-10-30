@@ -15,3 +15,6 @@ commands:
    setspawn:
        description: 'Set the current world spawn location for players'
        usage: /setspawn
+   bolt:
+       description: 'Strike a player with lightning'
+       usage: /bolt [player]

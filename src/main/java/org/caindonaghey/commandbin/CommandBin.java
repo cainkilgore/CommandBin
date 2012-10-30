@@ -3,8 +3,13 @@ package org.caindonaghey.commandbin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.caindonaghey.commandbin.commands.*;
-import org.caindonaghey.commandbin.listeners.*;
+import org.caindonaghey.commandbin.commands.BoltCommand;
+import org.caindonaghey.commandbin.commands.SetspawnCommand;
+import org.caindonaghey.commandbin.commands.SpawnCommand;
+import org.caindonaghey.commandbin.commands.TpCommand;
+import org.caindonaghey.commandbin.commands.TphereCommand;
+import org.caindonaghey.commandbin.listeners.EntityListener;
+import org.caindonaghey.commandbin.listeners.PlayerListener;
 
 public class CommandBin extends JavaPlugin {
 	
@@ -31,6 +36,7 @@ public class CommandBin extends JavaPlugin {
 		Utils.registerCommand("tphere", new TphereCommand());
 		Utils.registerCommand("spawn", new SpawnCommand());
 		Utils.registerCommand("setspawn", new SetspawnCommand());
+		Utils.registerCommand("bolt", new BoltCommand());
 	}
 
 }
