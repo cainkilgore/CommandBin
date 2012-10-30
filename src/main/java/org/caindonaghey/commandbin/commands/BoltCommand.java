@@ -32,7 +32,7 @@ public class BoltCommand implements CommandExecutor {
 			
 			if(args.length < 1) {
 				Utils.noArguments(player);
-				return true;
+				return false;
 			}
 			
 			if(!Utils.checkPermission(player, "CommandBin.bolt")) {
