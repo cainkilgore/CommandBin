@@ -41,5 +41,9 @@ public class Utils {
 	public static void errorMessage(Player player, String message) {
 		playerMessage(player, ChatColor.RED + message);
 	}
+	
+	public static void broadcastMessage(String message) {
+		Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + message);
+	}
 
 }
