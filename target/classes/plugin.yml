@@ -18,3 +18,6 @@ commands:
    bolt:
        description: 'Strike a player with lightning'
        usage: /bolt [player]
+   setxp:
+       description: 'Set a players experience level'
+       usage: /setxp <player> [level]
