@@ -40,7 +40,7 @@ public class SetxpCommand implements CommandExecutor {
 				return true;
 			}
 			
-			if(args.length < 0) {
+			if(args.length < 1) {
 				Utils.noArguments(player);
 				return false;
 			}
